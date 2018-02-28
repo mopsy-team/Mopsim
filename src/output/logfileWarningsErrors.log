@@ -1,0 +1,27 @@
+2018-02-28 23:01:16,618  WARN QueueWithBuffer:328 Link 30914 too small: enlarge storage capacity from: 4.289011311817947 Vehicles to: 9.650275451590382 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:16,619  WARN QueueWithBuffer:328 Link 30915 too small: enlarge storage capacity from: 4.289011311817947 Vehicles to: 9.650275451590382 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:16,619  WARN QueueWithBuffer:328 Link 30918 too small: enlarge storage capacity from: 6.1509404468977795 Vehicles to: 13.839616005520005 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:16,619  WARN QueueWithBuffer:328 Link 30919 too small: enlarge storage capacity from: 6.1509404468977795 Vehicles to: 13.839616005520005 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:16,692  WARN QueueWithBuffer:328 Link 98674 too small: enlarge storage capacity from: 8.050310235968551 Vehicles to: 18.113198030929244 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:16,692  WARN QueueWithBuffer:328 Link 98675 too small: enlarge storage capacity from: 8.050310235968551 Vehicles to: 18.113198030929244 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:252 The first and the last activity do not have the same type. 
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:253 Will score the first activity from midnight to its end, and the last activity from its start to midnight.
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:254 Because of the nonlinear function, this is not the same as scoring from start to end.
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:255 first activity: [type=h][coord=null][linkId=3922][startTime=undefined][endTime=11:13:00][duration=undefined][facilityId=null]
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:256 last activity: [type=w][coord=null][linkId=16777][startTime=11:50:39][endTime=undefined][duration=undefined][facilityId=null]
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:257 This may also happen when plans are not completed when the simulation ends.
+2018-02-28 23:01:34,676  WARN CharyparNagelActivityScoring:259 Additional warnings of this type are suppressed.
+2018-02-28 23:01:36,182  WARN QueueWithBuffer:328 Link 30914 too small: enlarge storage capacity from: 4.289011311817947 Vehicles to: 9.650275451590382 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:36,182  WARN QueueWithBuffer:328 Link 30915 too small: enlarge storage capacity from: 4.289011311817947 Vehicles to: 9.650275451590382 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:36,183  WARN QueueWithBuffer:328 Link 30918 too small: enlarge storage capacity from: 6.1509404468977795 Vehicles to: 13.839616005520005 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:36,183  WARN QueueWithBuffer:328 Link 30919 too small: enlarge storage capacity from: 6.1509404468977795 Vehicles to: 13.839616005520005 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:36,226  WARN QueueWithBuffer:328 Link 98674 too small: enlarge storage capacity from: 8.050310235968551 Vehicles to: 18.113198030929244 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2018-02-28 23:01:36,226  WARN QueueWithBuffer:331 Additional warnings of this type are suppressed.
+2018-02-28 23:01:54,920  WARN CharyparNagelActivityScoring:252 The first and the last activity do not have the same type. 
+2018-02-28 23:01:54,921  WARN CharyparNagelActivityScoring:253 Will score the first activity from midnight to its end, and the last activity from its start to midnight.
+2018-02-28 23:01:54,921  WARN CharyparNagelActivityScoring:254 Because of the nonlinear function, this is not the same as scoring from start to end.
+2018-02-28 23:01:54,921  WARN CharyparNagelActivityScoring:255 first activity: [type=h][coord=null][linkId=3922][startTime=undefined][endTime=11:13:00][duration=undefined][facilityId=null]
+2018-02-28 23:01:54,921  WARN CharyparNagelActivityScoring:256 last activity: [type=w][coord=null][linkId=16777][startTime=11:50:39][endTime=undefined][duration=undefined][facilityId=null]
+2018-02-28 23:01:54,921  WARN CharyparNagelActivityScoring:257 This may also happen when plans are not completed when the simulation ends.
+2018-02-28 23:01:54,921  WARN CharyparNagelActivityScoring:259 Additional warnings of this type are suppressed.
+2018-02-28 23:01:57,064 ERROR DumpDataAtEndImpl:147 writing output events did not work; probably parameters were such that no events were generated in the final iteration
