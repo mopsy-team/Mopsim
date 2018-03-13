@@ -1,3 +1,8 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * RandomStrategy.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 package strategies;
 import java.util.Random;
 
@@ -8,7 +13,7 @@ import java.util.Random;
 public final class RandomStrategy implements MOPEnterStrategy {
 	
 	@Override
-	public boolean decide(float lastVisit, float travelTime, String vehicleType) {
+	public boolean decide(double travelTime) {
 		Random r = new Random(); 
 		return r.nextBoolean();
 	}

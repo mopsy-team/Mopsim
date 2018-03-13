@@ -1,3 +1,8 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * MOPEnterEvent.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 package events;
 import java.util.Map;
 import org.matsim.api.core.v01.Id;

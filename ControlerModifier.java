@@ -1,6 +1,12 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * ControlerModifier.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 import org.matsim.core.controler.*;
 import org.matsim.core.events.handler.EventHandler;
 import org.matsim.core.mobsim.framework.listeners.MobsimListener;
+
 /*
  * Class used to modify MATSim Controler.
  */
@@ -11,6 +17,9 @@ public class ControlerModifier {
 		this.controler = controler;
 	}
 	
+	/*
+	 * Function adding event handler to controler using injection syntax.
+	 */
 	public void addHandler(EventHandler eventHandler) {
 		controler.addOverridingModule(new AbstractModule (){
 			@Override 
@@ -20,7 +29,10 @@ public class ControlerModifier {
 			}
 		);
 	}
-	
+
+	/*
+	 * Function adding mobsim listener to controler using injection syntax.
+	 */
 	public void addMobsimListener(MobsimListener mobsimListener) {
 		controler.addOverridingModule(new AbstractModule (){
 			@Override 

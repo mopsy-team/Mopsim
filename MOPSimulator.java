@@ -1,12 +1,16 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * MOPSimulator.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.core.config.*;
 import org.matsim.core.scenario.*;
-
-import events.MOPAfterSimStepListener;
-import events.MOPLinkEnterEventHandler;
-
 import org.matsim.core.controler.*;
 
+import events.MOPAfterSimStepListener;
+import events.MOPBeforeSimStepListener;
+import events.MOPLinkEnterEventHandler;
 import handlers.*;
 
 /*
@@ -23,6 +27,8 @@ public class MOPSimulator {
 	
 	public MOPSimulator() {
 		conf = ConfigUtils.loadConfig(CONFIG_PATH);
+		//We need just one iteration
+		conf.controler().setLastIteration(0);
 		scen = ScenarioUtils.loadScenario(conf);
 		cont = new Controler(scen);
 		contModifier = new ControlerModifier(cont);
@@ -30,7 +36,8 @@ public class MOPSimulator {
 	}
 	
 	public void runSimulation() {
-		contModifier.addHandler(new MOPLinkEnterEventHandler(mopHandler.getMops()));
+		contModifier.addHandler(new MOPLinkEnterEventHandler(mopHandler.getVehicleIds()));
+		contModifier.addMobsimListener(new MOPBeforeSimStepListener(mopHandler));
 		contModifier.addMobsimListener(new MOPAfterSimStepListener(mopHandler));
 		cont.run();
 	}

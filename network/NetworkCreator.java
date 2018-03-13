@@ -1,4 +1,10 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * NetworkCreator.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 package network;
+
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.network.Network;
 import org.matsim.core.config.Config;

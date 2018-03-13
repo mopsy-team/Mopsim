@@ -1,7 +1,15 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * MOPHandler.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 package handlers;
+
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 import org.matsim.api.core.v01.Coord;
 import org.matsim.api.core.v01.Id;
@@ -9,6 +17,7 @@ import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.network.Network;
 import org.matsim.core.network.NetworkUtils;
 import org.matsim.facilities.ActivityFacility;
+import org.matsim.vehicles.Vehicle;
 
 import events.MOPLeaveEvent;
 import mop.MOP;
@@ -16,7 +25,12 @@ import mop.MOP;
  * Class used for handling MOPs used in simulation.
  */
 public class MOPHandler {
-	private Map<Id<Link>, MOP> mops;
+	
+	// map tying links with mops
+	private ConcurrentMap<Id<Link>, MOP> mops;
+	
+	// map tying MOP-connected links with list of vehicle entering them
+	private ConcurrentMap<Id<Link>, HashSet<Id<Vehicle>>> vehicleIds;
 	
 	private Id<Link> tieMOPWithLink(Network network, Coord coord) {
 		Id<Link> idLink = NetworkUtils.getNearestLink(network, coord).getId();
@@ -24,20 +38,24 @@ public class MOPHandler {
 	}
 	
 	public MOPHandler(Map<Id<ActivityFacility>, ? extends ActivityFacility> facilityMap, Network network) {
-		mops = new HashMap<Id<Link>, MOP>();
+		mops = new ConcurrentHashMap<Id<Link>, MOP>();
 		for (Id<ActivityFacility> mopId: facilityMap.keySet()) {
 			ActivityFacility mop = facilityMap.get(mopId);
 			Id<Link> idLink = tieMOPWithLink(network, mop.getCoord());
-			mops.put(idLink, new MOP(mop.getId(), idLink, 100, 10, 10));//TODO put correct values
+			mops.put(idLink, new MOP(mop.getId(), idLink, 100, 10, 10, mop));//TODO put correct values of mop capacity 
 		}
-		
-		for (Id<Link> idLink: mops.keySet()) {
-			System.out.println(idLink.toString() + ": " + mops.get(idLink).getId());
+		vehicleIds = new ConcurrentHashMap<Id<Link>, HashSet<Id<Vehicle>>>();
+		for (Id<Link> linkId : mops.keySet()) {
+			vehicleIds.put(linkId, new HashSet<Id<Vehicle>>());
 		}
 	}
 	
-	public Map<Id<Link>, MOP> getMops() {
+	public ConcurrentMap<Id<Link>, MOP> getMops() {
 		return mops;
+	}
+	
+	public ConcurrentMap<Id<Link>, HashSet<Id<Vehicle>>> getVehicleIds() {
+		return vehicleIds;
 	}
 	
 	public ArrayList<MOPLeaveEvent> vehicleLeave(double time) {

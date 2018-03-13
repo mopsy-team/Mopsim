@@ -1,10 +1,18 @@
+/* *********************************************************************** *
+ * project: MOPSim
+ * MOPLeaveEvent.java
+ * written by: mopsy-team
+ * ***********************************************************************/
 package events;
+
 import java.util.Map;
+
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.population.Person;
 import org.matsim.facilities.ActivityFacility;
 import org.matsim.api.core.v01.events.Event;
+
 public class MOPLeaveEvent extends Event{
 	
 	public static final String EVENT_TYPE = "mopleave";
