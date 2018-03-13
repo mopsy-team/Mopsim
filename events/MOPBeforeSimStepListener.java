@@ -161,11 +161,6 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		
 		plan.getPlanElements().add(currentIndex + 1, newActivity);
 		plan.getPlanElements().add(currentIndex + 2, futureLeg);
-		System.out.println("ZMODYFIKOWALEM PLAN");
-		for (PlanElement pl: plan.getPlanElements()) {
-			System.out.println(pl.toString());
-		}
-		System.out.println("FAJNY CO?");
 	}
 	
 }
