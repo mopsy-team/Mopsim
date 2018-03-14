@@ -8,6 +8,6 @@ To run:
 3. Extract the library.
 4. To compile and run MOPSim, execute run_mopsim.sh script with path to matsim-0.9.0.jar file as a parameter. Example usage:
 ```
-./run_mopsim.sh matsim-0.9.0/matsim-0.9.9.jar
+./run_mopsim.sh matsim-0.9.0/matsim-0.9.0.jar
 ```
 5. After execution, directory ```output``` will contain simulation data.
