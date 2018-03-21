@@ -23,7 +23,7 @@ public class TravelPlanCreator {
     private static final String FOOTER = "</plans>\n";
 
     //Path to file with town coordinates
-    private static final String TOWN_COORDINATES_PATH = "miasta_converted.csv";
+    private static final String TOWN_COORDINATES_PATH = "town_coordinates/town_coordinates.csv";
 
 
     private static Pair<String, String> countyTowns[];

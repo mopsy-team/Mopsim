@@ -12,6 +12,7 @@ import events.MOPAfterSimStepListener;
 import events.MOPBeforeSimStepListener;
 import events.MOPLinkEnterEventHandler;
 import handlers.*;
+import plancreator.TravelPlanCreator;
 
 /*
  * Main MOPSim class.
@@ -26,6 +27,7 @@ public class MOPSimulator {
 	private MOPHandler mopHandler;
 	
 	public MOPSimulator() {
+		createTravelPlan();
 		conf = ConfigUtils.loadConfig(CONFIG_PATH);
 		//We need just one iteration
 		conf.controler().setLastIteration(0);
@@ -45,5 +47,11 @@ public class MOPSimulator {
 	public static void main(String[] args) {
 		MOPSimulator mopsim = new MOPSimulator();
 		mopsim.runSimulation();
+	}
+	
+	private void createTravelPlan() {
+		TravelPlanCreator.createPlan("travel_matrices/sam_os_Biznes_2025.csv", 
+				"travel_matrices/sam_os_Biznes_2025.csv",
+				"travel_matrices/sam_os_Biznes_2025.csv", 5000, 0, 0, "CONF/travel_plan.xml");
 	}
 }

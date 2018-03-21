@@ -27,6 +27,8 @@ import org.matsim.core.mobsim.qsim.interfaces.MobsimVehicle;
 import org.matsim.core.mobsim.qsim.interfaces.Netsim;
 import org.matsim.core.mobsim.qsim.interfaces.NetsimLink;
 import org.matsim.core.population.routes.LinkNetworkRouteImpl;
+import org.matsim.core.population.routes.NetworkRoute;
+import org.matsim.core.population.routes.RouteUtils;
 //import org.matsim.core.router.FacilityWrapperActivity;
 import org.matsim.vehicles.Vehicle;
 
@@ -132,16 +134,24 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		//Activity newActivity = new FacilityWrapperActivity(mopHandler.getMops().get(linkId).getFacility()) ;	
 		Activity newActivity = mobsim.getScenario().getPopulation().getFactory().createActivityFromLinkId("w", linkId) ;
 		newActivity.setMaximumDuration(MOP_STAY_TIME);
+		System.out.println("DROGAAAAA: "+ route.getTravelTime() + ", " + route.getDistance());
 		
 		// New routes produced from the old one by splitting in current link.
 		Route routeToMOP = ((LinkNetworkRouteImpl) route).getSubRoute(route.getStartLinkId(), linkId);
 		Route routeFromMOP = ((LinkNetworkRouteImpl) route).getSubRoute(linkId, route.getEndLinkId());
+		routeToMOP.setTravelTime(currentTime - currentLeg.getDepartureTime());
+		routeFromMOP.setTravelTime(currentLeg.getDepartureTime() + currentLeg.getTravelTime() - currentTime);
+		double distanceToMOP = RouteUtils.calcDistanceExcludingStartEndLink((NetworkRoute) routeToMOP, mobsim.getNetsimNetwork().getNetwork());
+		double distanceFromMOP = RouteUtils.calcDistanceExcludingStartEndLink((NetworkRoute) routeFromMOP, mobsim.getNetsimNetwork().getNetwork());
+		routeToMOP.setDistance(distanceToMOP);
+		routeFromMOP.setDistance(distanceFromMOP);
+		
 		Leg futureLeg = mobsim.getScenario().getPopulation().getFactory().createLeg(currentLeg.getMode());
 		
 		//Modifying current leg (from startLinkId to linkId) & future leg (from linkId to endLinkId)
 		currentLeg.setRoute(routeToMOP);
 		futureLeg.setRoute(routeFromMOP);
-		futureLeg.setTravelTime(currentLeg.getTravelTime() - currentTime);
+		futureLeg.setTravelTime(currentLeg.getDepartureTime() + currentLeg.getTravelTime() - currentTime);
 		currentLeg.setTravelTime(currentTime - currentLeg.getDepartureTime());
 		futureLeg.setDepartureTime(currentTime + MOP_STAY_TIME);
 		
@@ -161,6 +171,9 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		
 		plan.getPlanElements().add(currentIndex + 1, newActivity);
 		plan.getPlanElements().add(currentIndex + 2, futureLeg);
+		for (PlanElement pl: plan.getPlanElements()) {
+			System.out.println(pl.toString());
+		}
 	}
 	
 }
