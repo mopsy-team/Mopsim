@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
+import org.matsim.core.utils.charts.XYLineChart;
 import org.matsim.facilities.ActivityFacility;
 
 import events.MOPLeaveEvent;
@@ -43,8 +44,18 @@ public class MOP {
 	private AtomicInteger currentBus;
 	private AtomicInteger currentTruck;
 	
-	/* Queue with current vehicle leaving times */
-	ConcurrentLinkedQueue<Double> vehicleQueue;
+	/* Queues with current vehicle leaving times */
+	ConcurrentLinkedQueue<Double> carQueue;
+	ConcurrentLinkedQueue<Double> busQueue;
+	ConcurrentLinkedQueue<Double> truckQueue;
+	
+	/* Hourly vehicle statistics */
+	double[] carsEntering = new double[24];
+	double[] busesEntering = new double[24];
+	double[] trucksEntering = new double[24];
+	
+	/* plot path */
+	String plotPath;
 	
 	/* Constructors */
 	
@@ -59,7 +70,10 @@ public class MOP {
 		this.currentTruck = new AtomicInteger(currentTruck);
 		this.currentBus = new AtomicInteger(currentBus);
 		this.facility = facility;
-		vehicleQueue = new ConcurrentLinkedQueue<Double>();
+		carQueue = new ConcurrentLinkedQueue<Double>();
+		busQueue = new ConcurrentLinkedQueue<Double>();
+		truckQueue = new ConcurrentLinkedQueue<Double>();
+		plotPath = "mop_plots/" + id.toString();
 	}
 	
 	public MOP(Id<ActivityFacility> id, Id<Link> linkId, int carLimit, int truckLimit, int busLimit,
@@ -67,14 +81,19 @@ public class MOP {
 		this(id, linkId, carLimit, truckLimit, busLimit, 0, 0, 0, facility);
 	}
 
-	public void enterMOP(String type, double leaveTime) {
-		vehicleQueue.add(leaveTime);
+	public void enterMOP(String type, int enterHour, double leaveTime) {
 		if (type.equals(CAR)) {
+			carQueue.add(leaveTime);
 			currentCar.incrementAndGet();
+			carsEntering[enterHour]++;
 		} else if (type.equals(TRUCK)) {
+			truckQueue.add(leaveTime);
 			currentTruck.incrementAndGet();
+			trucksEntering[enterHour]++;
 		} else if (type.equals(BUS)) {
+			busQueue.add(leaveTime);
 			currentBus.incrementAndGet();
+			busesEntering[enterHour]++;
 		}
 	}
 	
@@ -139,15 +158,39 @@ public class MOP {
 	/*
 	 * Removes from the queue vehicles which are supposed to leave.
 	 * TODO: add more info to MOPLeaveEventConstructor, 
-	 * distinguish different vehicle types
 	 */
 	public ArrayList<MOPLeaveEvent> clearQueue(double time) throws InterruptedException {
 		ArrayList<MOPLeaveEvent> retList = new ArrayList<MOPLeaveEvent>();
-		while (!vehicleQueue.isEmpty() && vehicleQueue.peek() < time) {
-			leaveMOP(CAR); //TODO other vehicles
-			retList.add(new MOPLeaveEvent(vehicleQueue.remove(), null, linkId, null, null));
+		while (!carQueue.isEmpty() && carQueue.peek() < time) {
+			leaveMOP(CAR);
+			retList.add(new MOPLeaveEvent(carQueue.remove(), null, linkId, null, null));
+		}
+		while (!busQueue.isEmpty() && busQueue.peek() < time) {
+			leaveMOP(BUS);
+			retList.add(new MOPLeaveEvent(busQueue.remove(), null, linkId, null, null));
+		}
+		while (!truckQueue.isEmpty() && truckQueue.peek() < time) {
+			leaveMOP(TRUCK);
+			retList.add(new MOPLeaveEvent(truckQueue.remove(), null, linkId, null, null));
 		}
 		return retList;
+	}
+	
+	public void createPlot(String outputFilepath, double[] array, int arraySize) {
+		
+		double[] series = new double[arraySize];
+		for (int i = 0; i < arraySize; i++) {
+			series[i] = (double) i;
+		}
+		XYLineChart chart = new XYLineChart("Wjazdy na MOP nr " + id.toString(), "godzina", "wjazdy");
+		chart.addSeries("times", series, array);
+		chart.saveAsPng(outputFilepath, 800, 600);
+	}
+	
+	public void createAllPlots() {
+		createPlot(plotPath + CAR, carsEntering, 24);
+		createPlot(plotPath + BUS, busesEntering, 24);
+		createPlot(plotPath + TRUCK, trucksEntering, 24);
 	}
 	
 }

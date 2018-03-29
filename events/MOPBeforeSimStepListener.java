@@ -11,12 +11,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
 
+//import org.apache.log4j.Logger;
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.population.Activity;
 import org.matsim.api.core.v01.population.Leg;
 import org.matsim.api.core.v01.population.Plan;
-import org.matsim.api.core.v01.population.PlanElement;
 import org.matsim.api.core.v01.population.Route;
 import org.matsim.core.mobsim.framework.MobsimAgent;
 import org.matsim.core.mobsim.framework.MobsimDriverAgent;
@@ -33,8 +33,9 @@ import org.matsim.core.population.routes.RouteUtils;
 import org.matsim.vehicles.Vehicle;
 
 import handlers.MOPHandler;
+import strategies.BasicStrategy;
 import strategies.MOPEnterStrategy;
-import strategies.RandomStrategy;
+import strategies.TruckStrategy;
 
 /*
  * Class implementing MobsimBeforeSimStepListener.
@@ -49,7 +50,6 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 	private final String TRUCK = "truck";
 	private final String BUS = "bus";
 	
-	
 	private MOPHandler mopHandler;
 	
 	//MOP Enter strategies for each vehicle type.
@@ -57,12 +57,13 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 	private MOPEnterStrategy busStrategy;
 	private MOPEnterStrategy truckStrategy;
 	
+//	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
+	
 	public MOPBeforeSimStepListener(MOPHandler mopHandler) {
 		this.mopHandler = mopHandler;
-		// TODO These random strategies are only placeholders
-		this.carStrategy = new RandomStrategy();
-		this.truckStrategy = new RandomStrategy();
-		this.truckStrategy = new RandomStrategy();
+		this.carStrategy = new BasicStrategy();
+		this.busStrategy = new TruckStrategy();
+		this.truckStrategy = new TruckStrategy();
 	}
 	
 	@Override
@@ -92,21 +93,25 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 				Id<Vehicle> vehicleId = vehicle.getId();
 				if (vehicleIds.get(linkId).contains(vehicleId)) {
 					MobsimDriverAgent agent = vehicle.getDriver();
-					
 					/*
 					 * For sure current plan element is Leg.
 					 * Maybe it should be somehow checked if(WithinDayAgentUtils.getCurrentPlanElement(agent) instance of Leg)...
 					 */
 					Leg currentLeg = (Leg) WithinDayAgentUtils.getCurrentPlanElement(agent);
-					double travelTime = currentLeg.getTravelTime();
-					/*
-					 * Assuming that current vehicle is a car. TODO Distinguish types.
-					 */
-					if (carStrategy.decide(travelTime)) {
+					double travelTime = mobsim.getSimTimer().getTimeOfDay() - currentLeg.getDepartureTime();
+
+					if (agent.getId().toString().startsWith(CAR) && carStrategy.decide(travelTime)) {
 						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
 						agentsToReplan.get(linkId).add(agent);
 					}
-					
+					if (agent.getId().toString().startsWith(BUS) && busStrategy.decide(travelTime)) {
+						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
+						agentsToReplan.get(linkId).add(agent);
+					}
+					if (agent.getId().toString().startsWith(TRUCK) && truckStrategy.decide(travelTime)) {
+						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
+						agentsToReplan.get(linkId).add(agent);
+					}	
 				}
 				
 			}
@@ -126,16 +131,15 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 			return;
 		}
 		
-		Leg currentLeg = (Leg) WithinDayAgentUtils.getCurrentPlanElement(agent);
+		Leg currentLeg = WithinDayAgentUtils.getModifiableCurrentLeg(agent);
 		int currentIndex = WithinDayAgentUtils.getCurrentPlanElementIndex(agent);
 		Route route = currentLeg.getRoute();
-		
+
 		//This kind of activity creation gives unexpected error TODO find out if this can be done somehow
 		//Activity newActivity = new FacilityWrapperActivity(mopHandler.getMops().get(linkId).getFacility()) ;	
 		Activity newActivity = mobsim.getScenario().getPopulation().getFactory().createActivityFromLinkId("w", linkId) ;
 		newActivity.setMaximumDuration(MOP_STAY_TIME);
-		System.out.println("DROGAAAAA: "+ route.getTravelTime() + ", " + route.getDistance());
-		
+		newActivity.setStartTime(currentTime);
 		// New routes produced from the old one by splitting in current link.
 		Route routeToMOP = ((LinkNetworkRouteImpl) route).getSubRoute(route.getStartLinkId(), linkId);
 		Route routeFromMOP = ((LinkNetworkRouteImpl) route).getSubRoute(linkId, route.getEndLinkId());
@@ -154,16 +158,31 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		futureLeg.setTravelTime(currentLeg.getDepartureTime() + currentLeg.getTravelTime() - currentTime);
 		currentLeg.setTravelTime(currentTime - currentLeg.getDepartureTime());
 		futureLeg.setDepartureTime(currentTime + MOP_STAY_TIME);
+
 		
+//		These two links are problematic - agents who decided to stay here get removed... (TODO fix it)
+//		if (linkId.toString().equals("75382") || linkId.toString().equals("78266")) {
+//			log.info("Nowa trasa agenta " + agent.getId().toString() + ", " + futureLeg.getRoute().toString());
+//			log.info("Stara trasa: " + currentLeg.getRoute());
+//			log.info(currentLeg.toString());
+//		}
+
 		//Inserting new plan elements to agent's plan
 		insertMOPActivity(currentIndex, newActivity, futureLeg, plan);
 		
 		//Adding vehicle to MOP
-		mopHandler.getMops().get(linkId).enterMOP(CAR, newActivity.getEndTime());
+		if (agent.getId().toString().startsWith(CAR)) {
+			mopHandler.getMops().get(linkId).enterMOP(CAR, (int) (currentTime / 3600), newActivity.getEndTime());
+		}
+		if (agent.getId().toString().startsWith(BUS)) {
+			mopHandler.getMops().get(linkId).enterMOP(BUS, (int) (currentTime / 3600), newActivity.getEndTime());
+		}
+		if (agent.getId().toString().startsWith(TRUCK)) {
+			mopHandler.getMops().get(linkId).enterMOP(TRUCK, (int) (currentTime / 3600), newActivity.getEndTime());
+		}	
 		
-		// resetting cached Values of the PersonAgent - they may have changed!
 		WithinDayAgentUtils.resetCaches(agent);
-		
+		// resetting cached Values of the PersonAgent - they may have changed!
 	}
 
 	private void insertMOPActivity(int currentIndex, Activity newActivity, 
@@ -171,9 +190,6 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		
 		plan.getPlanElements().add(currentIndex + 1, newActivity);
 		plan.getPlanElements().add(currentIndex + 2, futureLeg);
-		for (PlanElement pl: plan.getPlanElements()) {
-			System.out.println(pl.toString());
-		}
 	}
 	
 }

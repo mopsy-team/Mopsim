@@ -2,6 +2,7 @@ package plancreator;
 
 import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -25,16 +26,17 @@ public class TravelPlanCreator {
     //Path to file with town coordinates
     private static final String TOWN_COORDINATES_PATH = "town_coordinates/town_coordinates.csv";
 
-
     private static Pair<String, String> countyTowns[];
-
+    
+    private static final Logger log = Logger.getLogger(TravelPlanCreator.class);
+    
     public static void createPlan(final String carMatrixPath,
                                   final String truckMatrixPath,
                                   final String busMatrixPath,
                                   int carNr, int truckNr, int busNr,
                                   final String outputFilepath) {
         if (carNr < 0 || truckNr < 0 || busNr < 0) {
-            System.out.println("Vehicle number cannot be negative");
+            log.error("Vehicle number cannot be negative");
             return;
         }
         createPlanHelper(carMatrixPath, truckMatrixPath, busMatrixPath,
@@ -55,7 +57,9 @@ public class TravelPlanCreator {
                                          final String busMatrixPath,
                                          int carNr, int truckNr, int busNr,
                                          final String outputFilepath, boolean withNumbers) {
-        setCountyTownsCoordinates();
+    	log.info("Creating travel plan.");
+    	
+    	setCountyTownsCoordinates();
 
         PrintWriter writer = null;
         try {
@@ -64,16 +68,21 @@ public class TravelPlanCreator {
             e.printStackTrace();
         }
         writer.printf(HEADER);
-
+        
+        log.info("Adding cars.");
         addPlansFromFile(writer, CAR, carMatrixPath, carNr, withNumbers, 0);
+        log.info("Adding trucks.");
         addPlansFromFile(writer, TRUCK, truckMatrixPath, truckNr, withNumbers, carNr);
+        log.info("Adding buses.");
         addPlansFromFile(writer, BUS, busMatrixPath, busNr, withNumbers, carNr + truckNr);
 
         writer.printf(FOOTER);
+        log.info("Travel plan created.");
         writer.close();
     }
 
-    private static void setCountyTownsCoordinates() {
+    @SuppressWarnings("unchecked")
+	private static void setCountyTownsCoordinates() {
         String line;
         String csvSplitBy = ",";
 
@@ -122,7 +131,8 @@ public class TravelPlanCreator {
     Writes to writer plans for vehicle of given type from csv file with inputFilepath
     If withNumbers is false then take vehicle number from input file.
      */
-    private static void addPlansFromFile(PrintWriter writer, String vehicleType, String inputFilepath,
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	private static void addPlansFromFile(PrintWriter writer, String vehicleType, String inputFilepath,
                                          int vehiclesNumber, boolean withNumbers, int idModifier) {
 
         Double travelMatrix[][] = new Double[COUNTY_NUMBER][COUNTY_NUMBER];
@@ -168,7 +178,7 @@ public class TravelPlanCreator {
         String y2 = countyTowns[targetTown].getSecond();
         ret = String.format("<person id=\"%s\"><plan type=\"%s\"><act type=\"h\" x=\"%s\" y=\"%s\" " +
                 "end_time=\"%s:%s:00\"/><leg mode=\"%s\"/><act type=\"w\" x=\"%s\" y=\"%s\" />" +
-                "</plan></person>\n", id, type, x1, y1, endHour, endMinute, type, x2, y2);
+                "</plan></person>\n", type + id, CAR, x1, y1, endHour, endMinute, CAR, x2, y2);
         return ret;
     }
 }

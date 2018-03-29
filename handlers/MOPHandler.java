@@ -17,6 +17,7 @@ import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.network.Network;
 import org.matsim.core.network.NetworkUtils;
 import org.matsim.facilities.ActivityFacility;
+import org.matsim.utils.objectattributes.ObjectAttributes;
 import org.matsim.vehicles.Vehicle;
 
 import events.MOPLeaveEvent;
@@ -37,12 +38,20 @@ public class MOPHandler {
 		return idLink;
 	}
 	
-	public MOPHandler(Map<Id<ActivityFacility>, ? extends ActivityFacility> facilityMap, Network network) {
+	public MOPHandler(Map<Id<ActivityFacility>, ? extends ActivityFacility> facilityMap, Network network,
+			ObjectAttributes attributes) {
 		mops = new ConcurrentHashMap<Id<Link>, MOP>();
+		
 		for (Id<ActivityFacility> mopId: facilityMap.keySet()) {
 			ActivityFacility mop = facilityMap.get(mopId);
+			
+			int carLimit = (int) attributes.getAttribute(mop.getId().toString(), "carLimit");
+			int busLimit = (int) attributes.getAttribute(mop.getId().toString(), "busLimit");
+			int truckLimit = (int) attributes.getAttribute(mop.getId().toString(), "truckLimit");
 			Id<Link> idLink = tieMOPWithLink(network, mop.getCoord());
-			mops.put(idLink, new MOP(mop.getId(), idLink, 100, 10, 10, mop));//TODO put correct values of mop capacity 
+			mops.put(idLink, new MOP(mop.getId(), idLink, carLimit,
+				busLimit, truckLimit, mop));
+		
 		}
 		vehicleIds = new ConcurrentHashMap<Id<Link>, HashSet<Id<Vehicle>>>();
 		for (Id<Link> linkId : mops.keySet()) {
@@ -64,7 +73,7 @@ public class MOPHandler {
 			try {
 				mopLeaveEvents = mop.clearQueue(time);
 			} catch (InterruptedException e) {
-				// do nothing TODO find more elegant way
+				// do nothing
 			}
 		}
 		return mopLeaveEvents;
@@ -75,6 +84,12 @@ public class MOPHandler {
 			System.out.print(mop.getId().toString() + ": " + mop.getCurrentCar() + ", ");
 		}
 		System.out.println();
+	}
+	
+	public void createMOPPLots() {
+		for (MOP mop : mops.values()) {
+			mop.createAllPlots();
+		}
 	}
 	
 }
