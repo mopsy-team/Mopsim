@@ -6,15 +6,16 @@
 package mop;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
-import org.matsim.core.utils.charts.XYLineChart;
 import org.matsim.facilities.ActivityFacility;
 
 import events.MOPLeaveEvent;
+import utils.ReportUtils;
 
 /*
  * Class implementing MOP.
@@ -35,6 +36,8 @@ public class MOP {
 	private final int carLimit;
 	private final int truckLimit;
 	private final int busLimit;
+	private final String town;
+	private final String name;
 	
 	/* Current MOP usage. Atomic values necessary 
 	 * to allow multithreading - it is not used in simulation
@@ -50,17 +53,24 @@ public class MOP {
 	ConcurrentLinkedQueue<Double> truckQueue;
 	
 	/* Hourly vehicle statistics */
-	double[] carsEntering = new double[24];
-	double[] busesEntering = new double[24];
-	double[] trucksEntering = new double[24];
+	HashMap<String, double[]> hourlyEnter;
+
+	/* Hourly usage statistics */
+	HashMap<String, double[]> hourlyUsage;
 	
-	/* plot path */
-	String plotPath;
+	/* Hourly counter of vehicles not entering MOP. */
+	HashMap<String, double[]> hourlyNotEnter;
+	
+	/* Statistics data filepath */
+	String statsPath;
 	
 	/* Constructors */
 	
 	public MOP(Id<ActivityFacility> id, Id<Link> linkId, int carLimit, int truckLimit, int busLimit,
-			int currentCar, int currentBus, int currentTruck, ActivityFacility facility) {
+			int currentCar, int currentBus, int currentTruck, ActivityFacility facility, String simDirPath,
+			String town, String name) {
+		this.town = town;
+		this.name = name;
 		this.id = id;
 		this.linkId = linkId;
 		this.carLimit = carLimit;
@@ -73,27 +83,39 @@ public class MOP {
 		carQueue = new ConcurrentLinkedQueue<Double>();
 		busQueue = new ConcurrentLinkedQueue<Double>();
 		truckQueue = new ConcurrentLinkedQueue<Double>();
-		plotPath = "mop_plots/" + id.toString();
+		statsPath = simDirPath + "/" + id.toString() + " (" + town + ")/";
+		hourlyEnter = new HashMap<>();
+		hourlyUsage = new HashMap<>();
+		hourlyNotEnter = new HashMap<>();
+		hourlyEnter.put(CAR, new double[24]);
+		hourlyUsage.put(CAR, new double[24]);
+		hourlyNotEnter.put(CAR, new double[24]);
+		hourlyEnter.put(BUS, new double[24]);
+		hourlyUsage.put(BUS, new double[24]);
+		hourlyNotEnter.put(BUS, new double[24]);
+		hourlyEnter.put(TRUCK, new double[24]);
+		hourlyUsage.put(TRUCK, new double[24]);
+		hourlyNotEnter.put(TRUCK, new double[24]);
 	}
 	
 	public MOP(Id<ActivityFacility> id, Id<Link> linkId, int carLimit, int truckLimit, int busLimit,
-			ActivityFacility facility) {
-		this(id, linkId, carLimit, truckLimit, busLimit, 0, 0, 0, facility);
+			ActivityFacility facility, String simDirPath, String town, String name) {
+		this(id, linkId, carLimit, truckLimit, busLimit, 0, 0, 0, facility, simDirPath, town, name);
 	}
 
 	public void enterMOP(String type, int enterHour, double leaveTime) {
 		if (type.equals(CAR)) {
 			carQueue.add(leaveTime);
 			currentCar.incrementAndGet();
-			carsEntering[enterHour]++;
+			hourlyEnter.get(CAR)[enterHour]++;
 		} else if (type.equals(TRUCK)) {
 			truckQueue.add(leaveTime);
 			currentTruck.incrementAndGet();
-			trucksEntering[enterHour]++;
+			hourlyEnter.get(TRUCK)[enterHour]++;
 		} else if (type.equals(BUS)) {
 			busQueue.add(leaveTime);
 			currentBus.incrementAndGet();
-			busesEntering[enterHour]++;
+			hourlyEnter.get(BUS)[enterHour]++;
 		}
 	}
 	
@@ -105,6 +127,10 @@ public class MOP {
 		} else if (type.equals(BUS)) {
 			currentBus.decrementAndGet();
 		}
+	}
+	
+	public void addPassingVehicle(String type, int hour) {
+		hourlyNotEnter.get(type)[hour]++;
 	}
 
 	public ActivityFacility getFacility() {
@@ -122,12 +148,25 @@ public class MOP {
 	public int getCurrentTruck() {
 		return currentTruck.get();
 	}
-
+	
+	public boolean isFull(String vehicle) {
+		if (vehicle == CAR) {
+			return currentCar.get() >= carLimit;
+		}
+		if (vehicle == BUS) {
+			return currentBus.get() >= busLimit;
+		}
+		if (vehicle == TRUCK) {
+			return currentTruck.get() >= truckLimit;
+		}
+		return true;
+	}
+	
 	public ArrayList<Integer> getCurrentUsage() {
 		ArrayList<Integer> usage = new ArrayList<Integer>();
 		usage.add(currentCar.get());
 		usage.add(currentBus.get());
-		usage.add(currentTruck.get( ));
+		usage.add(currentTruck.get());
 		return usage;
 	}
 
@@ -143,8 +182,12 @@ public class MOP {
 		return busLimit;
 	}
 	
+	public void setCurrentPercUsage(int hour, double val, String type) {
+		hourlyUsage.get(type)[hour] = val;
+	}
+
 	public ArrayList<Integer> getLimits() {
-		ArrayList<Integer> limits = new ArrayList<Integer>();
+		ArrayList<Integer> limits = new ArrayList<Integer>(3);
 		limits.add(carLimit);
 		limits.add(busLimit);
 		limits.add(truckLimit);
@@ -176,21 +219,60 @@ public class MOP {
 		return retList;
 	}
 	
-	public void createPlot(String outputFilepath, double[] array, int arraySize) {
+	private HashMap<String, double[]> getHourlyRatio() {
+		HashMap<String, double[]> ratio = new HashMap<>();
+		String[] keys = new String[3];
+		keys[0] = CAR;
+		keys[1] = TRUCK;
+		keys[2] = BUS;
 		
-		double[] series = new double[arraySize];
-		for (int i = 0; i < arraySize; i++) {
-			series[i] = (double) i;
+		for (String key: keys) {
+			ratio.put(key, new double[24]);
+			for (int i = 0; i < 24; i++) {
+				ratio.get(key)[i] = hourlyNotEnter.get(key)[i] + hourlyEnter.get(key)[i] == 0. ? 0. :
+					100. * hourlyEnter.get(key)[i] / (hourlyNotEnter.get(key)[i] + hourlyEnter.get(key)[i]);
+			}
 		}
-		XYLineChart chart = new XYLineChart("Wjazdy na MOP nr " + id.toString(), "godzina", "wjazdy");
-		chart.addSeries("times", series, array);
-		chart.saveAsPng(outputFilepath, 800, 600);
+		return ratio;
+	}
+	
+	private HashMap<String, double[]> getPassingVehicles() {
+		HashMap<String, double[]> passingVehicles = new HashMap<>();
+		String[] keys = new String[3];
+		keys[0] = CAR;
+		keys[1] = TRUCK;
+		keys[2] = BUS;
+		
+		for (String key: keys) {
+			passingVehicles.put(key, new double[24]);
+			for (int i = 0; i < 24; i++) {
+				passingVehicles.get(key)[i] = hourlyNotEnter.get(key)[i] + hourlyEnter.get(key)[i];
+			}
+		}
+		return passingVehicles;
 	}
 	
 	public void createAllPlots() {
-		createPlot(plotPath + CAR, carsEntering, 24);
-		createPlot(plotPath + BUS, busesEntering, 24);
-		createPlot(plotPath + TRUCK, trucksEntering, 24);
+		ReportUtils.createTimeBarPlot(statsPath + "vehicleEntering.png", 24, "Wjazdy na MOP nr " + id.toString(),
+				"godzina", "wjazdy", hourlyEnter);
+		ReportUtils.createTimeBarPlot(statsPath + "percentageUsage.png", 24, "Procentowe wykorzystanie MOPa nr " + id.toString(),
+				"godzina", "zajęte miejsca (w proc.)", hourlyUsage);
+		ReportUtils.createTimeBarPlot(statsPath + "enterRatio.png", 24, "Stosunek liczby pojazdów wjeżdżających na MOPa nr "
+				+ id.toString() + " do łącznej liczby przejeżdżających (w proc.)",
+				"godzina", "stosunek pojazdów (w proc.)", getHourlyRatio());
+		ReportUtils.createTimeBarPlot(statsPath + "passingVehicles.png", 24, "Łączna liczba pojazdów wjeżdżających i przejażdżających obok MOPa nr "
+				+ id.toString(), "godzina", "łączna liczba pojazdów", getPassingVehicles());
+	}
+	
+	public void createReportFile() {
+		HashMap<String, Double> entered = ReportUtils.countArrays(hourlyEnter, 24);
+		HashMap<String, Double> usage = ReportUtils.meanArrays(hourlyUsage, 24);
+		HashMap<String, Double> passed = ReportUtils.countArrays(getPassingVehicles(), 24);
+		HashMap<String, Double> ratio = ReportUtils.meanArrays(getHourlyRatio(), 24);
+		
+		ReportUtils.createMOPReport(statsPath + "report.txt", id, town, name,
+				carLimit, truckLimit, busLimit, entered, passed, usage, ratio);
+		
 	}
 	
 }

@@ -4,1465 +4,2051 @@
 <attribute name="carLimit" class="java.lang.Integer">8</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Jeżewo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jeżewo</attribute>
 </object>
 <object id="2">
 <attribute name="carLimit" class="java.lang.Integer">60</attribute>
 <attribute name="busLimit" class="java.lang.Integer">250</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">20</attribute>
+<attribute name="town" class="java.lang.String">Radule</attribute>
+<attribute name="name" class="java.lang.String">MOP II Radule</attribute>
 </object>
 <object id="3">
 <attribute name="carLimit" class="java.lang.Integer">52</attribute>
 <attribute name="busLimit" class="java.lang.Integer">150</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Złotoria</attribute>
+<attribute name="name" class="java.lang.String">MOP II Złotoria</attribute>
 </object>
 <object id="4">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Rudniki</attribute>
+<attribute name="name" class="java.lang.String">MOP III Rudniki Południe</attribute>
 </object>
 <object id="5">
 <attribute name="carLimit" class="java.lang.Integer">62</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Gosie Małe</attribute>
+<attribute name="name" class="java.lang.String">MOP II Kołaki</attribute>
 </object>
 <object id="6">
 <attribute name="carLimit" class="java.lang.Integer">63</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Kossaki-Borowe</attribute>
+<attribute name="name" class="java.lang.String">Mop III  Kossaki</attribute>
 </object>
 <object id="7">
 <attribute name="carLimit" class="java.lang.Integer">32</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Gajewo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Gajewo</attribute>
 </object>
 <object id="8">
 <attribute name="carLimit" class="java.lang.Integer">32</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Gajewo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Gajewo</attribute>
 </object>
 <object id="9">
 <attribute name="carLimit" class="java.lang.Integer">163</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Malankowo</attribute>
+<attribute name="name" class="java.lang.String">MOP II Malankowo</attribute>
 </object>
 <object id="10">
 <attribute name="carLimit" class="java.lang.Integer">175</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Malankowo</attribute>
+<attribute name="name" class="java.lang.String">MOP II Malankowo</attribute>
 </object>
 <object id="11">
 <attribute name="carLimit" class="java.lang.Integer">51</attribute>
 <attribute name="busLimit" class="java.lang.Integer">14</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Drzonowo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Drzonowo</attribute>
 </object>
 <object id="12">
 <attribute name="carLimit" class="java.lang.Integer">59</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Drzonowo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Drzonowo</attribute>
 </object>
 <object id="13">
 <attribute name="carLimit" class="java.lang.Integer">48</attribute>
 <attribute name="busLimit" class="java.lang.Integer">13</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Nowy Dwór</attribute>
+<attribute name="name" class="java.lang.String">MOP I Nowy Dwór</attribute>
 </object>
 <object id="14">
 <attribute name="carLimit" class="java.lang.Integer">32</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Nowy Dwór</attribute>
+<attribute name="name" class="java.lang.String">MOP I Nowy Dwór</attribute>
 </object>
 <object id="15">
 <attribute name="carLimit" class="java.lang.Integer">63</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Nowa Wieś</attribute>
+<attribute name="name" class="java.lang.String">MOP III Nowa Wieś</attribute>
 </object>
 <object id="16">
 <attribute name="carLimit" class="java.lang.Integer">121</attribute>
 <attribute name="busLimit" class="java.lang.Integer">29</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">7</attribute>
+<attribute name="town" class="java.lang.String">Nowa Wieś</attribute>
+<attribute name="name" class="java.lang.String">MOP II Nowa Wieś</attribute>
 </object>
 <object id="17">
 <attribute name="carLimit" class="java.lang.Integer">127</attribute>
 <attribute name="busLimit" class="java.lang.Integer">29</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Otłoczyn zach.</attribute>
+<attribute name="name" class="java.lang.String">MOP II</attribute>
 </object>
 <object id="18">
 <attribute name="carLimit" class="java.lang.Integer">141</attribute>
 <attribute name="busLimit" class="java.lang.Integer">46</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Otłoczyn wsch.</attribute>
+<attribute name="name" class="java.lang.String">MOP II</attribute>
 </object>
 <object id="19">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">32</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Kałęczynek zach.</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="20">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Kałęczynek wsch.</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="21">
 <attribute name="carLimit" class="java.lang.Integer">83</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Machnacz płd.</attribute>
+<attribute name="name" class="java.lang.String">MOP III</attribute>
 </object>
 <object id="22">
 <attribute name="carLimit" class="java.lang.Integer">133</attribute>
 <attribute name="busLimit" class="java.lang.Integer">38</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">7</attribute>
+<attribute name="town" class="java.lang.String">Machnacz płn.</attribute>
+<attribute name="name" class="java.lang.String">MOP II</attribute>
 </object>
 <object id="23">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Ludwinowo płd.</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="24">
 <attribute name="carLimit" class="java.lang.Integer">23</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Ludwinowo płn.</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="25">
 <attribute name="carLimit" class="java.lang.Integer">144</attribute>
 <attribute name="busLimit" class="java.lang.Integer">33</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Lubień płd.</attribute>
+<attribute name="name" class="java.lang.String">MOP III</attribute>
 </object>
 <object id="26">
 <attribute name="carLimit" class="java.lang.Integer">92</attribute>
 <attribute name="busLimit" class="java.lang.Integer">26</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Lubień płn.</attribute>
+<attribute name="name" class="java.lang.String">MOP II</attribute>
 </object>
 <object id="27">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Strzelce płd.</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="28">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">27</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Strzelce płn.</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="29">
 <attribute name="carLimit" class="java.lang.Integer">29</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">KLESZCZEWKO</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kleszczewko</attribute>
 </object>
 <object id="30">
 <attribute name="carLimit" class="java.lang.Integer">29</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">KLESZCZEWKO</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kleszczewko</attribute>
 </object>
 <object id="31">
 <attribute name="carLimit" class="java.lang.Integer">57</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">OLSZE</attribute>
+<attribute name="name" class="java.lang.String">MOP II Olsze</attribute>
 </object>
 <object id="32">
 <attribute name="carLimit" class="java.lang.Integer">64</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">OLSZE</attribute>
+<attribute name="name" class="java.lang.String">MOP II Olsze</attribute>
 </object>
 <object id="33">
 <attribute name="carLimit" class="java.lang.Integer">47</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">KOSZWAŁY</attribute>
+<attribute name="name" class="java.lang.String">MOP II Koszwały</attribute>
 </object>
 <object id="34">
 <attribute name="carLimit" class="java.lang.Integer">75</attribute>
 <attribute name="busLimit" class="java.lang.Integer">33</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Bobrowniki</attribute>
+<attribute name="name" class="java.lang.String">MOP I Dobieszowice Zachód</attribute>
 </object>
 <object id="35">
 <attribute name="carLimit" class="java.lang.Integer">70</attribute>
 <attribute name="busLimit" class="java.lang.Integer">13</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Bobrowiniki</attribute>
+<attribute name="name" class="java.lang.String">MOP I Dobieszowice Wschód</attribute>
 </object>
 <object id="36">
 <attribute name="carLimit" class="java.lang.Integer">169</attribute>
 <attribute name="busLimit" class="java.lang.Integer">81</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Zbrosławice</attribute>
+<attribute name="name" class="java.lang.String">MOP III Wieszowa Północ</attribute>
 </object>
 <object id="37">
 <attribute name="carLimit" class="java.lang.Integer">128</attribute>
 <attribute name="busLimit" class="java.lang.Integer">54</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">9</attribute>
+<attribute name="town" class="java.lang.String">gm. Zbrosławice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Wieszowa Południe</attribute>
 </object>
 <object id="38">
 <attribute name="carLimit" class="java.lang.Integer">63</attribute>
 <attribute name="busLimit" class="java.lang.Integer">14</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Knurów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Knurów Zachód</attribute>
 </object>
 <object id="39">
 <attribute name="carLimit" class="java.lang.Integer">63</attribute>
 <attribute name="busLimit" class="java.lang.Integer">14</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Knurów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Knurów Wschód</attribute>
 </object>
 <object id="40">
 <attribute name="carLimit" class="java.lang.Integer">64</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">m. Żory</attribute>
+<attribute name="name" class="java.lang.String">MOP II Rowień Zachód</attribute>
 </object>
 <object id="41">
 <attribute name="carLimit" class="java.lang.Integer">96</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">m. Żory</attribute>
+<attribute name="name" class="java.lang.String">MOP II Rowień Wschód</attribute>
 </object>
 <object id="42">
 <attribute name="carLimit" class="java.lang.Integer">161</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Mszana</attribute>
+<attribute name="name" class="java.lang.String">MOP III Mszana Północ</attribute>
 </object>
 <object id="43">
 <attribute name="carLimit" class="java.lang.Integer">59</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">1</attribute>
+<attribute name="town" class="java.lang.String">gm. Rudziniec</attribute>
+<attribute name="name" class="java.lang.String">MOP I Chechło</attribute>
 </object>
 <object id="44">
 <attribute name="carLimit" class="java.lang.Integer">59</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">1</attribute>
+<attribute name="town" class="java.lang.String">gm. Rudziniec</attribute>
+<attribute name="name" class="java.lang.String">MOP I Proboszczowice</attribute>
 </object>
 <object id="45">
 <attribute name="carLimit" class="java.lang.Integer">90</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Sośnicowice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Kozłów</attribute>
 </object>
 <object id="46">
 <attribute name="carLimit" class="java.lang.Integer">91</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">7</attribute>
+<attribute name="town" class="java.lang.String">gm. Sośnicowice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Rachowice</attribute>
 </object>
 <object id="47">
 <attribute name="carLimit" class="java.lang.Integer">99</attribute>
 <attribute name="busLimit" class="java.lang.Integer">48</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Ruda Śląska</attribute>
+<attribute name="name" class="java.lang.String">MOP III Wirek</attribute>
 </object>
 <object id="48">
 <attribute name="carLimit" class="java.lang.Integer">70</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Ruda Śląska</attribute>
+<attribute name="name" class="java.lang.String">MOP II Halemba</attribute>
 </object>
 <object id="49">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">50</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Jaworzno</attribute>
+<attribute name="name" class="java.lang.String">MOP III Kępnica</attribute>
 </object>
 <object id="50">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Jaworzno</attribute>
+<attribute name="name" class="java.lang.String">MOP III Zastawie</attribute>
 </object>
 <object id="51">
 <attribute name="carLimit" class="java.lang.Integer">22</attribute>
 <attribute name="busLimit" class="java.lang.Integer">7</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Sosnowiec</attribute>
+<attribute name="name" class="java.lang.String">MOP II - Stacja Paliw Shell</attribute>
 </object>
 <object id="52">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Lędziny</attribute>
+<attribute name="name" class="java.lang.String">MOP II - Stacja Paliw Orlen</attribute>
 </object>
 <object id="53">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">8</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Sosnowiec</attribute>
+<attribute name="name" class="java.lang.String">MOP II - Stacja Paliw BP</attribute>
 </object>
 <object id="54">
 <attribute name="carLimit" class="java.lang.Integer">16</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Lędziny</attribute>
+<attribute name="name" class="java.lang.String">MOP II - Stacja Paliw Orlen</attribute>
 </object>
 <object id="55">
-<attribute name="carLimit" class="java.lang.Integer">50</attribute>
-<attribute name="busLimit" class="java.lang.Integer">10</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">0</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">50</attribute>
+<attribute name="town" class="java.lang.String">Jasienica</attribute>
+<attribute name="name" class="java.lang.String">"Stacja Shell</attribute>
 </object>
 <object id="56">
-<attribute name="carLimit" class="java.lang.Integer">50</attribute>
-<attribute name="busLimit" class="java.lang.Integer">6</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">50</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Świętoszówka</attribute>
+<attribute name="name" class="java.lang.String">"Stacja Shell</attribute>
 </object>
 <object id="57">
-<attribute name="carLimit" class="java.lang.Integer">20</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">20</attribute>
+<attribute name="town" class="java.lang.String">Pogórze</attribute>
+<attribute name="name" class="java.lang.String">"Stacja paliw Orlen</attribute>
 </object>
 <object id="58">
-<attribute name="carLimit" class="java.lang.Integer">10</attribute>
-<attribute name="busLimit" class="java.lang.Integer">35</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Ogrodzona</attribute>
+<attribute name="name" class="java.lang.String">"MOP Ogrodzona</attribute>
 </object>
 <object id="59">
-<attribute name="carLimit" class="java.lang.Integer">10</attribute>
-<attribute name="busLimit" class="java.lang.Integer">40</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Gumna</attribute>
+<attribute name="name" class="java.lang.String">"MOP Gumna</attribute>
 </object>
 <object id="60">
-<attribute name="carLimit" class="java.lang.Integer">10</attribute>
-<attribute name="busLimit" class="java.lang.Integer">18</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">10</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">18</attribute>
+<attribute name="town" class="java.lang.String">Cieszyn</attribute>
+<attribute name="name" class="java.lang.String">"MOP Cieszyn</attribute>
 </object>
 <object id="61">
-<attribute name="carLimit" class="java.lang.Integer">36</attribute>
-<attribute name="busLimit" class="java.lang.Integer">38</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">36</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">38</attribute>
+<attribute name="town" class="java.lang.String">Cieszyn</attribute>
+<attribute name="name" class="java.lang.String">"MOP Cieszyn</attribute>
 </object>
 <object id="62">
 <attribute name="carLimit" class="java.lang.Integer">59</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Suchedniów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Suchedniów Zachód</attribute>
 </object>
 <object id="63">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Występa</attribute>
+<attribute name="name" class="java.lang.String">MOP I Występa Zachód</attribute>
 </object>
 <object id="64">
 <attribute name="carLimit" class="java.lang.Integer">37</attribute>
 <attribute name="busLimit" class="java.lang.Integer">16</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Szewce</attribute>
+<attribute name="name" class="java.lang.String">MOP II Szewce Wschód</attribute>
 </object>
 <object id="65">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">16</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Szewce</attribute>
+<attribute name="name" class="java.lang.String">MOP II Szewce Zachód</attribute>
 </object>
 <object id="66">
 <attribute name="carLimit" class="java.lang.Integer">42</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Występa</attribute>
+<attribute name="name" class="java.lang.String">Parking ****** (Występa Wschód)</attribute>
 </object>
 <object id="67">
 <attribute name="carLimit" class="java.lang.Integer">38</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Ludwinów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Ludwinów</attribute>
 </object>
 <object id="68">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Potok Mały</attribute>
+<attribute name="name" class="java.lang.String">MOP I Potok Mały</attribute>
 </object>
 <object id="69">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Morawica gm. Liszki</attribute>
+<attribute name="name" class="java.lang.String">MOP III Morawica</attribute>
 </object>
 <object id="70">
 <attribute name="carLimit" class="java.lang.Integer">43</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Aleksandrowice gm. Zabierzów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Aleksandrowice</attribute>
 </object>
 <object id="71">
 <attribute name="carLimit" class="java.lang.Integer">130</attribute>
 <attribute name="busLimit" class="java.lang.Integer">55</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Kłaj</attribute>
+<attribute name="name" class="java.lang.String">MOP III Kłaj</attribute>
 </object>
 <object id="72">
 <attribute name="carLimit" class="java.lang.Integer">89</attribute>
 <attribute name="busLimit" class="java.lang.Integer">38</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Kłaj</attribute>
+<attribute name="name" class="java.lang.String">MOP II Stanisławice</attribute>
 </object>
 <object id="73">
 <attribute name="carLimit" class="java.lang.Integer">93</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Wierzchosławice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Rudka</attribute>
 </object>
 <object id="74">
 <attribute name="carLimit" class="java.lang.Integer">110</attribute>
 <attribute name="busLimit" class="java.lang.Integer">49</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Wierzchosławice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Komorów</attribute>
 </object>
 <object id="75">
 <attribute name="carLimit" class="java.lang.Integer">76</attribute>
 <attribute name="busLimit" class="java.lang.Integer">39</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Zakrzów gm Niepołomice</attribute>
+<attribute name="name" class="java.lang.String">MOP I Zakrzów</attribute>
 </object>
 <object id="76">
 <attribute name="carLimit" class="java.lang.Integer">76</attribute>
 <attribute name="busLimit" class="java.lang.Integer">36</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Podłęże gm Niepołomice</attribute>
+<attribute name="name" class="java.lang.String">MOP I Podłęże</attribute>
 </object>
 <object id="77">
 <attribute name="carLimit" class="java.lang.Integer">56</attribute>
 <attribute name="busLimit" class="java.lang.Integer">28</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Brzesko</attribute>
+<attribute name="name" class="java.lang.String">"MOP I ""Bagno"""</attribute>
 </object>
 <object id="78">
 <attribute name="carLimit" class="java.lang.Integer">56</attribute>
 <attribute name="busLimit" class="java.lang.Integer">28</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Brzesko</attribute>
+<attribute name="name" class="java.lang.String">"MOP I ""Mokrzyska"""</attribute>
 </object>
 <object id="79">
 <attribute name="carLimit" class="java.lang.Integer">86</attribute>
 <attribute name="busLimit" class="java.lang.Integer">28</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Markuszów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Markuszów Północ</attribute>
 </object>
 <object id="80">
 <attribute name="carLimit" class="java.lang.Integer">93</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Markuszów</attribute>
+<attribute name="name" class="java.lang.String">MOP III Markuszów Południe</attribute>
 </object>
 <object id="81">
 <attribute name="carLimit" class="java.lang.Integer">54</attribute>
 <attribute name="busLimit" class="java.lang.Integer">55</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">gm. Krzyżanów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Krzyżanów Zachód</attribute>
 </object>
 <object id="82">
 <attribute name="carLimit" class="java.lang.Integer">32</attribute>
 <attribute name="busLimit" class="java.lang.Integer">31</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">gm. Krzyżanów</attribute>
+<attribute name="name" class="java.lang.String">MOP III Krzyżanów Wschód</attribute>
 </object>
 <object id="83">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">7</attribute>
+<attribute name="town" class="java.lang.String">gm. Głowno</attribute>
+<attribute name="name" class="java.lang.String">MOP I Głowno Zachód</attribute>
 </object>
 <object id="84">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">39</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">7</attribute>
+<attribute name="town" class="java.lang.String">gm. Głowno</attribute>
+<attribute name="name" class="java.lang.String">MOP I Głowno Wschód</attribute>
 </object>
 <object id="85">
 <attribute name="carLimit" class="java.lang.Integer">60</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Nowosolna</attribute>
+<attribute name="name" class="java.lang.String">MOP I Skoszewy Wschód</attribute>
 </object>
 <object id="86">
 <attribute name="carLimit" class="java.lang.Integer">60</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Nowosolna</attribute>
+<attribute name="name" class="java.lang.String">MOP I Skoszewy Zachód</attribute>
 </object>
 <object id="87">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">"miasto Łódź gm. Brójce"</attribute>
+<attribute name="name" class="java.lang.String">MOP II Wiśniowa Góra Wschód</attribute>
 </object>
 <object id="88">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">"miasto Łódź gm. Brójce"</attribute>
+<attribute name="name" class="java.lang.String">MOP III Wiśniowa Góra Zachód</attribute>
 </object>
 <object id="89">
 <attribute name="carLimit" class="java.lang.Integer">35</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">20</attribute>
+<attribute name="town" class="java.lang.String">gm. Świnice Warckie</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kozanki</attribute>
 </object>
 <object id="90">
 <attribute name="carLimit" class="java.lang.Integer">28</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">20</attribute>
+<attribute name="town" class="java.lang.String">gm. Uniejów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Zaborów</attribute>
 </object>
 <object id="91">
 <attribute name="carLimit" class="java.lang.Integer">114</attribute>
 <attribute name="busLimit" class="java.lang.Integer">26</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Parzęczew</attribute>
+<attribute name="name" class="java.lang.String">MOP II Chrząstów</attribute>
 </object>
 <object id="92">
 <attribute name="carLimit" class="java.lang.Integer">178</attribute>
 <attribute name="busLimit" class="java.lang.Integer">38</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">gm. Parzęczew</attribute>
+<attribute name="name" class="java.lang.String">MOP III Chrząstów</attribute>
 </object>
 <object id="93">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">gm. Zgierz</attribute>
+<attribute name="name" class="java.lang.String">MOP I Ciosny Północ</attribute>
 </object>
 <object id="94">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">11</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">11</attribute>
+<attribute name="town" class="java.lang.String">gm. Zgierz</attribute>
+<attribute name="name" class="java.lang.String">MOP I Ciosny Południe</attribute>
 </object>
 <object id="95">
 <attribute name="carLimit" class="java.lang.Integer">16</attribute>
 <attribute name="busLimit" class="java.lang.Integer">8</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Stryków</attribute>
+<attribute name="name" class="java.lang.String">PPO Stryków</attribute>
 </object>
 <object id="96">
 <attribute name="carLimit" class="java.lang.Integer">16</attribute>
 <attribute name="busLimit" class="java.lang.Integer">8</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Stryków</attribute>
+<attribute name="name" class="java.lang.String">PPO Stryków</attribute>
 </object>
 <object id="97">
 <attribute name="carLimit" class="java.lang.Integer">181</attribute>
 <attribute name="busLimit" class="java.lang.Integer">60</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">25</attribute>
+<attribute name="town" class="java.lang.String">gm. Dmosin</attribute>
+<attribute name="name" class="java.lang.String">MOP III Nowostawy</attribute>
 </object>
 <object id="98">
 <attribute name="carLimit" class="java.lang.Integer">133</attribute>
 <attribute name="busLimit" class="java.lang.Integer">45</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">15</attribute>
+<attribute name="town" class="java.lang.String">gm. Dmosin</attribute>
+<attribute name="name" class="java.lang.String">MOP II Niesułków</attribute>
 </object>
 <object id="99">
 <attribute name="carLimit" class="java.lang.Integer">130</attribute>
 <attribute name="busLimit" class="java.lang.Integer">45</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">15</attribute>
+<attribute name="town" class="java.lang.String">gm. Łyszkowice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Parma</attribute>
 </object>
 <object id="100">
 <attribute name="carLimit" class="java.lang.Integer">130</attribute>
 <attribute name="busLimit" class="java.lang.Integer">45</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">15</attribute>
+<attribute name="town" class="java.lang.String">gm. Łyszkowice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Polesie</attribute>
 </object>
 <object id="101">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">gm. Bolimów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Bolimów</attribute>
 </object>
 <object id="102">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">gm.Bolimów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Mogiły</attribute>
 </object>
 <object id="103">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Chojny gm. Lututów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Chojny</attribute>
 </object>
 <object id="104">
 <attribute name="carLimit" class="java.lang.Integer">45</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Chojny gm. Lututów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Chojny</attribute>
 </object>
 <object id="105">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Dąbrowa Wielka gm. Sieradz</attribute>
+<attribute name="name" class="java.lang.String">MOP I Dąbrowa Wielka</attribute>
 </object>
 <object id="106">
 <attribute name="carLimit" class="java.lang.Integer">60</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Dąbrowa Wielka gm. Sieradz</attribute>
+<attribute name="name" class="java.lang.String">MOP II Dąbrowa Wielka</attribute>
 </object>
 <object id="107">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">26</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Paprotnia gm. Zapolice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Paprotnia</attribute>
 </object>
 <object id="108">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Paprotnia gm. Zapolice</attribute>
+<attribute name="name" class="java.lang.String">MOP I Parotnia</attribute>
 </object>
 <object id="109">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">Sięganów gm. Łask</attribute>
+<attribute name="name" class="java.lang.String">MOP I Sięganów</attribute>
 </object>
 <object id="110">
 <attribute name="carLimit" class="java.lang.Integer">65</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Sięganów gm. Łask</attribute>
+<attribute name="name" class="java.lang.String">MOP II Sięganów</attribute>
 </object>
 <object id="111">
 <attribute name="carLimit" class="java.lang.Integer">53</attribute>
 <attribute name="busLimit" class="java.lang.Integer">22</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">gm. Rzgów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Guzew Północ</attribute>
 </object>
 <object id="112">
 <attribute name="carLimit" class="java.lang.Integer">53</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Rzgów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Guzew Południe</attribute>
 </object>
 <object id="113">
 <attribute name="carLimit" class="java.lang.Integer">0</attribute>
 <attribute name="busLimit" class="java.lang.Integer">3</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Wolbórz</attribute>
+<attribute name="name" class="java.lang.String">Parking dla ADR Wolbórz</attribute>
 </object>
 <object id="114">
 <attribute name="carLimit" class="java.lang.Integer">0</attribute>
 <attribute name="busLimit" class="java.lang.Integer">3</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Wolbórz</attribute>
+<attribute name="name" class="java.lang.String">Parking dla ADR Wolbórz</attribute>
 </object>
 <object id="115">
 <attribute name="carLimit" class="java.lang.Integer">0</attribute>
 <attribute name="busLimit" class="java.lang.Integer">3</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Rawa Maz.</attribute>
+<attribute name="name" class="java.lang.String">Parking dla ADR Przewodowice</attribute>
 </object>
 <object id="116">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Piotrków Tryb</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="117">
 <attribute name="carLimit" class="java.lang.Integer">70</attribute>
 <attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">15</attribute>
+<attribute name="town" class="java.lang.String">Piotrków Tryb</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="118">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">20</attribute>
+<attribute name="town" class="java.lang.String">Proszenie</attribute>
+<attribute name="name" class="java.lang.String">"obiekt obsługi uczestników ruchu drogowego Proszenie"</attribute>
 </object>
 <object id="119">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Studzianki</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="120">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Studzianki</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="121">
 <attribute name="carLimit" class="java.lang.Integer">100</attribute>
 <attribute name="busLimit" class="java.lang.Integer">38</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Studzianki</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="122">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">50</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">"Jadwigów"</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="123">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Lechów</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="124">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">"Wólka Jagielczyńska"</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="125">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Podlas</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="126">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Podlas</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="127">
 <attribute name="carLimit" class="java.lang.Integer">0</attribute>
 <attribute name="busLimit" class="java.lang.Integer">3</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Chrzczonowice</attribute>
+<attribute name="name" class="java.lang.String">Parking dla ADR</attribute>
 </object>
 <object id="128">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">9</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Proszenie</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="129">
 <attribute name="carLimit" class="java.lang.Integer">300</attribute>
 <attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">50</attribute>
+<attribute name="town" class="java.lang.String">Proszenie</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="130">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Wolbórz</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="131">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Wolbórz</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="132">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Studzianki</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="133">
 <attribute name="carLimit" class="java.lang.Integer">35</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Studzianki</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="134">
 <attribute name="carLimit" class="java.lang.Integer">10</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Jadwigów</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="135">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">70</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Jakubów</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="136">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Czerniewice</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="137">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">8</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Wólka Jagielczyńska</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="138">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Podlas</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="139">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Huta Zawadzka</attribute>
+<attribute name="name" class="java.lang.String">obiekt obsługi uczestników ruchu drogowego</attribute>
 </object>
 <object id="140">
-<attribute name="carLimit" class="java.lang.Integer">80</attribute>
-<attribute name="busLimit" class="java.lang.Integer">20</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">0</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">80</attribute>
+<attribute name="town" class="java.lang.String">Nowe Pole</attribute>
+<attribute name="name" class="java.lang.String">"Nowa Holandia Nowe Pole 1B</attribute>
 </object>
 <object id="141">
-<attribute name="carLimit" class="java.lang.Integer">20</attribute>
-<attribute name="busLimit" class="java.lang.Integer">5</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Elbląg</attribute>
+<attribute name="name" class="java.lang.String">"Auto Kompleks Oaza ul. Bursztynowa 2</attribute>
 </object>
 <object id="142">
-<attribute name="carLimit" class="java.lang.Integer">30</attribute>
-<attribute name="busLimit" class="java.lang.Integer">10</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">30</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">Komorowo Żuławskie</attribute>
+<attribute name="name" class="java.lang.String">"Stacja Paliw Lukoil Komorowo Żuławskie</attribute>
 </object>
 <object id="143">
-<attribute name="carLimit" class="java.lang.Integer">13</attribute>
-<attribute name="busLimit" class="java.lang.Integer">5</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">13</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Rzeczna</attribute>
+<attribute name="name" class="java.lang.String">"BP Amazonka Rzeczna 30</attribute>
 </object>
 <object id="144">
 <attribute name="carLimit" class="java.lang.Integer">106</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Sople</attribute>
+<attribute name="name" class="java.lang.String">MOP II (docelowo MOP III)</attribute>
 </object>
 <object id="145">
 <attribute name="carLimit" class="java.lang.Integer">130</attribute>
 <attribute name="busLimit" class="java.lang.Integer">28</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Sople</attribute>
+<attribute name="name" class="java.lang.String">MOP II</attribute>
 </object>
 <object id="146">
 <attribute name="carLimit" class="java.lang.Integer">121</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Liksajny</attribute>
+<attribute name="name" class="java.lang.String">MOP I (docelowo MOP II)</attribute>
 </object>
 <object id="147">
 <attribute name="carLimit" class="java.lang.Integer">117</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Majdany Wielkie</attribute>
+<attribute name="name" class="java.lang.String">MOP I (docelowo MOP II)</attribute>
 </object>
 <object id="148">
 <attribute name="carLimit" class="java.lang.Integer">118</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Grabin</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="149">
 <attribute name="carLimit" class="java.lang.Integer">118</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">Grabin</attribute>
+<attribute name="name" class="java.lang.String">MOP I</attribute>
 </object>
 <object id="150">
 <attribute name="carLimit" class="java.lang.Integer">38</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Lutek</attribute>
+<attribute name="name" class="java.lang.String">MOP I (docelowo MOP II)</attribute>
 </object>
 <object id="151">
-<attribute name="carLimit" class="java.lang.Integer">100</attribute>
-<attribute name="busLimit" class="java.lang.Integer">70</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">100</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">70</attribute>
+<attribute name="town" class="java.lang.String">Witramowo</attribute>
+<attribute name="name" class="java.lang.String">"Shell Witramowo 30</attribute>
 </object>
 <object id="152">
-<attribute name="carLimit" class="java.lang.Integer">40</attribute>
-<attribute name="busLimit" class="java.lang.Integer">20</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">40</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">20</attribute>
+<attribute name="town" class="java.lang.String">Rączki</attribute>
+<attribute name="name" class="java.lang.String">"ORLEN Rączki 34</attribute>
 </object>
 <object id="153">
 <attribute name="carLimit" class="java.lang.Integer">52</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Grodków</attribute>
+<attribute name="name" class="java.lang.String">MOP I Wierzbnik</attribute>
 </object>
 <object id="154">
 <attribute name="carLimit" class="java.lang.Integer">53</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Olszanka</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jankowice Wielkie</attribute>
 </object>
 <object id="155">
 <attribute name="carLimit" class="java.lang.Integer">190</attribute>
 <attribute name="busLimit" class="java.lang.Integer">62</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Niemodlin</attribute>
+<attribute name="name" class="java.lang.String">MOP III Młyński Staw</attribute>
 </object>
 <object id="156">
 <attribute name="carLimit" class="java.lang.Integer">163</attribute>
 <attribute name="busLimit" class="java.lang.Integer">49</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Niemodlin</attribute>
+<attribute name="name" class="java.lang.String">MOP II Rzędziwojowice</attribute>
 </object>
 <object id="157">
 <attribute name="carLimit" class="java.lang.Integer">34</attribute>
 <attribute name="busLimit" class="java.lang.Integer">36</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Prószków</attribute>
+<attribute name="name" class="java.lang.String">MOP I Przysiecz</attribute>
 </object>
 <object id="158">
 <attribute name="carLimit" class="java.lang.Integer">51</attribute>
 <attribute name="busLimit" class="java.lang.Integer">34</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Prószków</attribute>
+<attribute name="name" class="java.lang.String">MOP I Prószków</attribute>
 </object>
 <object id="159">
 <attribute name="carLimit" class="java.lang.Integer">158</attribute>
 <attribute name="busLimit" class="java.lang.Integer">33</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Leśnica</attribute>
+<attribute name="name" class="java.lang.String">MOP III Wysoka</attribute>
 </object>
 <object id="160">
 <attribute name="carLimit" class="java.lang.Integer">100</attribute>
 <attribute name="busLimit" class="java.lang.Integer">27</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Leśnica</attribute>
+<attribute name="name" class="java.lang.String">MOP II Góra Św. Anny</attribute>
 </object>
 <object id="161">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Nowy Tomyśl</attribute>
+<attribute name="name" class="java.lang.String">MOP I Wytomyśl</attribute>
 </object>
 <object id="162">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Nowy Tomyśl</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kozielaski</attribute>
 </object>
 <object id="163">
 <attribute name="carLimit" class="java.lang.Integer">53</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Szamotuły</attribute>
+<attribute name="name" class="java.lang.String">MOP III Sędzinko</attribute>
 </object>
 <object id="164">
 <attribute name="carLimit" class="java.lang.Integer">48</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Szamotuły</attribute>
+<attribute name="name" class="java.lang.String">MOP II Zalesie</attribute>
 </object>
 <object id="165">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Poznański</attribute>
+<attribute name="name" class="java.lang.String">MOP I Dopiewiec</attribute>
 </object>
 <object id="166">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Poznański</attribute>
+<attribute name="name" class="java.lang.String">MOP I Konarzewo</attribute>
 </object>
 <object id="167">
 <attribute name="carLimit" class="java.lang.Integer">42</attribute>
 <attribute name="busLimit" class="java.lang.Integer">33</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Poznański</attribute>
+<attribute name="name" class="java.lang.String">MOP II Tulce</attribute>
 </object>
 <object id="168">
 <attribute name="carLimit" class="java.lang.Integer">45</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Poznański</attribute>
+<attribute name="name" class="java.lang.String">MOP III Krzyżowniki</attribute>
 </object>
 <object id="169">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">33</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Września</attribute>
+<attribute name="name" class="java.lang.String">MOP I Chwałszyce</attribute>
 </object>
 <object id="170">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">33</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Września</attribute>
+<attribute name="name" class="java.lang.String">MOP I Targowa Górka</attribute>
 </object>
 <object id="171">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Września</attribute>
+<attribute name="name" class="java.lang.String">MOP II Sołeczno</attribute>
 </object>
 <object id="172">
 <attribute name="carLimit" class="java.lang.Integer">29</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Września</attribute>
+<attribute name="name" class="java.lang.String">MOP II Gozdowo</attribute>
 </object>
 <object id="173">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Słupca</attribute>
+<attribute name="name" class="java.lang.String">MOP I Skarboszewo</attribute>
 </object>
 <object id="174">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Słupca</attribute>
+<attribute name="name" class="java.lang.String">MOP I Lądek</attribute>
 </object>
 <object id="175">
 <attribute name="carLimit" class="java.lang.Integer">94</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Koniński</attribute>
+<attribute name="name" class="java.lang.String">MOP III Osiecza</attribute>
 </object>
 <object id="176">
 <attribute name="carLimit" class="java.lang.Integer">48</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Koniński</attribute>
+<attribute name="name" class="java.lang.String">MOP II Osiecza</attribute>
 </object>
 <object id="177">
 <attribute name="carLimit" class="java.lang.Integer">16</attribute>
 <attribute name="busLimit" class="java.lang.Integer">8</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Koniński</attribute>
+<attribute name="name" class="java.lang.String">MOP I Żdżary</attribute>
 </object>
 <object id="178">
 <attribute name="carLimit" class="java.lang.Integer">21</attribute>
 <attribute name="busLimit" class="java.lang.Integer">8</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Koniński</attribute>
+<attribute name="name" class="java.lang.String">MOP I Żdżary</attribute>
 </object>
 <object id="179">
 <attribute name="carLimit" class="java.lang.Integer">28</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">pow. turecki</attribute>
+<attribute name="name" class="java.lang.String">Mop Leonia</attribute>
 </object>
 <object id="180">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">pow. turecki</attribute>
+<attribute name="name" class="java.lang.String">MOP Kuny</attribute>
 </object>
 <object id="181">
 <attribute name="carLimit" class="java.lang.Integer">33</attribute>
 <attribute name="busLimit" class="java.lang.Integer">37</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">pow. kolski</attribute>
+<attribute name="name" class="java.lang.String">MOP III Police</attribute>
 </object>
 <object id="182">
 <attribute name="carLimit" class="java.lang.Integer">42</attribute>
 <attribute name="busLimit" class="java.lang.Integer">39</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">pow. kolski</attribute>
+<attribute name="name" class="java.lang.String">MOP II Łęka</attribute>
 </object>
 <object id="183">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">pow. kolski</attribute>
+<attribute name="name" class="java.lang.String">MOP Cichmiana</attribute>
 </object>
 <object id="184">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">pow. kolski</attribute>
+<attribute name="name" class="java.lang.String">MOP Sobótka</attribute>
 </object>
 <object id="185">
 <attribute name="carLimit" class="java.lang.Integer">43</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Łubowo</attribute>
+<attribute name="name" class="java.lang.String">MOP III Łubowo</attribute>
 </object>
 <object id="186">
 <attribute name="carLimit" class="java.lang.Integer">43</attribute>
 <attribute name="busLimit" class="java.lang.Integer">21</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Łubowo</attribute>
+<attribute name="name" class="java.lang.String">MOP II Pierzyska</attribute>
 </object>
 <object id="187">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Kostrzyn</attribute>
+<attribute name="name" class="java.lang.String">MOP I Wagowo</attribute>
 </object>
 <object id="188">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Kostrzyn</attribute>
+<attribute name="name" class="java.lang.String">MOP I Sanniki</attribute>
 </object>
 <object id="189">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Kostrzyn</attribute>
+<attribute name="name" class="java.lang.String">MOP II Siekierki</attribute>
 </object>
 <object id="190">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Kostrzyn</attribute>
+<attribute name="name" class="java.lang.String">MOP II Czerlejno</attribute>
 </object>
 <object id="191">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">55</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">gm. Bojanowo</attribute>
+<attribute name="name" class="java.lang.String">MOP Golina Wielka</attribute>
 </object>
 <object id="192">
 <attribute name="carLimit" class="java.lang.Integer">70</attribute>
 <attribute name="busLimit" class="java.lang.Integer">59</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">gm. Bojanowo</attribute>
+<attribute name="name" class="java.lang.String">MOP Trzebosz</attribute>
 </object>
 <object id="193">
 <attribute name="carLimit" class="java.lang.Integer">28</attribute>
 <attribute name="busLimit" class="java.lang.Integer">63</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">12</attribute>
+<attribute name="town" class="java.lang.String">gm. Rawicz</attribute>
+<attribute name="name" class="java.lang.String">MOP Dębno</attribute>
 </object>
 <object id="194">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">44</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">14</attribute>
+<attribute name="town" class="java.lang.String">gm. Rawicz</attribute>
+<attribute name="name" class="java.lang.String">MOP folwark</attribute>
 </object>
 <object id="195">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">38</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Mieleszyn</attribute>
+<attribute name="name" class="java.lang.String">MOP I Łabiszynek</attribute>
 </object>
 <object id="196">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">38</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Mieleszyn</attribute>
+<attribute name="name" class="java.lang.String">MOPI  Modliszewko</attribute>
 </object>
 <object id="197">
 <attribute name="carLimit" class="java.lang.Integer">43</attribute>
 <attribute name="busLimit" class="java.lang.Integer">26</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Palędzie</attribute>
+<attribute name="name" class="java.lang.String">MOP Palędzie</attribute>
 </object>
 <object id="198">
 <attribute name="carLimit" class="java.lang.Integer">43</attribute>
 <attribute name="busLimit" class="java.lang.Integer">27</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Skórzewo</attribute>
+<attribute name="name" class="java.lang.String">MOP Skórzewo</attribute>
 </object>
 <object id="199">
 <attribute name="carLimit" class="java.lang.Integer">45</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Sokolniki</attribute>
+<attribute name="name" class="java.lang.String">MOP Ochędzyn</attribute>
 </object>
 <object id="200">
 <attribute name="carLimit" class="java.lang.Integer">46</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Sokolniki</attribute>
+<attribute name="name" class="java.lang.String">MOP Niwiska</attribute>
 </object>
 <object id="201">
 <attribute name="carLimit" class="java.lang.Integer">158</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">gm. Jastrząbka</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jastrząbka</attribute>
 </object>
 <object id="202">
 <attribute name="carLimit" class="java.lang.Integer">158</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">gm. Jawornik</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jawornik</attribute>
 </object>
 <object id="203">
 <attribute name="carLimit" class="java.lang.Integer">79</attribute>
 <attribute name="busLimit" class="java.lang.Integer">45</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Dębica</attribute>
+<attribute name="name" class="java.lang.String">MOP II Paszczyna Południe **</attribute>
 </object>
 <object id="204">
 <attribute name="carLimit" class="java.lang.Integer">84</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Dębica</attribute>
+<attribute name="name" class="java.lang.String">MOP III Paszczyna Północ **</attribute>
 </object>
 <object id="205">
 <attribute name="carLimit" class="java.lang.Integer">172</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">12</attribute>
+<attribute name="town" class="java.lang.String">gm. Świlcza</attribute>
+<attribute name="name" class="java.lang.String">MOP I Dąbry</attribute>
 </object>
 <object id="206">
 <attribute name="carLimit" class="java.lang.Integer">175</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">12</attribute>
+<attribute name="town" class="java.lang.String">gm. Świlcza</attribute>
+<attribute name="name" class="java.lang.String">MOP I Bratkowice</attribute>
 </object>
 <object id="207">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">37</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Krasne i Czarna</attribute>
+<attribute name="name" class="java.lang.String">MOP II  Łukawiec **</attribute>
 </object>
 <object id="208">
 <attribute name="carLimit" class="java.lang.Integer">57</attribute>
 <attribute name="busLimit" class="java.lang.Integer">31</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Czarna</attribute>
+<attribute name="name" class="java.lang.String">MOP III  Palikówka **</attribute>
 </object>
 <object id="209">
 <attribute name="carLimit" class="java.lang.Integer">54</attribute>
 <attribute name="busLimit" class="java.lang.Integer">16</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Białobrzegi</attribute>
+<attribute name="name" class="java.lang.String">MOP I Budy</attribute>
 </object>
 <object id="210">
 <attribute name="carLimit" class="java.lang.Integer">54</attribute>
 <attribute name="busLimit" class="java.lang.Integer">16</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Białobrzegi</attribute>
+<attribute name="name" class="java.lang.String">MOP I Młyniska</attribute>
 </object>
 <object id="211">
 <attribute name="carLimit" class="java.lang.Integer">68</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Pawłosiów</attribute>
+<attribute name="name" class="java.lang.String">MOP III Pawłosiow **</attribute>
 </object>
 <object id="212">
 <attribute name="carLimit" class="java.lang.Integer">68</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Pawłosiow</attribute>
+<attribute name="name" class="java.lang.String">MOP II Cieszacin **</attribute>
 </object>
 <object id="213">
 <attribute name="carLimit" class="java.lang.Integer">47</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Orły</attribute>
+<attribute name="name" class="java.lang.String">MOP I Zamiechów</attribute>
 </object>
 <object id="214">
 <attribute name="carLimit" class="java.lang.Integer">47</attribute>
 <attribute name="busLimit" class="java.lang.Integer">18</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">gm. Chłopice</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kaszyce</attribute>
 </object>
 <object id="215">
 <attribute name="carLimit" class="java.lang.Integer">104</attribute>
 <attribute name="busLimit" class="java.lang.Integer">27</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Radymno</attribute>
+<attribute name="name" class="java.lang.String">MOP II Chotyniec **</attribute>
 </object>
 <object id="216">
 <attribute name="carLimit" class="java.lang.Integer">104</attribute>
 <attribute name="busLimit" class="java.lang.Integer">176</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm. Stubno</attribute>
+<attribute name="name" class="java.lang.String">MOP III Hruszowice **</attribute>
 </object>
 <object id="217">
 <attribute name="carLimit" class="java.lang.Integer">91</attribute>
 <attribute name="busLimit" class="java.lang.Integer">23</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Wysoka</attribute>
+<attribute name="name" class="java.lang.String">MOP II Wysoka Zachód</attribute>
 </object>
 <object id="218">
 <attribute name="carLimit" class="java.lang.Integer">87</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Wysoka</attribute>
+<attribute name="name" class="java.lang.String">MOP III Wysoka Wschód</attribute>
 </object>
 <object id="219">
 <attribute name="carLimit" class="java.lang.Integer">34</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Kunowo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kunowo Zachód</attribute>
 </object>
 <object id="220">
 <attribute name="carLimit" class="java.lang.Integer">34</attribute>
 <attribute name="busLimit" class="java.lang.Integer">12</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Kunowo</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kunowo Wschód</attribute>
 </object>
 <object id="221">
 <attribute name="carLimit" class="java.lang.Integer">119</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Sitno</attribute>
+<attribute name="name" class="java.lang.String">MOP II Sitno Wschód</attribute>
 </object>
 <object id="222">
 <attribute name="carLimit" class="java.lang.Integer">87</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">Sitno</attribute>
+<attribute name="name" class="java.lang.String">MOP III Sitno Zachód</attribute>
 </object>
 <object id="223">
 <attribute name="carLimit" class="java.lang.Integer">48</attribute>
 <attribute name="busLimit" class="java.lang.Integer">4</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Żdżary</attribute>
+<attribute name="name" class="java.lang.String">MOP II Żdżary</attribute>
 </object>
 <object id="224">
 <attribute name="carLimit" class="java.lang.Integer">52</attribute>
 <attribute name="busLimit" class="java.lang.Integer">5</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Łozienica</attribute>
+<attribute name="name" class="java.lang.String">MOP II Łozienica</attribute>
 </object>
 <object id="225">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">13</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Kliniska</attribute>
+<attribute name="name" class="java.lang.String">MOP II Kliniska</attribute>
 </object>
 <object id="226">
 <attribute name="carLimit" class="java.lang.Integer">47</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Barnisław</attribute>
+<attribute name="name" class="java.lang.String">MOP II Barnisław</attribute>
 </object>
 <object id="227">
 <attribute name="carLimit" class="java.lang.Integer">71</attribute>
 <attribute name="busLimit" class="java.lang.Integer">84</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Barnisław</attribute>
+<attribute name="name" class="java.lang.String">MOP II Barnisław</attribute>
 </object>
 <object id="228">
 <attribute name="carLimit" class="java.lang.Integer">27</attribute>
 <attribute name="busLimit" class="java.lang.Integer">31</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Kołbaskowo</attribute>
+<attribute name="name" class="java.lang.String">MOP II Kołbaskowo</attribute>
 </object>
 <object id="229">
 <attribute name="carLimit" class="java.lang.Integer">90</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Baranów</attribute>
+<attribute name="name" class="java.lang.String">MOP III Baranów</attribute>
 </object>
 <object id="230">
 <attribute name="carLimit" class="java.lang.Integer">150</attribute>
 <attribute name="busLimit" class="java.lang.Integer">34</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Baranów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Baranów</attribute>
 </object>
 <object id="231">
 <attribute name="carLimit" class="java.lang.Integer">90</attribute>
 <attribute name="busLimit" class="java.lang.Integer">34</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Brwinów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Brwinów</attribute>
 </object>
 <object id="232">
 <attribute name="carLimit" class="java.lang.Integer">150</attribute>
 <attribute name="busLimit" class="java.lang.Integer">43</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">6</attribute>
+<attribute name="town" class="java.lang.String">gm. Brwinów</attribute>
+<attribute name="name" class="java.lang.String">MOP III Brwinów</attribute>
 </object>
 <object id="233">
 <attribute name="carLimit" class="java.lang.Integer">48</attribute>
 <attribute name="busLimit" class="java.lang.Integer">17</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">8</attribute>
+<attribute name="town" class="java.lang.String">gm. Jakubów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Moczydła</attribute>
 </object>
 <object id="234">
 <attribute name="carLimit" class="java.lang.Integer">64</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">7</attribute>
+<attribute name="town" class="java.lang.String">gm. Jakubów</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jędrzejów</attribute>
 </object>
 <object id="235">
 <attribute name="carLimit" class="java.lang.Integer">25</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Zakroczym</attribute>
+<attribute name="name" class="java.lang.String">MOP II stacja paliw Statoil Polska</attribute>
 </object>
 <object id="236">
 <attribute name="carLimit" class="java.lang.Integer">35</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">WORÓW</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="237">
 <attribute name="carLimit" class="java.lang.Integer">28</attribute>
 <attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Grójec</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="238">
 <attribute name="carLimit" class="java.lang.Integer">10</attribute>
 <attribute name="busLimit" class="java.lang.Integer">0</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Skurów</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="239">
 <attribute name="carLimit" class="java.lang.Integer">60</attribute>
 <attribute name="busLimit" class="java.lang.Integer">6</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Skurów</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="240">
 <attribute name="carLimit" class="java.lang.Integer">27</attribute>
 <attribute name="busLimit" class="java.lang.Integer">4</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">BRONISZEW</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="241">
 <attribute name="carLimit" class="java.lang.Integer">30</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">BRONISZEW</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="242">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">PROMNA</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="243">
 <attribute name="carLimit" class="java.lang.Integer">7</attribute>
 <attribute name="busLimit" class="java.lang.Integer">4</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">2</attribute>
+<attribute name="town" class="java.lang.String">Promna Kolonia</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="244">
 <attribute name="carLimit" class="java.lang.Integer">50</attribute>
 <attribute name="busLimit" class="java.lang.Integer">2</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">1</attribute>
+<attribute name="town" class="java.lang.String">Sucha Wschodnia</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="245">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">10</attribute>
+<attribute name="town" class="java.lang.String">SUCHA</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="246">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">5</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">KIEŁBÓW</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="247">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">GÓZD</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="248">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">GÓZD</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="249">
 <attribute name="carLimit" class="java.lang.Integer">10</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">ŻDŹARY</attribute>
+<attribute name="name" class="java.lang.String">MOP</attribute>
 </object>
 <object id="250">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">15</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Gurba</attribute>
+<attribute name="name" class="java.lang.String">MOP Gurba</attribute>
 </object>
 <object id="251">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">5</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Radziejowice</attribute>
+<attribute name="name" class="java.lang.String">MOP Radziejowice</attribute>
 </object>
 <object id="252">
 <attribute name="carLimit" class="java.lang.Integer">12</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Krze</attribute>
+<attribute name="name" class="java.lang.String">"MOP ""Krze"""</attribute>
 </object>
 <object id="253">
 <attribute name="carLimit" class="java.lang.Integer">5</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Żabia Wola</attribute>
+<attribute name="name" class="java.lang.String">"MOP ""Żabia Wola"" "</attribute>
 </object>
 <object id="254">
 <attribute name="carLimit" class="java.lang.Integer">10</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Przeszkoda</attribute>
+<attribute name="name" class="java.lang.String">"MOP ""Przeszkoda"""</attribute>
 </object>
 <object id="255">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Emilianów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Emilianów</attribute>
 </object>
 <object id="256">
 <attribute name="carLimit" class="java.lang.Integer">101</attribute>
 <attribute name="busLimit" class="java.lang.Integer">50</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Małopole</attribute>
+<attribute name="name" class="java.lang.String">MOP II Małopole</attribute>
 </object>
 <object id="257">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">20</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Trojany</attribute>
+<attribute name="name" class="java.lang.String">MOP II Trojany</attribute>
 </object>
 <object id="258">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">3</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">GAJ</attribute>
+<attribute name="name" class="java.lang.String">MOP GAJ</attribute>
 </object>
 <object id="259">
 <attribute name="carLimit" class="java.lang.Integer">80</attribute>
 <attribute name="busLimit" class="java.lang.Integer">56</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Zgorzelec</attribute>
+<attribute name="name" class="java.lang.String">MOP III Żarska Wieś Północ</attribute>
 </object>
 <object id="260">
 <attribute name="carLimit" class="java.lang.Integer">80</attribute>
 <attribute name="busLimit" class="java.lang.Integer">71</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">5</attribute>
+<attribute name="town" class="java.lang.String">gm.Zgorzelec</attribute>
+<attribute name="name" class="java.lang.String">MOP III Żarska Wieś Południe</attribute>
 </object>
 <object id="261">
 <attribute name="carLimit" class="java.lang.Integer">55</attribute>
 <attribute name="busLimit" class="java.lang.Integer">50</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm.Bolesławiec</attribute>
+<attribute name="name" class="java.lang.String">MOP III Kraśnik Dolny</attribute>
 </object>
 <object id="262">
 <attribute name="carLimit" class="java.lang.Integer">82</attribute>
 <attribute name="busLimit" class="java.lang.Integer">47</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm.Oława</attribute>
+<attribute name="name" class="java.lang.String">MOP III Oleśnica Mała</attribute>
 </object>
 <object id="263">
 <attribute name="carLimit" class="java.lang.Integer">86</attribute>
 <attribute name="busLimit" class="java.lang.Integer">45</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">gm. Wiązów</attribute>
+<attribute name="name" class="java.lang.String">MOP II Witowice</attribute>
 </object>
 <object id="264">
 <attribute name="carLimit" class="java.lang.Integer">27</attribute>
 <attribute name="busLimit" class="java.lang.Integer">14</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Czerna</attribute>
+<attribute name="name" class="java.lang.String">MOP I Czerna Południe</attribute>
 </object>
 <object id="265">
 <attribute name="carLimit" class="java.lang.Integer">27</attribute>
 <attribute name="busLimit" class="java.lang.Integer">14</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Czerna</attribute>
+<attribute name="name" class="java.lang.String">MOP I Czerna Północ</attribute>
 </object>
 <object id="266">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">25</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Żórawina</attribute>
+<attribute name="name" class="java.lang.String">MOP I Krajków Południe</attribute>
 </object>
 <object id="267">
 <attribute name="carLimit" class="java.lang.Integer">24</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Żórawina</attribute>
+<attribute name="name" class="java.lang.String">MOP I Krajków Północ</attribute>
 </object>
 <object id="268">
 <attribute name="carLimit" class="java.lang.Integer">110</attribute>
 <attribute name="busLimit" class="java.lang.Integer">46</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Michałowice gm. Długołęka</attribute>
+<attribute name="name" class="java.lang.String">MOP III Michałowice Południe</attribute>
 </object>
 <object id="269">
 <attribute name="carLimit" class="java.lang.Integer">102</attribute>
 <attribute name="busLimit" class="java.lang.Integer">31</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Michałowice gm. Długołęka</attribute>
+<attribute name="name" class="java.lang.String">MOP III Michałowice Północ</attribute>
 </object>
 <object id="270">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Jonas gm. Oleśnica</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jonas Południe</attribute>
 </object>
 <object id="271">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Jonas gm. Oleśnica</attribute>
+<attribute name="name" class="java.lang.String">MOP I Jonas Północ</attribute>
 </object>
 <object id="272">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Syców</attribute>
+<attribute name="name" class="java.lang.String">MOP I Syców Południe</attribute>
 </object>
 <object id="273">
 <attribute name="carLimit" class="java.lang.Integer">36</attribute>
 <attribute name="busLimit" class="java.lang.Integer">24</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">Syców</attribute>
+<attribute name="name" class="java.lang.String">MOP I Syców Północ</attribute>
 </object>
 <object id="274">
 <attribute name="carLimit" class="java.lang.Integer">8</attribute>
 <attribute name="busLimit" class="java.lang.Integer">6</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Lipiany</attribute>
+<attribute name="name" class="java.lang.String">MOP I Lipiany</attribute>
 </object>
 <object id="275">
 <attribute name="carLimit" class="java.lang.Integer">16</attribute>
 <attribute name="busLimit" class="java.lang.Integer">9</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Krzywa</attribute>
+<attribute name="name" class="java.lang.String">Parking Krzywa</attribute>
 </object>
 <object id="276">
 <attribute name="carLimit" class="java.lang.Integer">17</attribute>
 <attribute name="busLimit" class="java.lang.Integer">2</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Strupice</attribute>
+<attribute name="name" class="java.lang.String">Parking Strupice</attribute>
 </object>
 <object id="277">
 <attribute name="carLimit" class="java.lang.Integer">4</attribute>
 <attribute name="busLimit" class="java.lang.Integer">1</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Pawlikowice</attribute>
+<attribute name="name" class="java.lang.String">Parking Pawlikowice</attribute>
 </object>
 <object id="278">
 <attribute name="carLimit" class="java.lang.Integer">20</attribute>
 <attribute name="busLimit" class="java.lang.Integer">6</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">Gniewomierz</attribute>
+<attribute name="name" class="java.lang.String">Parking Gniewomierz</attribute>
 </object>
 <object id="279">
 <attribute name="carLimit" class="java.lang.Integer">65</attribute>
 <attribute name="busLimit" class="java.lang.Integer">101</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Słubice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Gnilec</attribute>
 </object>
 <object id="280">
 <attribute name="carLimit" class="java.lang.Integer">65</attribute>
 <attribute name="busLimit" class="java.lang.Integer">111</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Słubice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Sosna</attribute>
 </object>
 <object id="281">
 <attribute name="carLimit" class="java.lang.Integer">28</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Sulęcin</attribute>
+<attribute name="name" class="java.lang.String">MOP I Koryta</attribute>
 </object>
 <object id="282">
 <attribute name="carLimit" class="java.lang.Integer">28</attribute>
 <attribute name="busLimit" class="java.lang.Integer">40</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Sulęcin</attribute>
+<attribute name="name" class="java.lang.String">MOP I Walewice</attribute>
 </object>
 <object id="283">
 <attribute name="carLimit" class="java.lang.Integer">93</attribute>
 <attribute name="busLimit" class="java.lang.Integer">54</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Międzyrzecz</attribute>
+<attribute name="name" class="java.lang.String">MOP II Chociszewo</attribute>
 </object>
 <object id="284">
 <attribute name="carLimit" class="java.lang.Integer">93</attribute>
 <attribute name="busLimit" class="java.lang.Integer">50</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Świebodzin</attribute>
+<attribute name="name" class="java.lang.String">MOP II Rogozieniec</attribute>
 </object>
 <object id="285">
-<attribute name="carLimit" class="java.lang.Integer">51</attribute>
-<attribute name="busLimit" class="java.lang.Integer">23</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">51</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">23</attribute>
+<attribute name="town" class="java.lang.String">"Marwice</attribute>
+<attribute name="name" class="java.lang.String">gm. Lubiszyn"</attribute>
 </object>
 <object id="286">
-<attribute name="carLimit" class="java.lang.Integer">53</attribute>
-<attribute name="busLimit" class="java.lang.Integer">23</attribute>
-<attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="carLimit" class="java.lang.Integer">0</attribute>
+<attribute name="busLimit" class="java.lang.Integer">53</attribute>
+<attribute name="truckLimit" class="java.lang.Integer">23</attribute>
+<attribute name="town" class="java.lang.String">"Marwice</attribute>
+<attribute name="name" class="java.lang.String">gm. Lubiszyn"</attribute>
 </object>
 <object id="287">
 <attribute name="carLimit" class="java.lang.Integer">67</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Skwierzyna</attribute>
+<attribute name="name" class="java.lang.String">MOP I Popowa Zachód</attribute>
 </object>
 <object id="288">
 <attribute name="carLimit" class="java.lang.Integer">67</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Skwierzyna</attribute>
+<attribute name="name" class="java.lang.String">MOP I Popowo Wschód</attribute>
 </object>
 <object id="289">
 <attribute name="carLimit" class="java.lang.Integer">74</attribute>
 <attribute name="busLimit" class="java.lang.Integer">36</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Świebodzin</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kępsko Zachód</attribute>
 </object>
 <object id="290">
 <attribute name="carLimit" class="java.lang.Integer">74</attribute>
 <attribute name="busLimit" class="java.lang.Integer">36</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">3</attribute>
+<attribute name="town" class="java.lang.String">Świebodzin</attribute>
+<attribute name="name" class="java.lang.String">MOP I Kępsko Wschód</attribute>
 </object>
 <object id="291">
 <attribute name="carLimit" class="java.lang.Integer">15</attribute>
 <attribute name="busLimit" class="java.lang.Integer">30</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Zielona Góra</attribute>
+<attribute name="name" class="java.lang.String">MOP Racula</attribute>
 </object>
 <object id="292">
 <attribute name="carLimit" class="java.lang.Integer">49</attribute>
 <attribute name="busLimit" class="java.lang.Integer">35</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">4</attribute>
+<attribute name="town" class="java.lang.String">gm. Tuplice</attribute>
+<attribute name="name" class="java.lang.String">MOP II Jagłowice</attribute>
 </object>
 <object id="293">
 <attribute name="carLimit" class="java.lang.Integer">40</attribute>
 <attribute name="busLimit" class="java.lang.Integer">10</attribute>
 <attribute name="truckLimit" class="java.lang.Integer">0</attribute>
+<attribute name="town" class="java.lang.String">gm. Tuplice</attribute>
+<attribute name="name" class="java.lang.String">MOP III Trzebiel</attribute>
 </object>
 </objectAttributes>

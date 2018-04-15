@@ -11,3 +11,4 @@ To run:
 ./run_mopsim.sh matsim-0.9.0/matsim-0.9.0.jar
 ```
 5. After execution, directory ```output``` will contain simulation data.
+

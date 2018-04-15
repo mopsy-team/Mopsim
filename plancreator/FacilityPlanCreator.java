@@ -39,17 +39,23 @@ public class FacilityPlanCreator {
             int id = 1;
             while ((line = br.readLine()) != null) {
                 String[] facility = line.split(csvSplitBy);
-
+                
+                if (facility.length < 7) {
+                	log.warn("Wrong mop data! MOP id: " + id);
+                	continue;
+                }
                 String x, y;
                 int carLimit, busLimit, truckLimit;
+                String town, name;
                 x = facility[0].trim();
                 Double.parseDouble(x);
                 y = facility[1].trim();
                 Double.parseDouble(y);
-
-                carLimit = normalize_data(facility[2], id);
-                busLimit = normalize_data(facility[3], id);
-                truckLimit = normalize_data(facility[4], id);
+                town = facility[2].trim();
+                name = facility[3].trim();
+                carLimit = normalize_data(facility[4], id);
+                busLimit = normalize_data(facility[5], id);
+                truckLimit = normalize_data(facility[6], id);
 
                 
                 
@@ -62,7 +68,9 @@ public class FacilityPlanCreator {
         		"<attribute name=\"carLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
         		"<attribute name=\"busLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
         		"<attribute name=\"truckLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-        		OBJECT_FOOTER, id, carLimit, busLimit, truckLimit);
+        		"<attribute name=\"town\" class=\"java.lang.String\">%s</attribute>\n" +
+        		"<attribute name=\"name\" class=\"java.lang.String\">%s</attribute>\n" +
+        		OBJECT_FOOTER, id, carLimit, busLimit, truckLimit, town, name);
                 id++;
             }
 

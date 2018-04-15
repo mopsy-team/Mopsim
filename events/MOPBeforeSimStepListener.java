@@ -53,17 +53,16 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 	private MOPHandler mopHandler;
 	
 	//MOP Enter strategies for each vehicle type.
-	private MOPEnterStrategy carStrategy;
-	private MOPEnterStrategy busStrategy;
-	private MOPEnterStrategy truckStrategy;
+	HashMap<String, MOPEnterStrategy> strategies;
 	
 //	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
 	
 	public MOPBeforeSimStepListener(MOPHandler mopHandler) {
 		this.mopHandler = mopHandler;
-		this.carStrategy = new BasicStrategy();
-		this.busStrategy = new TruckStrategy();
-		this.truckStrategy = new TruckStrategy();
+		this.strategies = new HashMap<>();
+		strategies.put(CAR, new BasicStrategy());
+		strategies.put(TRUCK, new TruckStrategy());
+		strategies.put(BUS, new TruckStrategy());
 	}
 	
 	@Override
@@ -98,22 +97,23 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 					 * Maybe it should be somehow checked if(WithinDayAgentUtils.getCurrentPlanElement(agent) instance of Leg)...
 					 */
 					Leg currentLeg = (Leg) WithinDayAgentUtils.getCurrentPlanElement(agent);
-					double travelTime = mobsim.getSimTimer().getTimeOfDay() - currentLeg.getDepartureTime();
-
-					if (agent.getId().toString().startsWith(CAR) && carStrategy.decide(travelTime)) {
-						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
-						agentsToReplan.get(linkId).add(agent);
+					double currentTime = mobsim.getSimTimer().getTimeOfDay();
+					double travelTime = currentTime - currentLeg.getDepartureTime();
+					String agentType = CAR;
+					
+					if (agent.getId().toString().startsWith(TRUCK)) {
+						agentType = TRUCK;
+					} else if (agent.getId().toString().startsWith(BUS)) {
+						agentType = BUS;
 					}
-					if (agent.getId().toString().startsWith(BUS) && busStrategy.decide(travelTime)) {
+					
+					if (strategies.get(agentType).decide(travelTime) && !mopHandler.getMop(linkId).isFull(agentType)) {
 						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
 						agentsToReplan.get(linkId).add(agent);
-					}
-					if (agent.getId().toString().startsWith(TRUCK) && truckStrategy.decide(travelTime)) {
-						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
-						agentsToReplan.get(linkId).add(agent);
+					} else {
+						mopHandler.getMop(linkId).addPassingVehicle(agentType, ((int) (currentTime / 3600)) % 24);
 					}	
-				}
-				
+				}	
 			}
 			// All vehicles considered, removing them from the list
 			vehicleIds.get(linkId).clear();
@@ -140,6 +140,7 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		Activity newActivity = mobsim.getScenario().getPopulation().getFactory().createActivityFromLinkId("w", linkId) ;
 		newActivity.setMaximumDuration(MOP_STAY_TIME);
 		newActivity.setStartTime(currentTime);
+		newActivity.setEndTime(currentTime + MOP_STAY_TIME);
 		// New routes produced from the old one by splitting in current link.
 		Route routeToMOP = ((LinkNetworkRouteImpl) route).getSubRoute(route.getStartLinkId(), linkId);
 		Route routeFromMOP = ((LinkNetworkRouteImpl) route).getSubRoute(linkId, route.getEndLinkId());
@@ -172,13 +173,13 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		
 		//Adding vehicle to MOP
 		if (agent.getId().toString().startsWith(CAR)) {
-			mopHandler.getMops().get(linkId).enterMOP(CAR, (int) (currentTime / 3600), newActivity.getEndTime());
+			mopHandler.getMop(linkId).enterMOP(CAR, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
 		}
 		if (agent.getId().toString().startsWith(BUS)) {
-			mopHandler.getMops().get(linkId).enterMOP(BUS, (int) (currentTime / 3600), newActivity.getEndTime());
+			mopHandler.getMop(linkId).enterMOP(BUS, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
 		}
 		if (agent.getId().toString().startsWith(TRUCK)) {
-			mopHandler.getMops().get(linkId).enterMOP(TRUCK, (int) (currentTime / 3600), newActivity.getEndTime());
+			mopHandler.getMop(linkId).enterMOP(TRUCK, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
 		}	
 		
 		WithinDayAgentUtils.resetCaches(agent);

@@ -162,7 +162,7 @@ public class TravelPlanCreator {
             int id = i + 1 + idModifier;
 
             Random random = new Random();
-            int endHour = 6 + random.nextInt(6);
+            int endHour = 3 + random.nextInt(15);
             int endMinute = random.nextInt(60);
 
             writer.print(agentPlan(id, sourceTown, targetTown, vehicleType, endHour, endMinute));

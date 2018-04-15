@@ -7,6 +7,9 @@ import org.apache.log4j.Logger;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.core.config.*;
 import org.matsim.core.scenario.*;
+
+import config_group.MOPSimConfigGroup;
+
 import org.matsim.core.controler.*;
 
 import events.MOPAfterSimStepListener;
@@ -15,6 +18,8 @@ import events.MOPLinkEnterEventHandler;
 import handlers.*;
 import plancreator.FacilityPlanCreator;
 import plancreator.TravelPlanCreator;
+import utils.FileUtils;
+import utils.TimeUtils;
 
 /*
  * Main MOPSim class.
@@ -27,29 +32,33 @@ public class MOPSimulator {
 	private static final String FACILITY_PATH = "CONF/facilities.xml";
 	private static final String FACILITY_ATTRIBUTES_PATH = "CONF/facilities_attributes.xml";
 	
-	//Default travel matrices & mop coordinates paths
-	private static final String TRUCK_PATH = "travel_matrices/truck_matrix.csv";
-	private static final String CAR_PATH = "travel_matrices/car_matrix.csv";
-	private static final String BUS_PATH = "travel_matrices/bus_matrix.csv";
-	private static final String MOP_DATA = "mop_data/mop_data.csv";
+	//Output simulation statistics filepath
+	private static final String SIMULATIONS = "SIMULATIONS";
 	
-	//Necessary simulation elements 
+	//Necessary simulation elements
+	private MOPSimConfigGroup confGroup;
 	private Config conf;
 	private Scenario scen;
 	private Controler cont;
 	private ControlerModifier contModifier;
 	private MOPHandler mopHandler;
-	
+	private String simulationId;
 	private static final Logger log = Logger.getLogger(MOPSimulator.class);
 	
 	public MOPSimulator() {
+		this("sim_" + TimeUtils.currentTime());
+	}
+	
+	public MOPSimulator(String simulationId) {
 		
-		//Creating travel & facilities plans
-		createTravelPlan(2400, 800, 800);
-		createFacilityPlan();
+		prepareSimulationDirectories(simulationId);
 		
 		//Loading configuration
-		conf = ConfigUtils.loadConfig(CONFIG_PATH);
+		confGroup = new MOPSimConfigGroup();
+		conf = ConfigUtils.loadConfig(CONFIG_PATH, confGroup);
+		//Creating travel & facilities plans
+		createPlans();
+		conf.controler().setOutputDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data/matsim_output");
 		//We need just one iteration
 		conf.controler().setLastIteration(0);
 		scen = ScenarioUtils.loadScenario(conf);
@@ -58,9 +67,9 @@ public class MOPSimulator {
 		//Additional simulation objects
 		contModifier = new ControlerModifier(cont);
 		mopHandler = new MOPHandler(scen.getActivityFacilities().getFacilities(), scen.getNetwork(),
-				scen.getActivityFacilities().getFacilityAttributes());
+				scen.getActivityFacilities().getFacilityAttributes(), SIMULATIONS + "/" + simulationId + "/MOPs");
 	}
-	
+
 	public void runSimulation() {
 		contModifier.addHandler(new MOPLinkEnterEventHandler(mopHandler.getVehicleIds()));
 		contModifier.addMobsimListener(new MOPBeforeSimStepListener(mopHandler));
@@ -68,47 +77,70 @@ public class MOPSimulator {
 		cont.run();
 	}
 	
-	public static void main(String[] args) {
-		
-		logStart();
-		MOPSimulator mopsim = new MOPSimulator();
-		mopsim.runSimulation();
-		logEnd();
-		log.info("Creating MOP usage plots.");
-		mopsim.mopHandler.createMOPPLots();
-		log.info("MOP usage plots created.\nMOPSIM FINISHED");
+	public void createStatistics() {
+		log.info("Generating MOP usage statistics.");
+		mopHandler.createMOPPLots();
+		log.info("MOP usage statistics created.");
 	}
 	
 	private void createFacilityPlan() {
-		FacilityPlanCreator.createFacilityPlan(MOP_DATA, FACILITY_PATH, FACILITY_ATTRIBUTES_PATH);
+		FacilityPlanCreator.createFacilityPlan(confGroup.getMopData(), FACILITY_PATH, FACILITY_ATTRIBUTES_PATH);
 	}
 	
 	private void createTravelPlan(int nrCars, int nrTrucks, int nrBuses) {
-		TravelPlanCreator.createPlan(CAR_PATH, TRUCK_PATH,BUS_PATH,
-				nrCars, nrTrucks, nrBuses, TRAVEL_PATH);
+		TravelPlanCreator.createPlan(confGroup.getCarPath(), confGroup.getTruckPath(),
+				confGroup.getBusPath(), nrCars, nrTrucks, nrBuses, TRAVEL_PATH);
 	}
 	
-	private static void logStart() {
+	public String getSimulationId() {
+		return simulationId;
+	}
+	
+	private void createPlans() {
+		createTravelPlan(confGroup.getCarNr(), confGroup.getTruckNr(), confGroup.getBusNr());
+		createFacilityPlan();
+	}
+
+	private void prepareSimulationDirectories(String simulationId) {
+		FileUtils.checkAndCreateDirectory(SIMULATIONS);
+		this.simulationId = FileUtils.createUniqueDirectory(SIMULATIONS, simulationId);
+		FileUtils.checkAndCreateDirectory(SIMULATIONS + "/" + simulationId + "/MOPs");
+		FileUtils.checkAndCreateDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data");
+		FileUtils.appendToFile(SIMULATIONS + "/" + simulationId + "/simulation_data/report.txt", "ID symulacji: " + simulationId);
+		log.info("Simulation id: " + simulationId);	
+	}
+	
+	protected MOPSimConfigGroup getMOPSimConfigGroup() {
+		return confGroup;
+	}
+	
+	//Auxiliary logging methods
+	protected static void logStart(MOPSimConfigGroup confGroup) {
 		log.info("STARTING MOPSIM");
-		log.info("###################");
-		
+		log.info("###################");		
 		log.info("CONFIG PATHS:");
 		log.info("Config path: " + CONFIG_PATH);
 		log.info("Travel plan file path: " + TRAVEL_PATH);
 		log.info("Facilities file path: " + FACILITY_PATH);
 		log.info("Facility attributes path: " + FACILITY_ATTRIBUTES_PATH);
-		
 		log.info("Travel matrices paths: ");
-		log.info("Car: " + CAR_PATH);
-		log.info("Bus: " + BUS_PATH);
-		log.info("Truck: " + TRUCK_PATH);
-		
-		log.info("MOP data path: " + MOP_DATA);
+		log.info("Car: " + confGroup.getCarPath());
+		log.info("Bus: " + confGroup.getBusPath());
+		log.info("Truck: " + confGroup.getTruckPath());	
+		log.info("MOP data path: " + confGroup.getMopData());
 		log.info("###################");
 	}
 	
-	private static void logEnd() {
+	protected static void logSimulationEnd() {
 		log.info("###################");
 		log.info("SIMULATION FINISHED");
+		log.info("###################");
 	}
+	protected static void logEnd(String simulationId) {
+		log.info("###################");
+		log.info("Simulation id: " + simulationId);
+		log.info("MOPSIM FINISHED");
+		log.info("###################");
+	}
+	
 }

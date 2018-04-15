@@ -21,11 +21,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="6" x="727651.437349 " y="582349.2864">
+<facility id="6" x="727651.437349 " y="582349.286400">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="7" x="476222.91 " y="640470.1">
+<facility id="7" x="476222.91 " y="640470.10">
 <activity type="rest">
 </activity>
 </facility>
@@ -53,7 +53,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="14" x="482734.8 " y="586496">
+<facility id="14" x="482734.80 " y="586496.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -93,7 +93,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="24" x="501015.26 " y="522367.9">
+<facility id="24" x="501015.26 " y="522367.90">
 <activity type="rest">
 </activity>
 </facility>
@@ -129,7 +129,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="33" x="487112.51 " y="715386.4">
+<facility id="33" x="487112.51 " y="715386.40">
 <activity type="rest">
 </activity>
 </facility>
@@ -141,7 +141,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="36" x="481912.9 " y="278333.17">
+<facility id="36" x="481912.90 " y="278333.17">
 <activity type="rest">
 </activity>
 </facility>
@@ -153,7 +153,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="39" x="478799 " y="258717.13">
+<facility id="39" x="478799.00 " y="258717.13">
 <activity type="rest">
 </activity>
 </facility>
@@ -165,7 +165,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="42" x="465129.01 " y="232395.8">
+<facility id="42" x="465129.01 " y="232395.80">
 <activity type="rest">
 </activity>
 </facility>
@@ -173,7 +173,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="44" x="456941.48 " y="284230.2">
+<facility id="44" x="456941.48 " y="284230.20">
 <activity type="rest">
 </activity>
 </facility>
@@ -185,35 +185,35 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="47" x="491766 " y="264904">
+<facility id="47" x="491766.00 " y="264904.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="48" x="491413 " y="265028">
+<facility id="48" x="491413.00 " y="265028.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="49" x="521097 " y="253513">
+<facility id="49" x="521097.00 " y="253513.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="50" x="521611 " y="253503">
+<facility id="50" x="521611.00 " y="253503.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="51" x="515541 " y="269546">
+<facility id="51" x="515541.00 " y="269546.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="52" x="507731 " y="253372">
+<facility id="52" x="507731.00 " y="253372.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="53" x="513889 " y="266791">
+<facility id="53" x="513889.00 " y="266791.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="54" x="507485 " y="253111">
+<facility id="54" x="507485.00 " y="253111.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -221,27 +221,27 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="56" x="491893 " y="215293">
+<facility id="56" x="491893.00 " y="215293.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="57" x="487976 " y="214207">
+<facility id="57" x="487976.00 " y="214207.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="58" x="478707 " y="210936">
+<facility id="58" x="478707.00 " y="210936.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="59" x="478266 " y="210891">
+<facility id="59" x="478266.00 " y="210891.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="60" x="475119 " y="211017">
+<facility id="60" x="475119.00 " y="211017.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="61" x="474774 " y="211003">
+<facility id="61" x="474774.00 " y="211003.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -277,7 +277,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="70" x="555287.1 " y="246296.49">
+<facility id="70" x="555287.10 " y="246296.49">
 <activity type="rest">
 </activity>
 </facility>
@@ -313,7 +313,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="79" x="726113.9 " y="396387.68">
+<facility id="79" x="726113.90 " y="396387.68">
 <activity type="rest">
 </activity>
 </facility>
@@ -333,7 +333,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="84" x="537343 " y="460095.81">
+<facility id="84" x="537343.00 " y="460095.81">
 <activity type="rest">
 </activity>
 </facility>
@@ -357,11 +357,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="90" x="491487.62 " y="463255.2">
+<facility id="90" x="491487.62 " y="463255.20">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="91" x="512389.44 " y="453111.7">
+<facility id="91" x="512389.44 " y="453111.70">
 <activity type="rest">
 </activity>
 </facility>
@@ -409,11 +409,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="103" x="466716.71 " y="387773.7">
+<facility id="103" x="466716.71 " y="387773.70">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="104" x="466946.06 " y="388068.8">
+<facility id="104" x="466946.06 " y="388068.80">
 <activity type="rest">
 </activity>
 </facility>
@@ -421,7 +421,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="106" x="478883.98 " y="407074.5">
+<facility id="106" x="478883.98 " y="407074.50">
 <activity type="rest">
 </activity>
 </facility>
@@ -457,7 +457,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="115" x="590779.2 " y="440059.69">
+<facility id="115" x="590779.20 " y="440059.69">
 <activity type="rest">
 </activity>
 </facility>
@@ -485,7 +485,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="122" x="563176.3 " y="405919.8">
+<facility id="122" x="563176.30 " y="405919.80">
 <activity type="rest">
 </activity>
 </facility>
@@ -573,7 +573,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="144" x="548219.6 " y="669670.06">
+<facility id="144" x="548219.60 " y="669670.06">
 <activity type="rest">
 </activity>
 </facility>
@@ -585,19 +585,19 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="147" x="552050.2 " y="660034.51">
+<facility id="147" x="552050.20 " y="660034.51">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="148" x="568827.66 " y="642351.6">
+<facility id="148" x="568827.66 " y="642351.60">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="149" x="569140.35 " y="641911.1">
+<facility id="149" x="569140.35 " y="641911.10">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="150" x="586294 " y="628174.1">
+<facility id="150" x="586294.00 " y="628174.10">
 <activity type="rest">
 </activity>
 </facility>
@@ -605,11 +605,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="152" x="588843.9 " y="617303.5">
+<facility id="152" x="588843.90 " y="617303.50">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="153" x="387917.54 " y="323356.8">
+<facility id="153" x="387917.54 " y="323356.80">
 <activity type="rest">
 </activity>
 </facility>
@@ -617,7 +617,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="155" x="405254.6 " y="312847.27">
+<facility id="155" x="405254.60 " y="312847.27">
 <activity type="rest">
 </activity>
 </facility>
@@ -633,19 +633,19 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="159" x="440630.3 " y="288678.89">
+<facility id="159" x="440630.30 " y="288678.89">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="160" x="440335.97 " y="288669.5">
+<facility id="160" x="440335.97 " y="288669.50">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="161" x="308746.2 " y="503913.78">
+<facility id="161" x="308746.20 " y="503913.78">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="162" x="308746.2 " y="503913.78">
+<facility id="162" x="308746.20 " y="503913.78">
 <activity type="rest">
 </activity>
 </facility>
@@ -665,11 +665,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="167" x="370053.2 " y="497549.74">
+<facility id="167" x="370053.20 " y="497549.74">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="168" x="370053.2 " y="497549.74">
+<facility id="168" x="370053.20 " y="497549.74">
 <activity type="rest">
 </activity>
 </facility>
@@ -697,11 +697,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="175" x="440047.53 " y="479648">
+<facility id="175" x="440047.53 " y="479648.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="176" x="440047.53 " y="479648">
+<facility id="176" x="440047.53 " y="479648.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -713,11 +713,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="179" x="462853.34 " y="476399.7">
+<facility id="179" x="462853.34 " y="476399.70">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="180" x="462853.34 " y="476399.7">
+<facility id="180" x="462853.34 " y="476399.70">
 <activity type="rest">
 </activity>
 </facility>
@@ -737,11 +737,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="185" x="396330.08 " y="516838.7">
+<facility id="185" x="396330.08 " y="516838.70">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="186" x="396330.08 " y="516838.7">
+<facility id="186" x="396330.08 " y="516838.70">
 <activity type="rest">
 </activity>
 </facility>
@@ -753,11 +753,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="189" x="377604.15 " y="501387">
+<facility id="189" x="377604.15 " y="501387.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="190" x="377604.15 " y="501387">
+<facility id="190" x="377604.15 " y="501387.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -809,19 +809,19 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="203" x="679831 " y="250684">
+<facility id="203" x="679831.00 " y="250684.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="204" x="680337 " y="250862">
+<facility id="204" x="680337.00 " y="250862.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="205" x="703123 " y="253133">
+<facility id="205" x="703123.00 " y="253133.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="206" x="703600 " y="253048">
+<facility id="206" x="703600.00 " y="253048.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -913,7 +913,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="229" x="472757.3 " y="600223">
+<facility id="229" x="472757.30 " y="600223.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -945,7 +945,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="237" x="627412.2 " y="446211.61">
+<facility id="237" x="627412.20 " y="446211.61">
 <activity type="rest">
 </activity>
 </facility>
@@ -953,11 +953,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="239" x="629300.4 " y="442479.92">
+<facility id="239" x="629300.40 " y="442479.92">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="240" x="631763.15 " y="432883.3">
+<facility id="240" x="631763.15 " y="432883.30">
 <activity type="rest">
 </activity>
 </facility>
@@ -969,11 +969,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="243" x="633552.4 " y="426973.05">
+<facility id="243" x="633552.40 " y="426973.05">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="244" x="627412.2 " y="446211.61">
+<facility id="244" x="627412.20 " y="446211.61">
 <activity type="rest">
 </activity>
 </facility>
@@ -1005,7 +1005,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="252" x="609131.7 " y="460921.02">
+<facility id="252" x="609131.70 " y="460921.02">
 <activity type="rest">
 </activity>
 </facility>
@@ -1045,11 +1045,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="262" x="377182 " y="332304">
+<facility id="262" x="377182.00 " y="332304.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="263" x="376980 " y="332418">
+<facility id="263" x="376980.00 " y="332418.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -1061,35 +1061,35 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="266" x="364899 " y="345157">
+<facility id="266" x="364899.00 " y="345157.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="267" x="365136 " y="344883">
+<facility id="267" x="365136.00 " y="344883.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="268" x="374190.4 " y="374747.4">
+<facility id="268" x="374190.40 " y="374747.40">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="269" x="374981.1 " y="374799.4">
+<facility id="269" x="374981.10 " y="374799.40">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="270" x="395052.3 " y="375736.6">
+<facility id="270" x="395052.30 " y="375736.60">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="271" x="395506.9 " y="376055.2">
+<facility id="271" x="395506.90 " y="376055.20">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="272" x="411501.3 " y="381596.4">
+<facility id="272" x="411501.30 " y="381596.40">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="273" x="412465.5 " y="381896.5">
+<facility id="273" x="412465.50 " y="381896.50">
 <activity type="rest">
 </activity>
 </facility>
@@ -1101,7 +1101,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="276" x="288797.41 " y="377099.5">
+<facility id="276" x="288797.41 " y="377099.50">
 <activity type="rest">
 </activity>
 </facility>
@@ -1113,7 +1113,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="279" x="204063.91 " y="504274.7">
+<facility id="279" x="204063.91 " y="504274.70">
 <activity type="rest">
 </activity>
 </facility>
@@ -1125,7 +1125,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="282" x="238809.78 " y="502473.3">
+<facility id="282" x="238809.78 " y="502473.30">
 <activity type="rest">
 </activity>
 </facility>
@@ -1137,11 +1137,11 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="285" x="238339 " y="553953">
+<facility id="285" x="238339.00 " y="553953.00">
 <activity type="rest">
 </activity>
 </facility>
-<facility id="286" x="238438 " y="553706">
+<facility id="286" x="238438.00 " y="553706.00">
 <activity type="rest">
 </activity>
 </facility>
@@ -1161,7 +1161,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="291" x="265314.5 " y="454363.31">
+<facility id="291" x="265314.50 " y="454363.31">
 <activity type="rest">
 </activity>
 </facility>
@@ -1169,7 +1169,7 @@
 <activity type="rest">
 </activity>
 </facility>
-<facility id="293" x="211572 " y="428404">
+<facility id="293" x="211572.00 " y="428404.00">
 <activity type="rest">
 </activity>
 </facility>
