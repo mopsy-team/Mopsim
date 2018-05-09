@@ -102,12 +102,6 @@ public class MOPHandler {
 		FileUtils.createUniqueDirectory(simDirPath, id.toString() + " (" + town + ")/");
 		MOP mop = new MOP(mopId, linkId, carLimit, truckLimit, busLimit, 
 				simDirPath, town, name);
-		if (linkId.toString().equals("78266")) { //TODO fix these mops
-		System.out.println(mop.getId() + ", " + town + ", " + name);
-	}
-	if (linkId.toString().equals("75382")) {
-		System.out.println(mop.getId() + ", " + town + ", " + name);
-	}
 		mops.put(linkId, mop);
 	}
 	
