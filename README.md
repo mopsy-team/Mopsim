@@ -19,4 +19,4 @@ To run:
 To configure:
 Edit ```src/main/CONF/config.xml``` file.
 
-Expect output data in src/main/SIMULATIONS directory.
+Expect output data in ```src/main/SIMULATIONS directory.```
