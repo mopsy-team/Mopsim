@@ -1,4 +1,3 @@
 *.class
-output/
-mop_plots/
-SIMULATIONS/
+src/main/SIMULATIONS/
+target

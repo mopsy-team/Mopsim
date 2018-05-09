@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd">
+<config>
+
+	<module name="global">
+		<param name="randomSeed" value="4711" />
+		<param name="coordinateSystem" value="EPSG:21781" />
+	</module>
+	<module name="network">
+		<param name="inputNetworkFile" value="poland_network.xml" />
+	</module>
+
+	<module name="plans">
+		<param name="inputPlansFile" value="travel_plan.xml" />
+	</module>
+
+	<module name="controler">
+		<param name="outputDirectory" value="./output" />
+		<param name="firstIteration" value="0" />
+		<param name="lastIteration" value="1" />
+		<param name="overwriteFiles" value="deleteDirectoryIfExists" />
+	</module>
+
+	<module name="qsim">
+		<!-- "start/endTime" of MobSim (00:00:00 == take earliest activity time/ run as long as active vehicles exist) -->
+		<param name="startTime" value="00:00:00" />
+		<param name="endTime" value="00:00:00" />
+		<param name="numberOfThreads" value="6" />
+		<param name = "snapshotperiod"	value = "00:00:00"/>
+	</module>
+
+	<module name="planCalcScore">
+		<param name="learningRate" value="1.0" />
+		<param name="BrainExpBeta" value="2.0" />
+
+		<param name="lateArrival" value="-18" />
+		<param name="earlyDeparture" value="-0" />
+		<param name="performing" value="+6" />
+		<param name="traveling" value="-6" />
+		<param name="waiting" value="-0" />
+
+		<param name="activityType_0"            value="h" /> <!-- home -->
+		<param name="activityPriority_0"        value="1" />
+		<param name="activityTypicalDuration_0" value="12:00:00" />
+		<param name="activityMinimalDuration_0" value="00:00:00" />
+
+		<param name="activityType_1"            value="w" /> <!-- work -->
+		<param name="activityPriority_1"        value="1" />
+		<param name="activityTypicalDuration_1" value="08:00:00" />
+		<param name="activityMinimalDuration_1" value="00:00:00" />
+
+		<param name="activityType_2"            value="rest" /> <!-- mop stay -->
+		<param name="activityPriority_2"        value="1" />
+		<param name="activityTypicalDuration_2" value="00:40:00" />
+		<param name="activityMinimalDuration_2" value="00:00:00" />
+	</module>
+
+	<module name="facilities" >
+            	<param name="inputFacilitiesFile" value="facilities.xml" />
+		<param name="inputCRS" value="EPSG:2180" />
+		<param name="inputFacilityAttributesFile" value="facilities_attributes.xml"/>
+
+        </module>
+
+	<module name="strategy">
+		<param name="maxAgentPlanMemorySize" value="5" /> <!-- 0 means unlimited -->
+
+		<param name="ModuleProbability_1" value="0.9" />
+		<param name="Module_1" value="BestScore" />
+
+		<param name="ModuleProbability_2" value="0.1" />
+		<param name="Module_2" value="ReRoute" />
+	</module>
+	
+	<!-- mopsim configuration - for default values see MOPSimConfigGroup-->
+	<module name="mopsim">
+		<param name="carNr" value="3500" />
+		<param name="truckNr" value="1520" />
+		<param name="busNr" value="1325" />
+		<param name="carPath" value="src/main/resources/travel_matrices/car_matrix.csv" /><!--default-->
+		<param name="busPath" value="src/main/resources/travel_matrices/bus_matrix.csv" /><!--default-->
+		<param name="truckPath" value="src/main/resources/travel_matrices/truck_matrix.csv" /><!--default-->
+		<param name="mopData" value="src/main/resources/mop_data/mop_data.csv" /><!--default-->
+	</module>
+
+</config>

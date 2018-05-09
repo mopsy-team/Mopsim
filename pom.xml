@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>mopsim</groupId>
+    <artifactId>mopsim</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>MOPSimRun</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+	<dependency>
+    		<groupId>log4j</groupId>
+    		<artifactId>log4j</artifactId>
+    		<version>1.2.17</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-math3</artifactId>
+	    <version>3.6.1</version>
+	</dependency>
+        <dependency>
+            <groupId>org.matsim</groupId>
+            <artifactId>matsim</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+	<repository>
+            <id>central</id>
+            <name>jcenter</name>
+            <url>http://jcenter.bintray.com</url>
+	</repository>
+        <repository>
+            <id>matsim</id>
+            <name>MATSim release repository</name>
+            <url>http://dl.bintray.com/matsim/matsim</url>
+        </repository>
+    </repositories>
+
+</project>
