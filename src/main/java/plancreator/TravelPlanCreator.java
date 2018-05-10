@@ -4,6 +4,8 @@ import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
 import org.apache.log4j.Logger;
 
+import strategies.BasicDistribution;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.PrintWriter;
@@ -27,6 +29,7 @@ public class TravelPlanCreator {
     private static final String TOWN_COORDINATES_PATH = "src/main/resources/town_coordinates/town_coordinates.csv";
 
     private static Pair<String, String> countyTowns[];
+    private static BasicDistribution basicDistribution = new BasicDistribution();
     
     private static final Logger log = Logger.getLogger(TravelPlanCreator.class);
     
@@ -155,15 +158,14 @@ public class TravelPlanCreator {
         Pair<Integer, Integer>[] results = new Pair[vehiclesNumber];
         distribution.sample(vehiclesNumber, results);
 
-
         for (int i = 0; i < results.length; i++) {
             int sourceTown = results[i].getFirst();
             int targetTown = results[i].getSecond();
             int id = i + 1 + idModifier;
 
-            Random random = new Random();
-            int endHour = 3 + random.nextInt(15);
-            int endMinute = random.nextInt(60);
+            Pair<Integer, Integer> nextHour = basicDistribution.nextHour(vehicleType);
+            int endHour = nextHour.getFirst();
+            int endMinute = nextHour.getSecond();
 
             writer.print(agentPlan(id, sourceTown, targetTown, vehicleType, endHour, endMinute));
         }
