@@ -106,7 +106,7 @@ public class MOPSimulator {
 		String reportPath = SIMULATIONS + "/" + simulationId + "/simulation_data/report.txt";
 		FileUtils.appendToFile(reportPath, "ID symulacji: " + simulationId + "\n");
 		FileUtils.appendToFile(reportPath, "Liczba samochodów w symulacji: " + confGroup.getCarNr() + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba autobusów w symulacji: " + confGroup.getTruckNr() + "\n");
+		FileUtils.appendToFile(reportPath, "Liczba autobusów w symulacji: " + confGroup.getBusNr() + "\n");
 		FileUtils.appendToFile(reportPath, "Liczba pojazdów ciężarowych w symulacji: " + confGroup.getTruckNr() + "\n");
 		log.info("Simulation id: " + simulationId);	
 	}
