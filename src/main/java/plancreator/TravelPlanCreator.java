@@ -4,15 +4,13 @@ import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
 import org.apache.log4j.Logger;
 
-import strategies.BasicDistribution;
+import strategies.time_distribution.TimeDistribution;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 public class TravelPlanCreator {
 
     private static final int COUNTY_NUMBER = 379;
@@ -29,7 +27,6 @@ public class TravelPlanCreator {
     private static final String TOWN_COORDINATES_PATH = "src/main/resources/town_coordinates/town_coordinates.csv";
 
     private static Pair<String, String> countyTowns[];
-    private static BasicDistribution basicDistribution = new BasicDistribution();
     
     private static final Logger log = Logger.getLogger(TravelPlanCreator.class);
     
@@ -37,29 +34,32 @@ public class TravelPlanCreator {
                                   final String truckMatrixPath,
                                   final String busMatrixPath,
                                   int carNr, int truckNr, int busNr,
-                                  final String outputFilepath) {
+                                  final String outputFilepath, 
+                                  TimeDistribution timeDistribution) {
         if (carNr < 0 || truckNr < 0 || busNr < 0) {
             log.error("Vehicle number cannot be negative");
             return;
         }
         createPlanHelper(carMatrixPath, truckMatrixPath, busMatrixPath,
-                carNr, truckNr, busNr, outputFilepath, true);
+                carNr, truckNr, busNr, outputFilepath, true, timeDistribution);
     }
 
 
     public static void createPlan(final String carMatrixPath,
                                   final String truckMatrixPath,
                                   final String busMatrixPath,
-                                  final String outputFilepath) {
+                                  final String outputFilepath,
+                                  TimeDistribution timeDistribution) {
         createPlanHelper(carMatrixPath, truckMatrixPath, busMatrixPath,
-                0, 0, 0, outputFilepath, false);
+                0, 0, 0, outputFilepath, false, timeDistribution);
     }
 
     private static void createPlanHelper(final String carMatrixPath,
                                          final String truckMatrixPath,
                                          final String busMatrixPath,
                                          int carNr, int truckNr, int busNr,
-                                         final String outputFilepath, boolean withNumbers) {
+                                         final String outputFilepath, boolean withNumbers,
+                                         TimeDistribution timeDistribution) {
     	log.info("Creating travel plan.");
     	
     	setCountyTownsCoordinates();
@@ -73,11 +73,11 @@ public class TravelPlanCreator {
         writer.printf(HEADER);
         
         log.info("Adding cars.");
-        addPlansFromFile(writer, CAR, carMatrixPath, carNr, withNumbers, 0);
+        addPlansFromFile(writer, CAR, carMatrixPath, carNr, withNumbers, 0, timeDistribution);
         log.info("Adding trucks.");
-        addPlansFromFile(writer, TRUCK, truckMatrixPath, truckNr, withNumbers, carNr);
+        addPlansFromFile(writer, TRUCK, truckMatrixPath, truckNr, withNumbers, carNr, timeDistribution);
         log.info("Adding buses.");
-        addPlansFromFile(writer, BUS, busMatrixPath, busNr, withNumbers, carNr + truckNr);
+        addPlansFromFile(writer, BUS, busMatrixPath, busNr, withNumbers, carNr + truckNr, timeDistribution);
 
         writer.printf(FOOTER);
         log.info("Travel plan created.");
@@ -136,7 +136,8 @@ public class TravelPlanCreator {
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
 	private static void addPlansFromFile(PrintWriter writer, String vehicleType, String inputFilepath,
-                                         int vehiclesNumber, boolean withNumbers, int idModifier) {
+                                         int vehiclesNumber, boolean withNumbers, int idModifier,
+                                         TimeDistribution timeDistribution) {
 
         Double travelMatrix[][] = new Double[COUNTY_NUMBER][COUNTY_NUMBER];
         Double sum = countSumAndCreateMatrix(travelMatrix, inputFilepath);
@@ -149,11 +150,14 @@ public class TravelPlanCreator {
         }
 
         List<Pair<Pair<Integer, Integer>, Double>> probability_distribution = new ArrayList<>();
+        Double sum_matrix = 0.;
         for (int r = 0; r < COUNTY_NUMBER; r++) {
             for (int c = 0; c < COUNTY_NUMBER; c++) {
+            	sum_matrix += travelMatrix[r][c];
                 probability_distribution.add(Pair.create(Pair.create(r, c), travelMatrix[r][c]));
             }
         }
+        
         EnumeratedDistribution distribution = new EnumeratedDistribution(probability_distribution);
         Pair<Integer, Integer>[] results = new Pair[vehiclesNumber];
         distribution.sample(vehiclesNumber, results);
@@ -163,7 +167,7 @@ public class TravelPlanCreator {
             int targetTown = results[i].getSecond();
             int id = i + 1 + idModifier;
 
-            Pair<Integer, Integer> nextHour = basicDistribution.nextHour(vehicleType);
+            Pair<Integer, Integer> nextHour = timeDistribution.nextHour(vehicleType);
             int endHour = nextHour.getFirst();
             int endMinute = nextHour.getSecond();
 

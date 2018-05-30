@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.population.Activity;
@@ -29,13 +29,12 @@ import org.matsim.core.mobsim.qsim.interfaces.NetsimLink;
 import org.matsim.core.population.routes.LinkNetworkRouteImpl;
 import org.matsim.core.population.routes.NetworkRoute;
 import org.matsim.core.population.routes.RouteUtils;
-//import org.matsim.core.router.FacilityWrapperActivity;
 import org.matsim.vehicles.Vehicle;
 
+import config_group.MOPSimConfigGroup;
 import handlers.MOPHandler;
-import strategies.BasicStrategy;
-import strategies.MOPEnterStrategy;
-import strategies.TruckStrategy;
+import strategies.mop_enter.MOPEnterStrategy;
+import strategies.mop_stay.MOPStayStrategy;
 
 /*
  * Class implementing MobsimBeforeSimStepListener.
@@ -45,30 +44,28 @@ import strategies.TruckStrategy;
  */
 public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 	
-	private final double MOP_STAY_TIME = 2400; //TODO or maybe this should be somehow calculated?
 	private final String CAR = "car";
 	private final String TRUCK = "truck";
 	private final String BUS = "bus";
 	
 	private MOPHandler mopHandler;
 	
-	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
+//	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
 	//MOP Enter strategies for each vehicle type.
 	HashMap<String, MOPEnterStrategy> strategies;
-	
+	HashMap<String, MOPStayStrategy> stayStrategies;
 //	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
 	
-	public MOPBeforeSimStepListener(MOPHandler mopHandler, MOPEnterStrategy carStrategy,
-			MOPEnterStrategy truckStrategy, MOPEnterStrategy busStrategy) {
+	public MOPBeforeSimStepListener(MOPHandler mopHandler, MOPSimConfigGroup confGroup) {
 		this.mopHandler = mopHandler;
 		this.strategies = new HashMap<>();
-		strategies.put(CAR, carStrategy);
-		strategies.put(TRUCK, truckStrategy);
-		strategies.put(BUS, busStrategy);
-	}
-	
-	public MOPBeforeSimStepListener(MOPHandler mopHandler) {
-		this(mopHandler, new BasicStrategy(), new TruckStrategy(), new TruckStrategy());
+		this.stayStrategies = new HashMap<>();
+		strategies.put(CAR, confGroup.getCarEnter());
+		strategies.put(TRUCK, confGroup.getTruckEnter());
+		strategies.put(BUS, confGroup.getBusEnter());
+		stayStrategies.put(CAR, confGroup.getCarStay());
+		stayStrategies.put(TRUCK, confGroup.getTruckStay());
+		stayStrategies.put(BUS, confGroup.getBusStay());
 	}
 	
 	@Override
@@ -132,13 +129,25 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 			return;
 		}
 		
+		String vehicleType = null;
+		if (agent.getId().toString().startsWith(CAR)) {
+			vehicleType = CAR;
+		}
+		if (agent.getId().toString().startsWith(BUS)) {
+			vehicleType = BUS;
+		}
+		if (agent.getId().toString().startsWith(TRUCK)) {
+			vehicleType = TRUCK;
+		}	
+		
 		Leg currentLeg = WithinDayAgentUtils.getModifiableCurrentLeg(agent);
 		int currentIndex = WithinDayAgentUtils.getCurrentPlanElementIndex(agent);
 		Route route = currentLeg.getRoute();
 		Activity newActivity = mobsim.getScenario().getPopulation().getFactory().createActivityFromLinkId("w", linkId) ;
-		newActivity.setMaximumDuration(MOP_STAY_TIME);
+		double mopStayTime = stayStrategies.get(vehicleType).nextStayLength(currentTime, currentLeg.getDepartureTime());
+		newActivity.setMaximumDuration(mopStayTime);
 		newActivity.setStartTime(currentTime);
-		newActivity.setEndTime(currentTime + MOP_STAY_TIME);
+		newActivity.setEndTime(currentTime + mopStayTime);
 		
 		// New routes produced from the old one by splitting in current link.
 		Route routeToMOP = ((LinkNetworkRouteImpl) route).getSubRoute(route.getStartLinkId(), linkId);
@@ -156,21 +165,21 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		futureLeg.setRoute(routeFromMOP);
 		futureLeg.setTravelTime(currentLeg.getDepartureTime() + currentLeg.getTravelTime() - currentTime);
 		currentLeg.setTravelTime(currentTime - currentLeg.getDepartureTime());
-		futureLeg.setDepartureTime(currentTime + MOP_STAY_TIME);
+		futureLeg.setDepartureTime(currentTime + mopStayTime);
+
+		
+//		These two links are problematic - agents who decided to stay here get removed... (TODO fix it)
+//		if (linkId.toString().equals("75382") || linkId.toString().equals("78266")) {
+//			log.info("Nowa trasa agenta " + agent.getId().toString() + ", " + futureLeg.getRoute().toString());
+//			log.info("Stara trasa: " + currentLeg.getRoute());
+//			log.info(currentLeg.toString());
+//		}
 
 		//Inserting new plan elements to agent's plan
 		insertMOPActivity(currentIndex, newActivity, futureLeg, plan);
 		
 		//Adding vehicle to MOP
-		if (agent.getId().toString().startsWith(CAR)) {
-			mopHandler.getMop(linkId).enterMOP(CAR, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
-		}
-		if (agent.getId().toString().startsWith(BUS)) {
-			mopHandler.getMop(linkId).enterMOP(BUS, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
-		}
-		if (agent.getId().toString().startsWith(TRUCK)) {
-			mopHandler.getMop(linkId).enterMOP(TRUCK, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
-		}	
+		mopHandler.getMop(linkId).enterMOP(vehicleType, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
 		
 		// resetting cached Values of the PersonAgent - they may have changed!
 		WithinDayAgentUtils.resetCaches(agent);

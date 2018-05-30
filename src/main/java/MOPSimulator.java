@@ -69,7 +69,7 @@ public class MOPSimulator {
 
 	public void runSimulation() {
 		contModifier.addHandler(new MOPLinkEnterEventHandler(mopHandler.getVehicleIds()));
-		contModifier.addMobsimListener(new MOPBeforeSimStepListener(mopHandler));
+		contModifier.addMobsimListener(new MOPBeforeSimStepListener(mopHandler, confGroup));
 		contModifier.addMobsimListener(new MOPAfterSimStepListener(mopHandler));
 		cont.run();
 	}
@@ -86,7 +86,7 @@ public class MOPSimulator {
 	
 	private void createTravelPlan(int nrCars, int nrTrucks, int nrBuses) {
 		TravelPlanCreator.createPlan(confGroup.getCarPath(), confGroup.getTruckPath(),
-				confGroup.getBusPath(), nrCars, nrTrucks, nrBuses, TRAVEL_PATH);
+				confGroup.getBusPath(), nrCars, nrTrucks, nrBuses, TRAVEL_PATH, confGroup.getTimeDistribution());
 	}
 	
 	public String getSimulationId() {

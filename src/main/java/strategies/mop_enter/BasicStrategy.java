@@ -3,7 +3,7 @@
  * BasicStrategy.java
  * written by: mopsy-team
  * ***********************************************************************/
-package strategies;
+package strategies.mop_enter;
 
 import java.util.Random;
 
@@ -12,13 +12,19 @@ import java.util.Random;
  */
 public final class BasicStrategy implements MOPEnterStrategy {
 	
-	final private double SEVEN_HOURS = 25200.;
+	public static final String ID = "BASIC_STRATEGY";
+	final private double NINE_HOURS = 32400.;
 	
 	@Override
 	public boolean decide(double travelTime) {
 		Random r = new Random(); 
-		Float val = r.nextFloat();
+		Double val = r.nextDouble();
 		
-		return travelTime / SEVEN_HOURS > val ;
+		return travelTime / NINE_HOURS > val ;
+	}
+
+	@Override
+	public String getIdentifier() {
+		return ID;
 	}
 }

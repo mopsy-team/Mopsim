@@ -12,7 +12,7 @@ import org.matsim.facilities.ActivityFacility;
 import org.matsim.api.core.v01.events.Event;
 public class MOPEnterEvent extends Event{
 	
-	public static final String EVENT_TYPE = "mopenter";
+	public static final String EVENT_TYPE = "mopleave";
 	public static final String ATTRIBUTE_PERSON = "person";
 	public static final String ATTRIBUTE_FACILITY = "facility";
 	public static final String ATTRIBUTE_LINK = "link";
