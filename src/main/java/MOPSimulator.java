@@ -17,7 +17,6 @@ import handlers.*;
 import plancreator.FacilityPlanCreator;
 import plancreator.TravelPlanCreator;
 import utils.FileUtils;
-import utils.TimeUtils;
 
 /*
  * Main MOPSim class.
@@ -44,15 +43,12 @@ public class MOPSimulator {
 	private static final Logger log = Logger.getLogger(MOPSimulator.class);
 	
 	public MOPSimulator() {
-		this("sim_" + TimeUtils.currentTime());
-	}
-	
-	public MOPSimulator(String simulationId) {
 
 		//Loading configuration
 		confGroup = new MOPSimConfigGroup();
 		conf = ConfigUtils.loadConfig(CONFIG_PATH, confGroup);
-		prepareSimulationDirectories(simulationId);
+		simulationId = confGroup.getSimulationId();
+		prepareSimulationDirectories();
 		//Creating travel & facilities plans
 		createPlans();
 		conf.controler().setOutputDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data/matsim_output");
@@ -77,6 +73,7 @@ public class MOPSimulator {
 	public void createStatistics() {
 		log.info("Generating MOP usage statistics.");
 		mopHandler.createMOPPLots();
+		mopHandler.addStatsToReport(SIMULATIONS + "/" + simulationId + "/simulation_data/report.txt");
 		log.info("MOP usage statistics created.");
 	}
 	
@@ -98,17 +95,32 @@ public class MOPSimulator {
 		createFacilityPlan();
 	}
 
-	private void prepareSimulationDirectories(String simulationId) {
+	private void prepareSimulationDirectories() {
 		FileUtils.checkAndCreateDirectory(SIMULATIONS);
 		this.simulationId = FileUtils.createUniqueDirectory(SIMULATIONS, simulationId);
 		FileUtils.checkAndCreateDirectory(SIMULATIONS + "/" + simulationId + "/MOPs");
 		FileUtils.checkAndCreateDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data");
 		String reportPath = SIMULATIONS + "/" + simulationId + "/simulation_data/report.txt";
-		FileUtils.appendToFile(reportPath, "ID symulacji: " + simulationId + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba samochodów w symulacji: " + confGroup.getCarNr() + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba autobusów w symulacji: " + confGroup.getBusNr() + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba pojazdów ciężarowych w symulacji: " + confGroup.getTruckNr() + "\n");
+		prepareReportFile(reportPath);
 		log.info("Simulation id: " + simulationId);	
+	}
+	
+	private void prepareReportFile(String reportPath) {
+		FileUtils.appendToFile(reportPath, "ID symulacji: " + confGroup.getSimulationId() + "\n");
+		FileUtils.appendToFile(reportPath, "Liczba samochodów w symulacji: " + confGroup.getCarNr() + "\n");
+		FileUtils.appendToFile(reportPath, "Liczba pojazdów ciężarowych w symulacji: " + confGroup.getTruckNr() + "\n");
+		FileUtils.appendToFile(reportPath, "Liczba autobusów w symulacji: " + confGroup.getBusNr() + "\n");
+		FileUtils.appendToFile(reportPath, "Macierz dla samochodów użyta w symulacji: " + confGroup.getCarPath() + "\n");
+		FileUtils.appendToFile(reportPath, "Macierz dla pojazdów ciężarowych użyta w symulacji: " + confGroup.getTruckPath() + "\n");
+		FileUtils.appendToFile(reportPath, "Macierz dla autobusów użyta w symulacji: " + confGroup.getBusPath() + "\n");
+		FileUtils.appendToFile(reportPath, "Plik z danymi o MOPach: " + confGroup.getMopData() + "\n");
+		FileUtils.appendToFile(reportPath, "Rozkład czasów wyjazdów: " + confGroup.getTimeDistribution().getIdentifier() + "\n");
+		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla samochodów: " + confGroup.getCarEnter().getIdentifier() + "\n");
+		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla pojazdów ciężarowych: " + confGroup.getTruckEnter().getIdentifier() + "\n");
+		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla autobusów: " + confGroup.getBusEnter().getIdentifier() + "\n");
+		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla samochodów: " + confGroup.getCarStay().getIdentifier() + "\n");
+		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla pojazdów ciężarowych: " + confGroup.getTruckStay().getIdentifier() + "\n");
+		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla autobusów: " + confGroup.getBusStay().getIdentifier() + "\n");
 	}
 	
 	protected MOPSimConfigGroup getMOPSimConfigGroup() {

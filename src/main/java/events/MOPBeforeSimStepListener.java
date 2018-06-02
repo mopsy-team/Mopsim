@@ -50,11 +50,10 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 	
 	private MOPHandler mopHandler;
 	
-//	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
+	//private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
 	//MOP Enter strategies for each vehicle type.
 	HashMap<String, MOPEnterStrategy> strategies;
 	HashMap<String, MOPStayStrategy> stayStrategies;
-//	private static final Logger log = Logger.getLogger(MOPBeforeSimStepListener.class);
 	
 	public MOPBeforeSimStepListener(MOPHandler mopHandler, MOPSimConfigGroup confGroup) {
 		this.mopHandler = mopHandler;
@@ -105,6 +104,7 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 						agentType = BUS;
 					}
 					
+					mopHandler.incPassingVehicles(agentType);
 					if (strategies.get(agentType).decide(travelTime) && !mopHandler.getMop(linkId).isFull(agentType)) {
 						agentsToReplan.putIfAbsent(linkId, new ArrayList<MobsimAgent>());
 						agentsToReplan.get(linkId).add(agent);
@@ -148,7 +148,6 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		newActivity.setMaximumDuration(mopStayTime);
 		newActivity.setStartTime(currentTime);
 		newActivity.setEndTime(currentTime + mopStayTime);
-		
 		// New routes produced from the old one by splitting in current link.
 		Route routeToMOP = ((LinkNetworkRouteImpl) route).getSubRoute(route.getStartLinkId(), linkId);
 		Route routeFromMOP = ((LinkNetworkRouteImpl) route).getSubRoute(linkId, route.getEndLinkId());
@@ -180,6 +179,8 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		
 		//Adding vehicle to MOP
 		mopHandler.getMop(linkId).enterMOP(vehicleType, ((int) (currentTime / 3600) % 24), newActivity.getEndTime());
+		mopHandler.incMOPEnter(vehicleType);
+		mopHandler.incStayLength(vehicleType, mopStayTime);
 		
 		// resetting cached Values of the PersonAgent - they may have changed!
 		WithinDayAgentUtils.resetCaches(agent);

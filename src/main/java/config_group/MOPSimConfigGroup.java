@@ -12,6 +12,7 @@ import strategies.mop_enter.MOPEnterStrategy;
 import strategies.mop_stay.MOPStayStrategy;
 import strategies.time_distribution.TimeDistribution;
 import utils.FileUtils;
+import utils.TimeUtils;
 
 import org.apache.log4j.Logger;
 /*
@@ -57,13 +58,22 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private MOPStayStrategy carStay = StrategyUtils.getMOPStayStrategy(CAR_STAY);
 	private MOPStayStrategy truckStay = StrategyUtils.getMOPStayStrategy(TRUCK_STAY);
 	private MOPStayStrategy busStay = StrategyUtils.getMOPStayStrategy(BUS_STAY);
+	private String simulationId = "sim_" + TimeUtils.currentTime();
 	
 	public MOPSimConfigGroup() {
 		super( GROUP_NAME );
 	}
 
-	//Setters & Getters
+	@StringGetter( "simulationId" )
+	public String getSimulationId() {
+		return simulationId;
+	}
+	@StringSetter( "simulationId" )
+	public void setSimulationId(String id) {
+		this.simulationId = id;
+	}	
 	
+	//Setters & Getters
 	@StringGetter( "carNr" )
 	public int getCarNr() {
 		return carNr;
