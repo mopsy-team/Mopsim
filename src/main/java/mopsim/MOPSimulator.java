@@ -1,4 +1,4 @@
-package mopsim;/* *********************************************************************** *
+/* *********************************************************************** *
  * project: MOPSim
  * MOPSimulator.java
  * written by: mopsy-team
@@ -9,14 +9,14 @@ import org.matsim.core.config.*;
 import org.matsim.core.scenario.*;
 import org.matsim.core.controler.*;
 
-import mopsim.config_group.MOPSimConfigGroup;
-import mopsim.events.MOPAfterSimStepListener;
-import mopsim.events.MOPBeforeSimStepListener;
-import mopsim.events.MOPLinkEnterEventHandler;
-import mopsim.handlers.*;
-import mopsim.plancreator.FacilityPlanCreator;
-import mopsim.plancreator.TravelPlanCreator;
-import mopsim.utils.FileUtils;
+import config_group.MOPSimConfigGroup;
+import events.MOPAfterSimStepListener;
+import events.MOPBeforeSimStepListener;
+import events.MOPLinkEnterEventHandler;
+import handlers.*;
+import plancreator.FacilityPlanCreator;
+import plancreator.TravelPlanCreator;
+import utils.FileUtils;
 
 /*
  * Main MOPSim class.
@@ -42,10 +42,10 @@ public class MOPSimulator {
 	private String simulationId;
 	private static final Logger log = Logger.getLogger(MOPSimulator.class);
 	
-	public MOPSimulator() {
+	public MOPSimulator(MOPSimConfigGroup confGroup) {
 
 		//Loading configuration
-		confGroup = new MOPSimConfigGroup();
+		this.confGroup = confGroup;
 		conf = ConfigUtils.loadConfig(CONFIG_PATH, confGroup);
 		simulationId = confGroup.getSimulationId();
 		prepareSimulationDirectories();
@@ -54,6 +54,7 @@ public class MOPSimulator {
 		conf.controler().setOutputDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data/matsim_output");
 		//We need just one iteration
 		conf.controler().setLastIteration(0);
+		conf.network().setInputFile(confGroup.getMapPath());
 		scen = ScenarioUtils.loadScenario(conf);
 		cont = new Controler(scen);
 		
@@ -61,6 +62,10 @@ public class MOPSimulator {
 		contModifier = new ControlerModifier(cont);
 		mopHandler = new MOPHandler(scen.getActivityFacilities().getFacilities(), scen.getNetwork(),
 				scen.getActivityFacilities().getFacilityAttributes(), SIMULATIONS + "/" + simulationId + "/MOPs");
+	}
+	
+	public MOPSimulator() {
+		this(new MOPSimConfigGroup());
 	}
 
 	public void runSimulation() {

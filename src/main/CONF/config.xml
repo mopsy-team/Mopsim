@@ -57,7 +57,7 @@
 
 	<module name="facilities" >
             	<param name="inputFacilitiesFile" value="facilities.xml" />
-		<!--<param name="inputCRS" value="EPSG:2180" />-->
+		<param name="inputCRS" value="EPSG:2180" />
 		<param name="inputFacilityAttributesFile" value="facilities_attributes.xml"/>
 
         </module>
@@ -72,15 +72,15 @@
 		<param name="Module_2" value="ReRoute" />
 	</module>
 	
-	<!-- mopsim configuration - for default values see MOPSimConfigGroup-->
+	<!-- mopsim configuration - for default values see MOPSimConfigGroup
 	<module name="mopsim">
-		<param name="carNr" value="500" />
-		<param name="truckNr" value="0" />
-		<param name="busNr" value="0" />
-		<param name="carPath" value="src/main/resources/travel_matrices/car_matrix.csv" /><!--default-->
-		<param name="busPath" value="src/main/resources/travel_matrices/bus_matrix.csv" /><!--default-->
-		<param name="truckPath" value="src/main/resources/travel_matrices/truck_matrix.csv" /><!--default-->
-		<param name="mopData" value="src/main/resources/mop_data/mop_data_switz.csv" /><!--default-->
-	</module>
+		<param name="carNr" value="10000" />
+		<param name="truckNr" value="500" />
+		<param name="busNr" value="0"/>
+		<param name="carPath" value="src/main/resources/travel_matrices/car_matrix.csv" />
+		<param name="busPath" value="src/main/resources/travel_matrices/bus_matrix.csv" />
+		<param name="truckPath" value="src/main/resources/travel_matrices/truck_matrix.csv" />
+		<param name="mopData" value="src/main/resources/mop_data/mop_data.csv" />
+	</module> -->
 
 </config>

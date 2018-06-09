@@ -3,16 +3,16 @@
  * MOPSimConfigGroup.java
  * written by: mopsy-team
  * ***********************************************************************/
-package mopsim.config_group;
+package config_group;
 
 import org.matsim.core.config.ReflectiveConfigGroup;
 
-import mopsim.strategies.StrategyUtils;
-import mopsim.strategies.mop_enter.MOPEnterStrategy;
-import mopsim.strategies.mop_stay.MOPStayStrategy;
-import mopsim.strategies.time_distribution.TimeDistribution;
-import mopsim.utils.FileUtils;
-import mopsim.utils.TimeUtils;
+import strategies.StrategyUtils;
+import strategies.mop_enter.MOPEnterStrategy;
+import strategies.mop_stay.MOPStayStrategy;
+import strategies.time_distribution.TimeDistribution;
+import utils.FileUtils;
+import utils.TimeUtils;
 
 import org.apache.log4j.Logger;
 /*
@@ -28,11 +28,12 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	public static final int DEFAULT_TRUCK_NR = 40000;
 	public static final int DEFAULT_BUS_NR = 0;
 
-	//Default travel matrices & mop coordinates paths
+	//Default travel matrices & mop coordinates paths & map path
 	private static final String TRUCK_PATH = "src/main/resources/travel_matrices/truck_matrix.csv";
 	private static final String CAR_PATH = "src/main/resources/travel_matrices/car_matrix.csv";
 	private static final String BUS_PATH = "src/main/resources/travel_matrices/bus_matrix.csv";
 	private static final String MOP_DATA = "src/main/resources/mop_data/mop_data.csv";
+	private static final String MAP_PATH = "poland_network.xml";
 	
 	//Default strategy identifiers
 	private static final String TIME_DISTRIBUTION = "BASIC_DISTRIBUTION";
@@ -51,6 +52,7 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private String carPath = CAR_PATH;
 	private String busPath = BUS_PATH;
 	private String mopData = MOP_DATA;
+	private String mapPath = MAP_PATH;
 	private TimeDistribution timeDistribution = StrategyUtils.getTimeDistribution(TIME_DISTRIBUTION);
 	private MOPEnterStrategy carEnter = StrategyUtils.getMOPEnterStrategy(CAR_ENTER);
 	private MOPEnterStrategy truckEnter = StrategyUtils.getMOPEnterStrategy(TRUCK_ENTER);
@@ -64,6 +66,7 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 		super( GROUP_NAME );
 	}
 
+	//Setters & Getters
 	@StringGetter( "simulationId" )
 	public String getSimulationId() {
 		return simulationId;
@@ -73,7 +76,15 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 		this.simulationId = id;
 	}	
 	
-	//Setters & Getters
+	@StringGetter( "mapPath" )
+	public String getMapPath() {
+		return mapPath;
+	}
+	@StringSetter( "mapPath" )
+	public void setMapPath(String id) {
+		this.mapPath = id;
+	}	
+	
 	@StringGetter( "carNr" )
 	public int getCarNr() {
 		return carNr;
