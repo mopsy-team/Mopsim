@@ -5,6 +5,8 @@
  * ***********************************************************************/
 package events;
 
+import java.util.ArrayList;
+
 //import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
@@ -36,7 +38,7 @@ public class MOPAfterSimStepListener implements MobsimAfterSimStepListener {
 			mopHandler.updateHourlyStats((int) hourlyNotifier - 1);
 		}	
 		
-		//ArrayList<MOPLeaveEvent> mopLeaveEvents = mopHandler.vehicleLeave(time);
+		ArrayList<MOPLeaveEvent> mopLeaveEvents = mopHandler.vehicleLeave(time);
 		//TODO do something with Events
 		//mopHandler.report();
 	}

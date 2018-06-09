@@ -6,6 +6,7 @@
 package handlers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -36,6 +37,13 @@ public class MOPHandler {
 	private String simDirPath;
 	private Network network;
 	private static final Logger log = Logger.getLogger(MOPHandler.class);
+	
+	//MOP usage statistics
+	private HashMap<String, Integer> mopEnterCounter;
+	private HashMap<String, Integer> passingVehiclesCounter;
+	private HashMap<String, Double> stayLength; 
+	
+	
 	public MOPHandler(Map<Id<ActivityFacility>, ? extends ActivityFacility> facilityMap, Network network,
 			ObjectAttributes attributes, String simDirPath) {
 		mops = new ConcurrentHashMap<Id<Link>, MOP>();
@@ -56,6 +64,9 @@ public class MOPHandler {
 		for (Id<Link> linkId : mops.keySet()) {
 			vehicleIds.put(linkId, new HashSet<Id<Vehicle>>());
 		}
+		mopEnterCounter = new HashMap<>();
+		passingVehiclesCounter = new HashMap<>();
+		stayLength = new HashMap<>();
 	}
 	
 	public ConcurrentMap<Id<Link>, MOP> getMops() {
@@ -130,9 +141,38 @@ public class MOPHandler {
 		}
 	}
 	
+	public void addStatsToReport(String reportPath) {
+		FileUtils.appendToFile(reportPath, "################\n");
+		FileUtils.appendToFile(reportPath, "Łączna liczba pojazdów przejeżdżających obok MOP-ów: "
+		+ passingVehiclesCounter.getOrDefault("car", 0) + ", " + passingVehiclesCounter.getOrDefault("truck", 0)
+		+ ", " + passingVehiclesCounter.getOrDefault("bus", 0) + "\n");
+		FileUtils.appendToFile(reportPath, "Łączna liczba pojazdów wjeżdżających na MOP-a: "
+		+ mopEnterCounter.getOrDefault("car", 0) + ", " + mopEnterCounter.getOrDefault("truck", 0)
+		+ ", " + mopEnterCounter.getOrDefault("bus", 0) + "\n");
+		int carTime = (int) ( mopEnterCounter.get("car") == null ? 0. : stayLength.get("car") / (60 * mopEnterCounter.get("car")));
+		int truckTime = (int) (mopEnterCounter.get("truck") == null ? 0. : stayLength.get("truck") / (60 * mopEnterCounter.get("truck")));
+		int busTime = (int) (mopEnterCounter.get("bus") == null ? 0. : stayLength.get("bus") / (60 * mopEnterCounter.get("bus")));
+		FileUtils.appendToFile(reportPath, "Średnia długość pobytu na MOP-ie (w min.): "
+		+ carTime + ", " + truckTime + ", " + busTime + "\n");
+	}
+	
 	private static Id<Link> tieMOPWithLink(Network network, Coord coord) {
 		Id<Link> idLink = NetworkUtils.getNearestLink(network, coord).getId();
 		return idLink;
 	}
 	
+	public void incMOPEnter(String type) {
+		int count = mopEnterCounter.containsKey(type) ? mopEnterCounter.get(type) : 0;
+		mopEnterCounter.put(type, ++count);
+	}
+	
+	public void incPassingVehicles(String type) {
+		int count = passingVehiclesCounter.containsKey(type) ? passingVehiclesCounter.get(type) : 0;
+		passingVehiclesCounter.put(type, ++count);
+	}
+	
+	public void incStayLength(String type, double length) {
+		double count = stayLength.containsKey(type) ? stayLength.get(type) : 0.;
+		stayLength.put(type, count + length);
+	}
 }

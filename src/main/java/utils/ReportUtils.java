@@ -76,7 +76,7 @@ public class ReportUtils {
 				+ entered.get(CAR) +  ", " + entered.get(TRUCK) + ", " + entered.get(BUS) + ".\n");
 		FileUtils.appendToFile(path, "Łączna liczba pojazdów przejeżdżających lub wjeżdżających na MOPa: "
 				+ passed.get(CAR) +  ", " + passed.get(TRUCK) + ", " + passed.get(BUS) + ".\n");
-		FileUtils.appendToFile(path, "Procentowy stosunek kierowców zjeżdżających na MOPa do wszystkich przejeżdżających obok niego: "
+		FileUtils.appendToFile(path, "Procentowy udział kierowców zjeżdżających na MOPa na danym odcinku drogi: "
 				+ ratio.get(CAR) +  "%, " + ratio.get(TRUCK) + "%, " + ratio.get(BUS) + "%.\n");		
 		FileUtils.appendToFile(path, "Średnie wykorzystanie MOPa: "
 				+ usage.get(CAR) +  "%, " + usage.get(TRUCK) + "%, " + usage.get(BUS) + "%.\n");

@@ -61,4 +61,9 @@ public class FileUtils {
 		    log.warn("Failed to append text to file " + path + ". Exception: " + e.getStackTrace());
 		}
 	}
+	
+	public static boolean checkIfExists(String path) {
+		File f = new File(path);
+		return f.exists() && !f.isDirectory();
+	}
 }
