@@ -1,3 +1,4 @@
+package mopsim;
 /* *********************************************************************** *
  * project: MOPSim
  * MOPSimulator.java
@@ -9,14 +10,14 @@ import org.matsim.core.config.*;
 import org.matsim.core.scenario.*;
 import org.matsim.core.controler.*;
 
-import config_group.MOPSimConfigGroup;
-import events.MOPAfterSimStepListener;
-import events.MOPBeforeSimStepListener;
-import events.MOPLinkEnterEventHandler;
-import handlers.*;
-import plancreator.FacilityPlanCreator;
-import plancreator.TravelPlanCreator;
-import utils.FileUtils;
+import mopsim.config_group.MOPSimConfigGroup;
+import mopsim.events.MOPAfterSimStepListener;
+import mopsim.events.MOPBeforeSimStepListener;
+import mopsim.events.MOPLinkEnterEventHandler;
+import mopsim.handlers.*;
+import mopsim.plancreator.FacilityPlanCreator;
+import mopsim.plancreator.TravelPlanCreator;
+import mopsim.utils.FileUtils;
 
 /*
  * Main MOPSim class.
