@@ -3,16 +3,16 @@
  * MOPSimConfigGroup.java
  * written by: mopsy-team
  * ***********************************************************************/
-package config_group;
+package mopsim.config_group;
 
 import org.matsim.core.config.ReflectiveConfigGroup;
 
-import strategies.StrategyUtils;
-import strategies.mop_enter.MOPEnterStrategy;
-import strategies.mop_stay.MOPStayStrategy;
-import strategies.time_distribution.TimeDistribution;
-import utils.FileUtils;
-import utils.TimeUtils;
+import mopsim.strategies.StrategyUtils;
+import mopsim.strategies.mop_enter.MOPEnterStrategy;
+import mopsim.strategies.mop_stay.MOPStayStrategy;
+import mopsim.strategies.time_distribution.TimeDistribution;
+import mopsim.utils.FileUtils;
+import mopsim.utils.TimeUtils;
 
 import org.apache.log4j.Logger;
 /*

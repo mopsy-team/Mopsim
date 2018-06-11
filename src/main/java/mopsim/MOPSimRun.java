@@ -1,4 +1,6 @@
-import config_group.MOPSimConfigGroup;
+package mopsim;
+
+import mopsim.config_group.MOPSimConfigGroup;
 
 /* *********************************************************************** *
  * project: MOPSim
