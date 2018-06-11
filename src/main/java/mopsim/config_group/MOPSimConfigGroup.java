@@ -27,6 +27,7 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	public static final int DEFAULT_CAR_NR = 100000;
 	public static final int DEFAULT_TRUCK_NR = 40000;
 	public static final int DEFAULT_BUS_NR = 0;
+	public static final int DEFAULT_THREAD_NR = 3;
 
 	//Default travel matrices & mop coordinates paths & map path
 	private static final String TRUCK_PATH = "src/main/resources/travel_matrices/truck_matrix.csv";
@@ -61,6 +62,7 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private MOPStayStrategy truckStay = StrategyUtils.getMOPStayStrategy(TRUCK_STAY);
 	private MOPStayStrategy busStay = StrategyUtils.getMOPStayStrategy(BUS_STAY);
 	private String simulationId = "sim_" + TimeUtils.currentTime();
+	private int threadNr = DEFAULT_THREAD_NR;
 	
 	public MOPSimConfigGroup() {
 		super( GROUP_NAME );
@@ -83,8 +85,22 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	@StringSetter( "mapPath" )
 	public void setMapPath(String id) {
 		this.mapPath = id;
-	}	
-	
+	}
+
+	@StringGetter( "threadNr" )
+	public int getThreadNr() {
+		return threadNr;
+	}
+	@StringSetter( "threadNr" )
+	public void setThreadNr(int threadNr) {
+		if (threadNr <= 0) {
+			log.warn("Thread number must be positive. Setting to default value.");
+			this.threadNr = DEFAULT_THREAD_NR;
+			return;
+		}
+		this.threadNr = threadNr;
+	}
+
 	@StringGetter( "carNr" )
 	public int getCarNr() {
 		return carNr;
