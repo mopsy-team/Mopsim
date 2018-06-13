@@ -27,12 +27,14 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	public static final int DEFAULT_CAR_NR = 100000;
 	public static final int DEFAULT_TRUCK_NR = 40000;
 	public static final int DEFAULT_BUS_NR = 0;
+	public static final int DEFAULT_THREAD_NR = 3;
 
-	//Default travel matrices & mop coordinates paths
+	//Default travel matrices & mop coordinates paths & map path
 	private static final String TRUCK_PATH = "src/main/resources/travel_matrices/truck_matrix.csv";
 	private static final String CAR_PATH = "src/main/resources/travel_matrices/car_matrix.csv";
 	private static final String BUS_PATH = "src/main/resources/travel_matrices/bus_matrix.csv";
 	private static final String MOP_DATA = "src/main/resources/mop_data/mop_data.csv";
+	private static final String MAP_PATH = "poland_network.xml";
 	
 	//Default strategy identifiers
 	private static final String TIME_DISTRIBUTION = "BASIC_DISTRIBUTION";
@@ -51,6 +53,7 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private String carPath = CAR_PATH;
 	private String busPath = BUS_PATH;
 	private String mopData = MOP_DATA;
+	private String mapPath = MAP_PATH;
 	private TimeDistribution timeDistribution = StrategyUtils.getTimeDistribution(TIME_DISTRIBUTION);
 	private MOPEnterStrategy carEnter = StrategyUtils.getMOPEnterStrategy(CAR_ENTER);
 	private MOPEnterStrategy truckEnter = StrategyUtils.getMOPEnterStrategy(TRUCK_ENTER);
@@ -59,11 +62,13 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private MOPStayStrategy truckStay = StrategyUtils.getMOPStayStrategy(TRUCK_STAY);
 	private MOPStayStrategy busStay = StrategyUtils.getMOPStayStrategy(BUS_STAY);
 	private String simulationId = "sim_" + TimeUtils.currentTime();
+	private int threadNr = DEFAULT_THREAD_NR;
 	
 	public MOPSimConfigGroup() {
 		super( GROUP_NAME );
 	}
 
+	//Setters & Getters
 	@StringGetter( "simulationId" )
 	public String getSimulationId() {
 		return simulationId;
@@ -73,7 +78,29 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 		this.simulationId = id;
 	}	
 	
-	//Setters & Getters
+	@StringGetter( "mapPath" )
+	public String getMapPath() {
+		return mapPath;
+	}
+	@StringSetter( "mapPath" )
+	public void setMapPath(String id) {
+		this.mapPath = id;
+	}
+
+	@StringGetter( "threadNr" )
+	public int getThreadNr() {
+		return threadNr;
+	}
+	@StringSetter( "threadNr" )
+	public void setThreadNr(int threadNr) {
+		if (threadNr <= 0) {
+			log.warn("Thread number must be positive. Setting to default value.");
+			this.threadNr = DEFAULT_THREAD_NR;
+			return;
+		}
+		this.threadNr = threadNr;
+	}
+
 	@StringGetter( "carNr" )
 	public int getCarNr() {
 		return carNr;

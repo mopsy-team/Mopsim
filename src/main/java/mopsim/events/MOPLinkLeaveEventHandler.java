@@ -18,10 +18,6 @@ public class MOPLinkLeaveEventHandler implements LinkLeaveEventHandler {
 
 	@Override
 	public void handleEvent(LinkLeaveEvent linkLeaveEvent) {
-		Id<Link> linkId = linkLeaveEvent.getLinkId(); 
-
-		if (linkId.toString().equals("78266")) {
-			log.info("Wyjezdzam z 78266.");
-		}
+		Id<Link> linkId = linkLeaveEvent.getLinkId();
 	}
 }

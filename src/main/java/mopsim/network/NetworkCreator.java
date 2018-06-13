@@ -23,10 +23,12 @@ import org.matsim.core.utils.io.OsmNetworkReader;
 public class NetworkCreator {
 
 	private final String outputFilepath;
+	private final String osmFilepath;
 	private Network network;
 	
 	public NetworkCreator(String osmFilepath, String outputFilepath) {
 		this.outputFilepath = outputFilepath;
+		this.osmFilepath = osmFilepath;
 		Config config = ConfigUtils.createConfig();
 		Scenario scenario = ScenarioUtils.createScenario(config);
 		network = scenario.getNetwork();
@@ -35,9 +37,7 @@ public class NetworkCreator {
 	/*
 	 * Loads network from osm (OpenStreetMap) file.
 	 */
-	public void loadNetworkFromOsm(String osmFilepath) {
-		//String osm = "../../mapy/poland-extract.osm";
-	
+	public void loadNetworkFromOsm() {
 		/*
 		 * The coordinate system to use. OpenStreetMAp used WGS84, we need projection to 
 		 * EPSG:21781 - CH1903_LV03
@@ -61,7 +61,6 @@ public class NetworkCreator {
 	 * Writes the network to a MATSim network xml file.
 	 */
 	public void write() {
-		//new NetworkWriter(network).write("/home/michal/Desktop/ZPP/mapy/poland_network.xml");
 		new NetworkWriter(network).write(outputFilepath);
 	}
 }

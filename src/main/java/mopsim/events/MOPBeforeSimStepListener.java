@@ -166,14 +166,6 @@ public class MOPBeforeSimStepListener implements MobsimBeforeSimStepListener{
 		currentLeg.setTravelTime(currentTime - currentLeg.getDepartureTime());
 		futureLeg.setDepartureTime(currentTime + mopStayTime);
 
-		
-//		These two links are problematic - agents who decided to stay here get removed... (TODO fix it)
-//		if (linkId.toString().equals("75382") || linkId.toString().equals("78266")) {
-//			log.info("Nowa trasa agenta " + agent.getId().toString() + ", " + futureLeg.getRoute().toString());
-//			log.info("Stara trasa: " + currentLeg.getRoute());
-//			log.info(currentLeg.toString());
-//		}
-
 		//Inserting new plan elements to agent's plan
 		insertMOPActivity(currentIndex, newActivity, futureLeg, plan);
 		

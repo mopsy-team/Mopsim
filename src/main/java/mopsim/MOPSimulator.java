@@ -1,4 +1,5 @@
-package mopsim;/* *********************************************************************** *
+package mopsim;
+/* *********************************************************************** *
  * project: MOPSim
  * MOPSimulator.java
  * written by: mopsy-team
@@ -42,18 +43,20 @@ public class MOPSimulator {
 	private String simulationId;
 	private static final Logger log = Logger.getLogger(MOPSimulator.class);
 	
-	public MOPSimulator() {
+	public MOPSimulator(MOPSimConfigGroup confGroup) {
 
 		//Loading configuration
-		confGroup = new MOPSimConfigGroup();
+		this.confGroup = confGroup;
 		conf = ConfigUtils.loadConfig(CONFIG_PATH, confGroup);
 		simulationId = confGroup.getSimulationId();
 		prepareSimulationDirectories();
 		//Creating travel & facilities plans
 		createPlans();
+		conf.qsim().setNumberOfThreads(confGroup.getThreadNr());
 		conf.controler().setOutputDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data/matsim_output");
 		//We need just one iteration
 		conf.controler().setLastIteration(0);
+		conf.network().setInputFile(confGroup.getMapPath());
 		scen = ScenarioUtils.loadScenario(conf);
 		cont = new Controler(scen);
 		
@@ -61,6 +64,10 @@ public class MOPSimulator {
 		contModifier = new ControlerModifier(cont);
 		mopHandler = new MOPHandler(scen.getActivityFacilities().getFacilities(), scen.getNetwork(),
 				scen.getActivityFacilities().getFacilityAttributes(), SIMULATIONS + "/" + simulationId + "/MOPs");
+	}
+	
+	public MOPSimulator() {
+		this(new MOPSimConfigGroup());
 	}
 
 	public void runSimulation() {

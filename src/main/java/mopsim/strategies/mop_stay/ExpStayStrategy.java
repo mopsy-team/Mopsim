@@ -12,7 +12,7 @@ import java.util.Random;
 public class ExpStayStrategy implements MOPStayStrategy {
 	
 	public static final String ID = "CAR_STAY_STRATEGY";
-	double lambda;
+	private double lambda;
 	
 	public ExpStayStrategy(double lambda) {
 		this.lambda = lambda;

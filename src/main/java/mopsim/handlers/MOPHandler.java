@@ -46,7 +46,7 @@ public class MOPHandler {
 	
 	public MOPHandler(Map<Id<ActivityFacility>, ? extends ActivityFacility> facilityMap, Network network,
 			ObjectAttributes attributes, String simDirPath) {
-		mops = new ConcurrentHashMap<Id<Link>, MOP>();
+		mops = new ConcurrentHashMap<>();
 		this.simDirPath = simDirPath;
 		this.network = network;
 		for (Id<ActivityFacility> mopId: facilityMap.keySet()) {
@@ -60,9 +60,9 @@ public class MOPHandler {
 			
 			createAndAddMOP(mopId.toString(), carLimit, truckLimit, busLimit, town, name, mop.getCoord());
 		}
-		vehicleIds = new ConcurrentHashMap<Id<Link>, HashSet<Id<Vehicle>>>();
+		vehicleIds = new ConcurrentHashMap<>();
 		for (Id<Link> linkId : mops.keySet()) {
-			vehicleIds.put(linkId, new HashSet<Id<Vehicle>>());
+			vehicleIds.put(linkId, new HashSet<>());
 		}
 		mopEnterCounter = new HashMap<>();
 		passingVehiclesCounter = new HashMap<>();
@@ -125,13 +125,6 @@ public class MOPHandler {
 			}
 		}
 		log.warn("removeMOP function failed - no MOP of such ID");
-	}
-	
-	public void report() {
-		for (MOP mop : mops.values()) {
-			System.out.print(mop.getId().toString() + ": " + mop.getCurrentCar() + ", ");
-		}
-		System.out.println();
 	}
 	
 	public void createMOPPLots() {

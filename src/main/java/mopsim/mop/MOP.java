@@ -192,7 +192,6 @@ public class MOP {
 	
 	/*
 	 * Removes from the queue vehicles which are supposed to leave.
-	 * TODO: add more info to MOPLeaveEventConstructor, 
 	 */
 	public ArrayList<MOPLeaveEvent> clearQueue(double time) throws InterruptedException {
 		ArrayList<MOPLeaveEvent> retList = new ArrayList<MOPLeaveEvent>();

@@ -150,10 +150,8 @@ public class TravelPlanCreator {
         }
 
         List<Pair<Pair<Integer, Integer>, Double>> probability_distribution = new ArrayList<>();
-        Double sum_matrix = 0.;
         for (int r = 0; r < COUNTY_NUMBER; r++) {
             for (int c = 0; c < COUNTY_NUMBER; c++) {
-            	sum_matrix += travelMatrix[r][c];
                 probability_distribution.add(Pair.create(Pair.create(r, c), travelMatrix[r][c]));
             }
         }
