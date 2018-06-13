@@ -9,7 +9,7 @@ package mopsim.strategies.mop_enter;
  */
 public interface MOPEnterStrategy {
 	
-	public abstract boolean decide(double travelTime);
+	boolean decide(double travelTime);
 	
-	public abstract String getIdentifier();
+	String getIdentifier();
 }

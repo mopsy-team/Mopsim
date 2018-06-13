@@ -12,23 +12,23 @@ import org.matsim.facilities.ActivityFacility;
 import org.matsim.api.core.v01.events.Event;
 public class MOPEnterEvent extends Event{
 	
-	public static final String EVENT_TYPE = "mopleave";
+	public static final String EVENT_TYPE = "mopenter";
 	public static final String ATTRIBUTE_PERSON = "person";
 	public static final String ATTRIBUTE_FACILITY = "facility";
 	public static final String ATTRIBUTE_LINK = "link";
-	public static final String ATTRIBUTE_ACTTYPE = "actType";
+	public static final String ATTRIBUTE_ACT_TYPE = "actType";
 	
 	private final Id<Person> personId;
 	private final Id<Link> linkId;
 	private final Id<ActivityFacility> facilityId;
-	private final String acttype;
+	private final String actType;
 	
 	public MOPEnterEvent(final double time, final Id<Person> agentId, final Id<Link> linkId, 
-			final Id<ActivityFacility> facilityId, final String acttype) {       
+			final Id<ActivityFacility> facilityId, final String actType) {
 		super(time);
 		this.linkId = linkId;
 		this.facilityId = facilityId;
-        this.acttype = acttype == null ? "" : acttype;
+        this.actType = actType == null ? "" : actType;
         this.personId = agentId;
 	}
 	
@@ -38,7 +38,7 @@ public class MOPEnterEvent extends Event{
     }
 
     public String getActType() {
-            return this.acttype;
+            return this.actType;
     }
 
     public Id<Link> getLinkId() {
@@ -63,7 +63,7 @@ public class MOPEnterEvent extends Event{
         if (this.facilityId != null) {
                 attr.put(ATTRIBUTE_FACILITY, this.facilityId.toString());
         }
-        attr.put(ATTRIBUTE_ACTTYPE, this.acttype);
+        attr.put(ATTRIBUTE_ACT_TYPE, this.actType);
         return attr;
     }
 	

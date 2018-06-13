@@ -38,9 +38,7 @@ public class MOPAfterSimStepListener implements MobsimAfterSimStepListener {
 			mopHandler.updateHourlyStats((int) hourlyNotifier - 1);
 		}	
 		
-		ArrayList<MOPLeaveEvent> mopLeaveEvents = mopHandler.vehicleLeave(time);
-		//TODO do something with Events
-		//mopHandler.report();
+		mopHandler.vehicleLeave(time);
 	}
 	
 }
