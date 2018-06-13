@@ -3,3 +3,6 @@ src/main/SIMULATIONS/
 target
 src/main/java/.classpath
 src/main/java/.project
+.idea/
+mopsim.iml
+classes/

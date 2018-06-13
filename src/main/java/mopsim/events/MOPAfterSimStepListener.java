@@ -33,7 +33,7 @@ public class MOPAfterSimStepListener implements MobsimAfterSimStepListener {
 	public void notifyMobsimAfterSimStep(@SuppressWarnings("rawtypes") MobsimAfterSimStepEvent simStepEvent) {
 		double time = simStepEvent.getSimulationTime();
 		if (time / 3600. > hourlyNotifier) {
-			log.info("Curent time: "+ hourlyNotifier + ".");
+			log.info("Current time: "+ hourlyNotifier + ".");
 			hourlyNotifier += 1.;
 			mopHandler.updateHourlyStats((int) hourlyNotifier - 1);
 		}	
