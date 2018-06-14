@@ -22,7 +22,9 @@ public class StrategyUtils {
 			return new BasicStrategy();
 		} else if (id == "RANDOM_STRATEGY") {
 			return new RandomStrategy();
-		} else if(id  == "TRUCK_STRATEGY") {
+		} else if (id == "TRUCK_STRATEGY") {
+			return new TruckStrategy();
+		} else if (id == "BUS_STRATEGY") {
 			return new TruckStrategy();
 		} else {
 			return null;
@@ -33,6 +35,8 @@ public class StrategyUtils {
 		if (id == "CAR_STAY_STRATEGY") {
 			return new ExpStayStrategy(1. / (23. * 60.));
 		} else if (id == "TRUCK_STAY_STRATEGY") {
+			return new TruckStayStrategy();
+		} else if (id == "BUS_STAY_STRATEGY") {
 			return new TruckStayStrategy();
 		} else {
 			return null;

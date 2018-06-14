@@ -13,14 +13,14 @@ import java.util.Random;
 public final class BasicStrategy implements MOPEnterStrategy {
 	
 	public static final String ID = "BASIC_STRATEGY";
-	final private double NINE_HOURS = 32400.;
+	final private double EIGHT_HOURS = 28800.;
 	
 	@Override
 	public boolean decide(double travelTime) {
 		Random r = new Random(); 
 		Double val = r.nextDouble();
 		
-		return travelTime / NINE_HOURS > val ;
+		return (travelTime - 3600) / EIGHT_HOURS > val ;
 	}
 
 	@Override

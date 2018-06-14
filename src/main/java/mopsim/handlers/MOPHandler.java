@@ -95,8 +95,6 @@ public class MOPHandler {
 	
 	public void updateHourlyStats(int time) {
 		
-		time %= 24;
-		
 		for (MOP mop : mops.values()) {
 			ArrayList<Integer> usage = mop.getCurrentUsage();
 			ArrayList<Integer> limits = mop.getLimits();;

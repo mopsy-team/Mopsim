@@ -40,10 +40,10 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private static final String TIME_DISTRIBUTION = "BASIC_DISTRIBUTION";
 	private static final String CAR_ENTER = "BASIC_STRATEGY";
 	private static final String TRUCK_ENTER = "TRUCK_STRATEGY";
-	private static final String BUS_ENTER = "TRUCK_STRATEGY";
+	private static final String BUS_ENTER = "BUS_STRATEGY";
 	private static final String CAR_STAY = "CAR_STAY_STRATEGY";
 	private static final String TRUCK_STAY = "TRUCK_STAY_STRATEGY";
-	private static final String BUS_STAY = "TRUCK_STAY_STRATEGY";
+	private static final String BUS_STAY = "BUS_STAY_STRATEGY";
 	
 	//Config group elements
 	private int carNr = DEFAULT_CAR_NR;
