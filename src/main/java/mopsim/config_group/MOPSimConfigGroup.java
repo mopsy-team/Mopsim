@@ -24,16 +24,17 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	
 	public static final String GROUP_NAME = "mopsim";
 	
-	public static final int DEFAULT_CAR_NR = 100000;
-	public static final int DEFAULT_TRUCK_NR = 40000;
-	public static final int DEFAULT_BUS_NR = 0;
-	public static final int DEFAULT_THREAD_NR = 3;
+	private static final int DEFAULT_CAR_NR = 100000;
+	private static final int DEFAULT_TRUCK_NR = 40000;
+	private static final int DEFAULT_BUS_NR = 0;
+	private static final int DEFAULT_THREAD_NR = 3;
+	private static final String DEFAULT_COOR_SYSTEM = "EPSG:4326";
 
 	//Default travel matrices & mop coordinates paths & map path
 	private static final String TRUCK_PATH = "src/main/resources/travel_matrices/truck_matrix.csv";
 	private static final String CAR_PATH = "src/main/resources/travel_matrices/car_matrix.csv";
 	private static final String BUS_PATH = "src/main/resources/travel_matrices/bus_matrix.csv";
-	private static final String MOP_DATA = "src/main/resources/mop_data/mop_data.csv";
+	private static final String MOP_DATA = "src/main/resources/mop_data/mop_data.json";
 	private static final String MAP_PATH = "poland_network.xml";
 	
 	//Default strategy identifiers
@@ -63,12 +64,22 @@ public class MOPSimConfigGroup extends ReflectiveConfigGroup {
 	private MOPStayStrategy busStay = StrategyUtils.getMOPStayStrategy(BUS_STAY);
 	private String simulationId = "sim_" + TimeUtils.currentTime();
 	private int threadNr = DEFAULT_THREAD_NR;
+	private String coordinateSystem = DEFAULT_COOR_SYSTEM;
 	
 	public MOPSimConfigGroup() {
 		super( GROUP_NAME );
 	}
 
 	//Setters & Getters
+	@StringGetter( "coordinateSystem" )
+	public String getCoordinateSystem() {
+		return coordinateSystem;
+	}
+	@StringSetter( "coordinateSystem" )
+	public void setCoordinateSystem(String system) {
+		this.coordinateSystem = system;
+	}
+
 	@StringGetter( "simulationId" )
 	public String getSimulationId() {
 		return simulationId;
