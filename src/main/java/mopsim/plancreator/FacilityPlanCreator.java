@@ -22,7 +22,7 @@ public class FacilityPlanCreator {
     
     public static void createFacilityPlan(final String inputFilepath, 
     		final String outputFilepath, final String outputAttributesFilepath) {
-    	log.info("Starting facilities plan & facilities attributes plan creation. XD");
+    	log.info("Starting facilities plan & facilities attributes plan creation.");
 
         String line;
         String csvSplitBy = ",";

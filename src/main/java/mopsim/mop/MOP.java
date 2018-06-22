@@ -38,7 +38,7 @@ public class MOP {
 	
 	/* Current MOP usage. Atomic values necessary 
 	 * to allow multithreading - it is not used in simulation
-	 * but might be useful for MOPnik communication.
+	 * but might be useful for Mopnik communication.
 	 */
 	private AtomicInteger currentCar;
 	private AtomicInteger currentBus;
@@ -175,6 +175,9 @@ public class MOP {
 	}
 	
 	public void setCurrentPercUsage(int hour, double val, String type) {
+		if (hour > 23) {
+			return;
+		}
 		hourlyUsage.get(type)[hour] = val;
 	}
 
@@ -233,7 +236,7 @@ public class MOP {
 		keys[0] = CAR;
 		keys[1] = TRUCK;
 		keys[2] = BUS;
-		
+
 		for (String key: keys) {
 			passingVehicles.put(key, new double[24]);
 			for (int i = 0; i < 24; i++) {

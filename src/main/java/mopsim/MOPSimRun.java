@@ -1,12 +1,11 @@
-package mopsim;
-
-import mopsim.config_group.MOPSimConfigGroup;
-
 /* *********************************************************************** *
  * project: MOPSim
  * MOPSimRun.java
  * written by: mopsy-team
  * ***********************************************************************/
+package mopsim;
+
+import mopsim.config_group.MOPSimConfigGroup;
 
 //MOPSim run function
 public class MOPSimRun {

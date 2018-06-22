@@ -53,6 +53,7 @@ public class MOPSimulator {
 		//Creating travel & facilities plans
 		createPlans();
 		conf.qsim().setNumberOfThreads(confGroup.getThreadNr());
+		conf.facilities().setInputCRS(confGroup.getCoordinateSystem());
 		conf.controler().setOutputDirectory(SIMULATIONS + "/" + simulationId + "/simulation_data/matsim_output");
 		//We need just one iteration
 		conf.controler().setLastIteration(0);

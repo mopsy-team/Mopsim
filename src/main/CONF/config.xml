@@ -75,8 +75,8 @@
 	
 	<!-- mopsim configuration - for default values see MOPSimConfigGroup -->
 	<module name="mopsim">
-		<param name="carNr" value="10000" />
-		<param name="truckNr" value="500" />
+		<param name="carNr" value="40000" />
+		<param name="truckNr" value="10000" />
 		<param name="busNr" value="0"/>
 		<param name="carPath" value="src/main/resources/travel_matrices/car_matrix.csv" />
 		<param name="busPath" value="src/main/resources/travel_matrices/bus_matrix.csv" />
