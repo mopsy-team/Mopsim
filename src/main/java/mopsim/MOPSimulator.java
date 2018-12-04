@@ -4,11 +4,17 @@ package mopsim;
  * MOPSimulator.java
  * written by: mopsy-team
  * ***********************************************************************/
+import mopsim.network.modifiers.NetworkModifiers;
+import mopsim.utils.NewRoadInfo;
 import org.apache.log4j.Logger;
+import org.matsim.api.core.v01.Coord;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.core.config.*;
+import org.matsim.core.network.NetworkUtils;
 import org.matsim.core.scenario.*;
 import org.matsim.core.controler.*;
+import org.matsim.api.core.v01.network.*;
+
 
 import mopsim.config_group.MOPSimConfigGroup;
 import mopsim.events.MOPAfterSimStepListener;
@@ -18,6 +24,9 @@ import mopsim.handlers.*;
 import mopsim.plancreator.FacilityPlanCreator;
 import mopsim.plancreator.TravelPlanCreator;
 import mopsim.utils.FileUtils;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /*
  * Main MOPSim class.
@@ -43,7 +52,7 @@ public class MOPSimulator {
 	private String simulationId;
 	private static final Logger log = Logger.getLogger(MOPSimulator.class);
 	
-	public MOPSimulator(MOPSimConfigGroup confGroup) {
+	public MOPSimulator(MOPSimConfigGroup confGroup, Set<NewRoadInfo> newRoads) {
 
 		//Loading configuration
 		this.confGroup = confGroup;
@@ -60,6 +69,16 @@ public class MOPSimulator {
 		conf.network().setInputFile(confGroup.getMapPath());
 		scen = ScenarioUtils.loadScenario(conf);
 		cont = new Controler(scen);
+
+		Network network = scen.getNetwork();
+
+		for (NewRoadInfo newRoad: newRoads) {
+			Node begin = NetworkUtils.getNearestNode(network, newRoad.getBegin());
+			Node end = NetworkUtils.getNearestNode(network, newRoad.getEnd());
+			NetworkModifiers.addLink(network, begin, end, newRoad.getLength(), 140., 10000, 2);
+			NetworkModifiers.addLink(network, end, begin, newRoad.getLength(), 140., 10000, 2);
+
+		}
 		
 		//Additional simulation objects
 		contModifier = new ControlerModifier(cont);
@@ -68,7 +87,7 @@ public class MOPSimulator {
 	}
 	
 	public MOPSimulator() {
-		this(new MOPSimConfigGroup());
+		this(new MOPSimConfigGroup(), new HashSet<>());
 	}
 
 	public void runSimulation() {

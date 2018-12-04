@@ -13,7 +13,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 import org.apache.log4j.Logger;
-
 /*
  * Class providing file manipulation methods.
  */
@@ -33,7 +32,7 @@ public class FileUtils {
 	
 	//If directory exists - renames new directory
 	public static String createUniqueDirectory(String path, String directoryName) {
-		String directoryPath = path + "/" + directoryName;
+		String directoryPath = Paths.get(path, directoryName).toString();
 		if (checkAndCreateDirectory(directoryPath)) {
 			return directoryName;
 		}

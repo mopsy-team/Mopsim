@@ -57,8 +57,8 @@
 
 	<module name="facilities" >
             	<param name="inputFacilitiesFile" value="facilities.xml" />
-		<!-- <param name="inputCRS" value="EPSG:2180" /> -->
-		<param name="inputCRS" value="EPSG:4326" />
+		<param name="inputCRS" value="EPSG:2180" />
+		<!-- <param name="inputCRS" value="EPSG:4326" /> -->
 		<param name="inputFacilityAttributesFile" value="facilities_attributes.xml"/>
 
         </module>
@@ -72,16 +72,17 @@
 		<param name="ModuleProbability_2" value="0.1" />
 		<param name="Module_2" value="ReRoute" />
 	</module>
-	
+
 	<!-- mopsim configuration - for default values see MOPSimConfigGroup -->
 	<module name="mopsim">
-		<param name="carNr" value="40000" />
-		<param name="truckNr" value="10000" />
+		<param name="carNr" value="4000" />
+		<param name="coordinateSystem" value="EPSG:2180" />
+		<param name="truckNr" value="1000" />
 		<param name="busNr" value="0"/>
 		<param name="carPath" value="src/main/resources/travel_matrices/car_matrix.csv" />
 		<param name="busPath" value="src/main/resources/travel_matrices/bus_matrix.csv" />
 		<param name="truckPath" value="src/main/resources/travel_matrices/truck_matrix.csv" />
-		<param name="mopData" value="src/main/resources/mop_data/mop_data.json" />
+		<param name="mopData" value="src/main/resources/mop_data/mop_data.csv" />
 	</module>
 
 </config>
