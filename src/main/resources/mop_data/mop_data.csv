@@ -52,13 +52,13 @@
 507731.00,253372.00,Lędziny,MOP II - Stacja Paliw Orlen,15,21,0
 513889.00,266791.00,Sosnowiec,MOP II - Stacja Paliw BP,15,8,0
 507485.00,253111.00,Lędziny,MOP II - Stacja Paliw Orlen,16,18,0
-494256.57,216115.29,Jasienica,"Stacja Shell, Mc Donald, Jasienica 75",50,10,0
-491893.00,215293.00,Świętoszówka,"Stacja Shell, Świętoszówka",50,6,0
-487976.00,214207.00,Pogórze,"Stacja paliw Orlen, Pogórze 25",20,20,0
-478707.00,210936.00,Ogrodzona,"MOP Ogrodzona, stacja paliw BP, Ogrodzona 166, Dębowicec",10,35,0
-478266.00,210891.00,Gumna,"MOP Gumna, stacja paliw BP, Gumna 124, Dębowiec",10,40,0
-475119.00,211017.00,Cieszyn,"MOP Cieszyn, stacja paliw ARGE ul. Graniczna 55",10,18,0
-474774.00,211003.00,Cieszyn,"MOP Cieszyn, stacja paliw ARGE ul. Graniczna 50",36,38,0
+494256.57,216115.29,Jasienica,Stacja Shell Mc Donald Jasienica 75,50,10,0
+491893.00,215293.00,Świętoszówka,Stacja Shell Świętoszówka,50,6,0
+487976.00,214207.00,Pogórze,Stacja paliw Orlen Pogórze 25,20,20,0
+478707.00,210936.00,Ogrodzona,MOP Ogrodzona stacja paliw BP Ogrodzona 166 Dębowicec,10,35,0
+478266.00,210891.00,Gumna,MOP Gumna stacja paliw BP Gumna 124 Dębowiec,10,40,0
+475119.00,211017.00,Cieszyn,MOP Cieszyn stacja paliw ARGE ul. Graniczna 55,10,18,0
+474774.00,211003.00,Cieszyn,MOP Cieszyn stacja paliw ARGE ul. Graniczna 50,36,38,0
 627448.32,353247.56,Suchedniów,MOP II Suchedniów Zachód,59,15,0
 622324.78,346791.71,Występa,MOP I Występa Zachód ,25,10,4
 604395.52,331542.15,Szewce,MOP II Szewce Wschód ,37,16,0
@@ -74,8 +74,8 @@
 635423.83,243200.86,gm. Wierzchosławice,MOP II Komorów,110,49,0
 581605.82,239454.25,Zakrzów gm Niepołomice,MOP I Zakrzów,76,39,0
 581716.95,239546.33,Podłęże gm Niepołomice,MOP I Podłęże,76,36,0
-616165.63,237982.45,gm. Brzesko,"MOP I ""Bagno""",56,28,0
-615462.63,238021.21,gm. Brzesko,"MOP I ""Mokrzyska""",56,28,0
+616165.63,237982.45,gm. Brzesko,MOP I Bagno,56,28,0
+615462.63,238021.21,gm. Brzesko,MOP I Mokrzyska,56,28,0
 726113.90,396387.68,Markuszów,MOP II Markuszów Północ,86,28,3
 725686.92,396476.93,Markuszów,MOP III Markuszów Południe,93,35,3
 533312.58,480299.09,gm. Krzyżanów,MOP II Krzyżanów Zachód,54,55,10
@@ -84,8 +84,8 @@
 537343.00,460095.81,gm. Głowno,MOP I Głowno Wschód,33,39,7
 545379.27,441841.25,gm. Nowosolna,MOP I Skoszewy Wschód,60,40,5
 545379.27,441841.25,gm. Nowosolna,MOP I Skoszewy Zachód,60,40,5
-541707.88,426396.95,"miasto Łódź gm. Brójce",MOP II Wiśniowa Góra Wschód,30,22,4
-541707.88,426396.95,"miasto Łódź gm. Brójce",MOP III Wiśniowa Góra Zachód,30,22,4
+541707.88,426396.95,miasto Łódź gm. Brójce,MOP II Wiśniowa Góra Wschód,30,22,4
+541707.88,426396.95,miasto Łódź gm. Brójce,MOP III Wiśniowa Góra Zachód,30,22,4
 491803.91,463120.32,gm. Świnice Warckie,MOP I Kozanki,35,20,20
 491487.62,463255.20,gm. Uniejów,MOP I Zaborów,28,20,20
 512389.44,453111.70,gm. Parzęczew,MOP II Chrząstów,114,26,6
@@ -115,13 +115,13 @@
 590779.20,440059.69,gm. Rawa Maz.,Parking dla ADR Przewodowice,bd,3,0
 547275.52,397486.99,Piotrków Tryb,obiekt obsługi uczestników ruchu drogowego,15,10,0
 547275.52,397486.99,Piotrków Tryb,obiekt obsługi uczestników ruchu drogowego,70,bd,15
-554227.08,399551.05,Proszenie ,"obiekt obsługi uczestników ruchu drogowego Proszenie",50,40,20
+554227.08,399551.05,Proszenie ,obiekt obsługi uczestników ruchu drogowego Proszenie,50,40,20
 560288.02,404391.68,Studzianki,obiekt obsługi uczestników ruchu drogowego,15,30,10
 560958.33,404676.05,Studzianki,obiekt obsługi uczestników ruchu drogowego,30,20,10
 561534.89,404766.68,Studzianki,obiekt obsługi uczestników ruchu drogowego,100,38,10
-563176.30,405919.80,"Jadwigów",obiekt obsługi uczestników ruchu drogowego,30,50,10
+563176.30,405919.80,Jadwigów,obiekt obsługi uczestników ruchu drogowego,30,50,10
 578191.14,420158.87,Lechów,obiekt obsługi uczestników ruchu drogowego,15,15,5
-582302.76,424336.52,"Wólka Jagielczyńska",obiekt obsługi uczestników ruchu drogowego,20,20,5
+582302.76,424336.52,Wólka Jagielczyńska,obiekt obsługi uczestników ruchu drogowego,20,20,5
 584982.32,430470.05,Podlas,obiekt obsługi uczestników ruchu drogowego,20,bd,2
 584982.32,430470.05,Podlas,obiekt obsługi uczestników ruchu drogowego,20,20,0
 595095.83,444858.87, Chrzczonowice,Parking dla ADR,bd,3,0
@@ -137,10 +137,10 @@
 581558.57,423449.85,Wólka Jagielczyńska,obiekt obsługi uczestników ruchu drogowego,15,8,2
 585050.29,430727.08,Podlas,obiekt obsługi uczestników ruchu drogowego,50,15,5
 600672.94,452253.64,Huta Zawadzka,obiekt obsługi uczestników ruchu drogowego,15,15,bd
-527103.39,697076.84,Nowe Pole,"Nowa Holandia Nowe Pole 1B, 82-310 Elbląg 2", MOP II (docelowo MOP III),80,20,5
-529586.76,696956.53,Elbląg,"Auto Kompleks Oaza ul. Bursztynowa 2, 82-310 Elbląg - Gronowo Górne MOP III",20,5,5
-532690.01,693919.42,Komorowo Żuławskie,"Stacja Paliw Lukoil Komorowo Żuławskie, 82-300 Elbląg",30,10,5
-539984.86,690539.92,Rzeczna,"BP Amazonka Rzeczna 30, 14-400 Pasłęk",13,5,0
+527103.39,697076.84,Nowe Pole,Nowa Holandia Nowe Pole 1B 82-310 Elbląg 2, MOP II (docelowo MOP III),80,20,5
+529586.76,696956.53,Elbląg,Auto Kompleks Oaza ul. Bursztynowa 2 82-310 Elbląg - Gronowo Górne MOP III,20,5,5
+532690.01,693919.42,Komorowo Żuławskie,Stacja Paliw Lukoil Komorowo Żuławskie 82-300 Elbląg,30,10,5
+539984.86,690539.92,Rzeczna,BP Amazonka Rzeczna 30 14-400 Pasłęk,13,5,0
 548219.60,669670.06,Sople,MOP II (docelowo MOP III),106,35,5
 548211.78,669143.03,Sople,MOP II,130,28,5
 551974.71,660270.81,Liksajny,MOP I (docelowo MOP II),121,17,6
@@ -148,8 +148,8 @@
 568827.66,642351.60,Grabin,MOP I,118,17,6
 569140.35,641911.10,Grabin,MOP I,118,17,6
 586294.00,628174.10,Lutek,MOP I (docelowo MOP II),38,24,3
-587620.51,624912.48,Witramowo,"Shell Witramowo 30, 11-015 Olsztynek MOP II",100,70,0
-588843.90,617303.50,Rączki,"ORLEN Rączki 34, 13-100 Nidzica",40,20,0
+587620.51,624912.48,Witramowo,Shell Witramowo 30 11-015 Olsztynek MOP II,100,70,0
+588843.90,617303.50,Rączki,ORLEN Rączki 34 13-100 Nidzica,40,20,0
 387917.54,323356.80,gm. Grodków,MOP I Wierzbnik,52,25,0
 389642.45,322005.63,gm. Olszanka,MOP I Jankowice Wielkie,53,21,0
 405254.60,312847.27,gm. Niemodlin,MOP III Młyński Staw,190,62,5
@@ -249,9 +249,9 @@
 642787.56,410388.81,ŻDŹARY,MOP,10,10,4
 602530.87,455003.07,Gurba,MOP Gurba,20,15,0
 459785.09,606105.58,Radziejowice,MOP Radziejowice,15,5,0
-609131.70,460921.02,Krze,"MOP ""Krze""",12,10,0
-614714.31,463771.91,Żabia Wola,"MOP ""Żabia Wola"" ",5,10,0
-616410.67,465096.15,Przeszkoda ,"MOP ""Przeszkoda""",10,10,0
+609131.70,460921.02,Krze,MOP Krze,12,10,0
+614714.31,463771.91,Żabia Wola,MOP Żabia Wola,5,10,0
+616410.67,465096.15,Przeszkoda,MOP Przeszkoda,10,10,0
 652718.46,510814.12,Emilianów,MOP II Emilianów ,20,20,0
 655784.32,512744.26,Małopole,MOP II Małopole,101,50,0
 657646.07,514091.39,Trojany ,MOP II Trojany ,20,20,0
@@ -282,8 +282,8 @@
 238809.78,502473.30,Sulęcin,MOP I Walewice,28,40,3
 280952.84,499093.91,Międzyrzecz,MOP II Chociszewo,93,54,3
 280539.45,498881.47,Świebodzin,MOP II Rogozieniec,93,50,3
-238339.00,553953.00,"Marwice, gm. Lubiszyn",MOP I Marwice Zachód,51,23,3
-238438.00,553706.00,"Marwice, gm. Lubiszyn",MOP I Marwice Wschód,53,23,3
+238339.00,553953.00,Marwice gm. Lubiszyn,MOP I Marwice Zachód,51,23,3
+238438.00,553706.00,Marwice gm. Lubiszyn,MOP I Marwice Wschód,53,23,3
 265456.63,525248.23,Skwierzyna,MOP I Popowa Zachód,67,30,3
 265596.08,525201.55,Skwierzyna,MOP I Popowo Wschód,67,30,3
 265703.88,479973.93,Świebodzin,MOP I Kępsko Zachód,74,36,3
