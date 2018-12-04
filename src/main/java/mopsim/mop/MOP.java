@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.nio.file.Paths;
 
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
@@ -79,7 +80,7 @@ public class MOP {
 		carQueue = new ConcurrentLinkedQueue<Double>();
 		busQueue = new ConcurrentLinkedQueue<Double>();
 		truckQueue = new ConcurrentLinkedQueue<Double>();
-		statsPath = simDirPath + "/" + id.toString() + " (" + town + ")/";
+		statsPath = Paths.get(simDirPath , id.toString() + " (" + town + ")").toString();
 		hourlyEnter = new HashMap<>();
 		hourlyUsage = new HashMap<>();
 		hourlyNotEnter = new HashMap<>();
@@ -247,14 +248,14 @@ public class MOP {
 	}
 	
 	public void createAllPlots() {
-		ReportUtils.createTimeBarPlot(statsPath + "vehicleEntering.png", 24, "Wjazdy na MOP nr " + id.toString(),
+		ReportUtils.createTimeBarPlot(Paths.get(statsPath , "vehicleEntering.png").toString(), 24, "Wjazdy na MOP nr " + id.toString(),
 				"godzina", "wjazdy", hourlyEnter);
-		ReportUtils.createTimeBarPlot(statsPath + "percentageUsage.png", 24, "Procentowe wykorzystanie MOPa nr " + id.toString(),
+		ReportUtils.createTimeBarPlot(Paths.get(statsPath, "percentageUsage.png").toString(), 24, "Procentowe wykorzystanie MOPa nr " + id.toString(),
 				"godzina", "zajęte miejsca (w proc.)", hourlyUsage);
-		ReportUtils.createTimeBarPlot(statsPath + "enterRatio.png", 24, "Stosunek liczby pojazdów wjeżdżających na MOPa nr "
+		ReportUtils.createTimeBarPlot(Paths.get(statsPath, "enterRatio.png").toString(), 24, "Stosunek liczby pojazdów wjeżdżających na MOPa nr "
 				+ id.toString() + " do łącznej liczby przejeżdżających (w proc.)",
 				"godzina", "stosunek pojazdów (w proc.)", getHourlyRatio());
-		ReportUtils.createTimeBarPlot(statsPath + "passingVehicles.png", 24, "Łączna liczba pojazdów wjeżdżających i przejażdżających obok MOPa nr "
+		ReportUtils.createTimeBarPlot(Paths.get(statsPath,"passingVehicles.png").toString(), 24, "Łączna liczba pojazdów wjeżdżających i przejażdżających obok MOPa nr "
 				+ id.toString(), "godzina", "łączna liczba pojazdów", getPassingVehicles());
 	}
 	
@@ -264,9 +265,9 @@ public class MOP {
 		HashMap<String, Double> passed = ReportUtils.countArrays(getPassingVehicles(), 24);
 		HashMap<String, Double> ratio = ReportUtils.meanArrays(getHourlyRatio(), 24);
 		
-		ReportUtils.createMOPReport(statsPath + "report.txt", id, town, name,
+		ReportUtils.createMOPReport(Paths.get(statsPath, "report.txt").toString(), id, town, name,
 				carLimit, truckLimit, busLimit, entered, passed, usage, ratio);
-		ReportUtils.createCSVReport(statsPath + "report.csv", id, town, name,
+		ReportUtils.createCSVReport(Paths.get(statsPath,"report.csv").toString(), id, town, name,
 				carLimit, truckLimit, busLimit, entered, passed, usage, ratio);
 		
 	}

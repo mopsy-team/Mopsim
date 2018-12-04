@@ -29,8 +29,8 @@ public class FacilityPlanCreator {
         PrintWriter writer = null;
         PrintWriter attrWriter = null;
         try {
-            writer = new PrintWriter(outputFilepath, "UTF-8");
-            attrWriter = new PrintWriter(outputAttributesFilepath, "UTF-8");
+            writer = new PrintWriter(outputFilepath);
+            attrWriter = new PrintWriter(outputAttributesFilepath);
         } catch (Exception e) {
             e.printStackTrace();
         }
