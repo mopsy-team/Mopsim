@@ -14,8 +14,8 @@ import java.util.Set;
 //MOPSim run function
 public class MOPSimRun {
 	
-	public static void run(MOPSimConfigGroup confGroup, Set<NewRoadInfo> newRoads) {
-		MOPSimulator mopsim = new MOPSimulator(confGroup, newRoads);
+	public static void run(MOPSimConfigGroup confGroup) {
+		MOPSimulator mopsim = new MOPSimulator(confGroup);
 		MOPSimulator.logStart(mopsim.getMOPSimConfigGroup());
 		mopsim.runSimulation();
 		MOPSimulator.logSimulationEnd();
@@ -24,6 +24,6 @@ public class MOPSimRun {
 	}
 	
 	public static void main(String[] args) {
-		run(new MOPSimConfigGroup(), Collections.emptySet());
+		run(new MOPSimConfigGroup());
 	}
 }

@@ -52,7 +52,7 @@ public class MOPSimulator {
 	private String simulationId;
 	private static final Logger log = Logger.getLogger(MOPSimulator.class);
 	
-	public MOPSimulator(MOPSimConfigGroup confGroup, Set<NewRoadInfo> newRoads) {
+	public MOPSimulator(MOPSimConfigGroup confGroup) {
 
 		//Loading configuration
 		this.confGroup = confGroup;
@@ -70,16 +70,16 @@ public class MOPSimulator {
 		scen = ScenarioUtils.loadScenario(conf);
 		cont = new Controler(scen);
 
-		Network network = scen.getNetwork();
-
-		for (NewRoadInfo newRoad: newRoads) {
-			Node begin = NetworkUtils.getNearestNode(network, newRoad.getBegin());
-			Node end = NetworkUtils.getNearestNode(network, newRoad.getEnd());
-			NetworkModifiers.addLink(network, begin, end, newRoad.getLength(), 140., 10000, 2);
-			NetworkModifiers.addLink(network, end, begin, newRoad.getLength(), 140., 10000, 2);
-
-		}
-		
+//		Network network = scen.getNetwork();
+//
+//		for (NewRoadInfo newRoad: newRoads) {
+//			Node begin = NetworkUtils.getNearestNode(network, newRoad.getBegin());
+//			Node end = NetworkUtils.getNearestNode(network, newRoad.getEnd());
+//			NetworkModifiers.addLink(network, begin, end, newRoad.getLength(), 140., 10000, 2);
+//			NetworkModifiers.addLink(network, end, begin, newRoad.getLength(), 140., 10000, 2);
+//
+//		}
+//
 		//Additional simulation objects
 		contModifier = new ControlerModifier(cont);
 		mopHandler = new MOPHandler(scen.getActivityFacilities().getFacilities(), scen.getNetwork(),
@@ -87,7 +87,7 @@ public class MOPSimulator {
 	}
 	
 	public MOPSimulator() {
-		this(new MOPSimConfigGroup(), new HashSet<>());
+		this(new MOPSimConfigGroup()/*, new HashSet<>()*/);
 	}
 
 	public void runSimulation() {
