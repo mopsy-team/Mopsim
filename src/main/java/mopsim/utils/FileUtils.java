@@ -7,6 +7,7 @@ package mopsim.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -52,9 +53,9 @@ public class FileUtils {
 			File fileCheck = new File(path);
 			Path file = Paths.get(path);
 			if (fileCheck.exists()) {
-		    	Files.write(file, text.getBytes(), StandardOpenOption.APPEND);
+		    	Files.write(file, text.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
 			} else {
-				Files.write(file, text.getBytes());
+				Files.write(file, text.getBytes(StandardCharsets.UTF_8));
 			}
 		}catch (IOException e) {
 		    log.warn("Failed to append text to file " + path + ". Exception: " + e.getStackTrace());
