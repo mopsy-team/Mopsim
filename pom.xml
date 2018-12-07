@@ -55,7 +55,7 @@
 		<artifactId>maven-jar-plugin</artifactId>
 		<configuration>
 			<archive>
-                <manifest><mopsim class="MOPSimRun"></mopsim></manifest>
+                <manifest><mainClass>mopsim.MOPSimRun</mainClass></manifest>
 			</archive>
 		</configuration>
 	</plugin>

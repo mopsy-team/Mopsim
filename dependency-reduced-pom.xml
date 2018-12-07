@@ -50,7 +50,9 @@
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
           <archive>
-            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+            <manifest>
+              <mainClass>mopsim.MOPSimRun"</mainClass>
+            </manifest>
           </archive>
         </configuration>
       </plugin>

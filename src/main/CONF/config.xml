@@ -75,7 +75,7 @@
 
 	<!-- mopsim configuration - for default values see MOPSimConfigGroup -->
 	<module name="mopsim">
-		<param name="carNr" value="4000" />
+		<param name="carNr" value="1000" />
 		<param name="coordinateSystem" value="EPSG:2180" />
 		<param name="truckNr" value="1000" />
 		<param name="busNr" value="0"/>
