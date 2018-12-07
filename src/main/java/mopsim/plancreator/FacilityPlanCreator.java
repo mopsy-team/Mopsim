@@ -13,7 +13,7 @@ public class FacilityPlanCreator {
     private static final String FACILITY_FOOT = "<activity type=\"rest\">\n</activity>\n</facility>\n";
     private static final String FOOTER = "</facilities>";
     
-    private static final String ATTRIBUTES_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
+    private static final String ATTRIBUTES_HEADER = "<?xml version=\"1.0\" ?>\n" +
     "<!DOCTYPE objectAttributes SYSTEM \"http://matsim.org/files/dtd/objectattributes_v1.dtd\">\n<objectAttributes>";
     private static final String ATTRIBUTES_FOOTER = "</objectAttributes>";
     private static final String OBJECT_FOOTER = "</object>\n";
