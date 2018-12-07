@@ -51,7 +51,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>mopsim.MOPSimRun"</mainClass>
+              <mainClass>mopsim.MOPSimRun</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -70,8 +70,4 @@
       <url>http://dl.bintray.com/matsim/matsim</url>
     </repository>
   </repositories>
-  <properties>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 </project>

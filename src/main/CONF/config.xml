@@ -75,14 +75,14 @@
 
 	<!-- mopsim configuration - for default values see MOPSimConfigGroup -->
 	<module name="mopsim">
-		<param name="carNr" value="1000" />
-		<param name="coordinateSystem" value="EPSG:2180" />
-		<param name="truckNr" value="1000" />
+		<param name="carNr" value="100" />
+		<param name="coordinateSystem" value="EPSG:4326" />
+		<param name="truckNr" value="100" />
 		<param name="busNr" value="0"/>
 		<param name="carPath" value="src/main/resources/travel_matrices/car_matrix.csv" />
 		<param name="busPath" value="src/main/resources/travel_matrices/bus_matrix.csv" />
 		<param name="truckPath" value="src/main/resources/travel_matrices/truck_matrix.csv" />
-		<param name="mopData" value="src/main/resources/mop_data/mop_data.csv" />
+		<param name="mopData" value="src/main/resources/mop_data/aba.json" />
 	</module>
 
 </config>

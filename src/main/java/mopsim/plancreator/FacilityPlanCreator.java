@@ -1,10 +1,14 @@
 package mopsim.plancreator;
 
-import java.io.*;
-import java.util.Scanner;
-
-import org.json.*;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONObject;
+
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class FacilityPlanCreator {
 
@@ -12,25 +16,25 @@ public class FacilityPlanCreator {
     private static final String FACILITY_HEAD = "<facilities name=\"mopy\" >\n";
     private static final String FACILITY_FOOT = "<activity type=\"rest\">\n</activity>\n</facility>\n";
     private static final String FOOTER = "</facilities>";
-    
-    private static final String ATTRIBUTES_HEADER = "<?xml version=\"1.0\" ?>\n" +
-    "<!DOCTYPE objectAttributes SYSTEM \"http://matsim.org/files/dtd/objectattributes_v1.dtd\">\n<objectAttributes>";
+
+    private static final String ATTRIBUTES_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+            "<!DOCTYPE objectAttributes SYSTEM \"http://matsim.org/files/dtd/objectattributes_v1.dtd\">\n<objectAttributes>";
     private static final String ATTRIBUTES_FOOTER = "</objectAttributes>";
     private static final String OBJECT_FOOTER = "</object>\n";
-    
+
     private static final Logger log = Logger.getLogger(FacilityPlanCreator.class);
-    
-    public static void createFacilityPlan(final String inputFilepath, 
-    		final String outputFilepath, final String outputAttributesFilepath) {
-    	log.info("Starting facilities plan & facilities attributes plan creation.");
+
+    public static void createFacilityPlan(final String inputFilepath,
+                                          final String outputFilepath, final String outputAttributesFilepath) throws IOException {
+        log.info("Starting facilities plan & facilities attributes plan creation.");
 
         String line;
         String csvSplitBy = ",";
         PrintWriter writer = null;
         PrintWriter attrWriter = null;
         try {
-            writer = new PrintWriter(outputFilepath);
-            attrWriter = new PrintWriter(outputAttributesFilepath);
+            writer = new PrintWriter(outputFilepath, "UTF-8");
+            attrWriter = new PrintWriter(outputAttributesFilepath, "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,7 +44,9 @@ public class FacilityPlanCreator {
         if (inputFilepath.endsWith(".json")) {
             createFacilityPlanFromJSON(writer, attrWriter, inputFilepath, outputFilepath, outputAttributesFilepath);
         } else {
-            try (BufferedReader br = new BufferedReader(new FileReader(inputFilepath))) {
+            try {
+                BufferedReader br = new BufferedReader(new InputStreamReader(
+                        new FileInputStream(inputFilepath), StandardCharsets.UTF_8));
                 int id = 1;
                 while ((line = br.readLine()) != null) {
                     String[] facility = line.split(csvSplitBy);
@@ -90,13 +96,8 @@ public class FacilityPlanCreator {
     }
 
     public static void createFacilityPlanFromJSON(PrintWriter writer, PrintWriter attrWriter, final String inputFilepath,
-                                          final String outputFilepath, final String outputAttributesFilepath) {
-        String content = null;
-        try {
-            content = new Scanner(new File(inputFilepath)).useDelimiter("\\Z").next();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+                                                  final String outputFilepath, final String outputAttributesFilepath) throws IOException {
+        String content = new String(Files.readAllBytes(Paths.get(inputFilepath)), StandardCharsets.UTF_8);
         JSONObject obj = new JSONObject(content);
         for (String key : obj.keySet()) {
             if (obj.get(key) instanceof JSONObject) {
@@ -108,8 +109,8 @@ public class FacilityPlanCreator {
                 String town, name;
                 x = coords.getDouble("longitude");
                 y = coords.getDouble("latitude");
-                town = mop.getString("town");
-                name = mop.getString("title");
+                town = mop.getString("town").replace("\n", "").replace("\r", "");
+                name = mop.getString("title").replace("\n", "").replace("\r", "");;
                 JSONObject places = (JSONObject) mop.get("available");
                 carLimit = places.getInt("car");
                 busLimit = places.getInt("bus");
@@ -138,12 +139,10 @@ public class FacilityPlanCreator {
         if (s.equals("bd")) {
             ret = 0;
             log.info("Lacking data of parking places at MOP nr " + id + ".\n Assuming 0 then.");
-        }
-        else {
+        } else {
             try {
                 ret = Integer.parseInt(s);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 ret = 0;
                 log.info("Lacking data of parking places at MOP nr " + id + ".\n Assuming 0 then.");
             }

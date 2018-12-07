@@ -3,10 +3,10 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+    <!--<properties>-->
+    <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+    <!--<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+    <!--</properties>-->
     <groupId>mopsim</groupId>
     <artifactId>mopsim</artifactId>
     <version>0.2</version>
@@ -28,72 +28,77 @@
                     <mainClass>mopsim.MOPSimRun</mainClass>
                 </configuration>
             </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>shade</goal>
-                    </goals>
-                    <configuration>
-                        <transformers>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                  <manifestEntries>
-                                      <Main-Class>mopsim.MOPSimRun</Main-Class>
-                                  </manifestEntries>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>src/main/resources/META-INF/services</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                        </transformers>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-jar-plugin</artifactId>
-		<configuration>
-			<archive>
-                <manifest><mainClass>mopsim.MOPSimRun</mainClass></manifest>
-			</archive>
-		</configuration>
-	</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>mopsim.MOPSimRun</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource>src/main/resources/META-INF/services</resource>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>mopsim.MOPSimRun</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
-	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-	<dependency>
-    		<groupId>log4j</groupId>
-    		<artifactId>log4j</artifactId>
-    		<version>1.2.17</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
-	<dependency>
-	    <groupId>org.apache.commons</groupId>
-	    <artifactId>commons-math3</artifactId>
-	    <version>3.6.1</version>
-	</dependency>
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
         <dependency>
             <groupId>org.matsim</groupId>
             <artifactId>matsim</artifactId>
             <version>0.9.0</version>
         </dependency>
-	<dependency>
-	    <groupId>org.json</groupId>
+        <dependency>
+            <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20180130</version>
-	</dependency>
+        </dependency>
     </dependencies>
     <repositories>
-	<repository>
+        <repository>
             <id>central</id>
             <name>jcenter</name>
             <url>http://jcenter.bintray.com</url>
-	</repository>
+        </repository>
         <repository>
             <id>matsim</id>
             <name>MATSim release repository</name>

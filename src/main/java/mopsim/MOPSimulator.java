@@ -25,6 +25,7 @@ import mopsim.plancreator.FacilityPlanCreator;
 import mopsim.plancreator.TravelPlanCreator;
 import mopsim.utils.FileUtils;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -105,7 +106,11 @@ public class MOPSimulator {
 	}
 	
 	private void createFacilityPlan() {
-		FacilityPlanCreator.createFacilityPlan(confGroup.getMopData(), FACILITY_PATH, FACILITY_ATTRIBUTES_PATH);
+		try {
+			FacilityPlanCreator.createFacilityPlan(confGroup.getMopData(), FACILITY_PATH, FACILITY_ATTRIBUTES_PATH);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void createTravelPlan(int nrCars, int nrTrucks, int nrBuses) {
