@@ -1,26 +1,25 @@
 package mopsim.plancreator;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class FacilityPlanCreator {
+    private static final String newline = System.lineSeparator();
 
-    private static final String HEADER = "<?xml version=\"1.0\"?>\n<!DOCTYPE facilities SYSTEM \"http://www.matsim.org/files/dtd/facilities_v1.dtd\">\n";
-    private static final String FACILITY_HEAD = "<facilities name=\"mopy\" >\n";
-    private static final String FACILITY_FOOT = "<activity type=\"rest\">\n</activity>\n</facility>\n";
+    private static final String HEADER = "<?xml version=\"1.0\"?>" + newline + "<!DOCTYPE facilities SYSTEM \"http://www.matsim.org/files/dtd/facilities_v1.dtd\">" + newline;
+    private static final String FACILITY_HEAD = "<facilities name=\"mopy\" >" + newline;
+    private static final String FACILITY_FOOT = "<activity type=\"rest\">" + newline + "</activity>" + newline + "</facility>" + newline;
     private static final String FOOTER = "</facilities>";
 
-    private static final String ATTRIBUTES_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<!DOCTYPE objectAttributes SYSTEM \"http://matsim.org/files/dtd/objectattributes_v1.dtd\">\n<objectAttributes>";
+    private static final String ATTRIBUTES_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + newline +
+            "<!DOCTYPE objectAttributes SYSTEM \"http://matsim.org/files/dtd/objectattributes_v1.dtd\">" + newline + "<objectAttributes>";
     private static final String ATTRIBUTES_FOOTER = "</objectAttributes>";
-    private static final String OBJECT_FOOTER = "</object>\n";
+    private static final String OBJECT_FOOTER = "</object>" + newline;
 
     private static final Logger log = Logger.getLogger(FacilityPlanCreator.class);
 
@@ -70,16 +69,16 @@ public class FacilityPlanCreator {
 
 
                     writer.printf("<facility id=\"%d\" " +
-                                    "x=\"%s \" " + "y=\"%s\">\n",
+                                    "x=\"%s \" " + "y=\"%s\">" + newline,
                             id, x, y);
                     writer.printf(FACILITY_FOOT);
 
-                    attrWriter.printf("<object id=\"%d\">\n" +
-                            "<attribute name=\"carLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-                            "<attribute name=\"busLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-                            "<attribute name=\"truckLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-                            "<attribute name=\"town\" class=\"java.lang.String\">%s</attribute>\n" +
-                            "<attribute name=\"name\" class=\"java.lang.String\">%s</attribute>\n" +
+                    attrWriter.printf("<object id=\"%d\">" + newline +
+                            "<attribute name=\"carLimit\" class=\"java.lang.Integer\">%d</attribute>" + newline +
+                            "<attribute name=\"busLimit\" class=\"java.lang.Integer\">%d</attribute>" + newline +
+                            "<attribute name=\"truckLimit\" class=\"java.lang.Integer\">%d</attribute>" + newline +
+                            "<attribute name=\"town\" class=\"java.lang.String\">%s</attribute>" + newline +
+                            "<attribute name=\"name\" class=\"java.lang.String\">%s</attribute>" + newline +
                             OBJECT_FOOTER, id, carLimit, busLimit, truckLimit, town, name);
                     id++;
                 }
@@ -118,16 +117,16 @@ public class FacilityPlanCreator {
 
 
                 writer.printf("<facility id=\"%d\" " +
-                                "x=\"%s \" " + "y=\"%s\">\n",
+                                "x=\"%s \" " + "y=\"%s\">" +  newline,
                         id, x, y);
                 writer.printf(FACILITY_FOOT);
 
-                attrWriter.printf("<object id=\"%d\">\n" +
-                        "<attribute name=\"carLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-                        "<attribute name=\"busLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-                        "<attribute name=\"truckLimit\" class=\"java.lang.Integer\">%d</attribute>\n" +
-                        "<attribute name=\"town\" class=\"java.lang.String\">%s</attribute>\n" +
-                        "<attribute name=\"name\" class=\"java.lang.String\">%s</attribute>\n" +
+                attrWriter.printf("<object id=\"%d\">" + newline +
+                        "<attribute name=\"carLimit\" class=\"java.lang.Integer\">%d</attribute>" + newline +
+                        "<attribute name=\"busLimit\" class=\"java.lang.Integer\">%d</attribute>" + newline +
+                        "<attribute name=\"truckLimit\" class=\"java.lang.Integer\">%d</attribute>" + newline +
+                        "<attribute name=\"town\" class=\"java.lang.String\">%s</attribute>" + newline +
+                        "<attribute name=\"name\" class=\"java.lang.String\">%s</attribute>" + newline +
                         OBJECT_FOOTER, id, carLimit, busLimit, truckLimit, town, name);
                 id++;
             }
@@ -138,13 +137,13 @@ public class FacilityPlanCreator {
         int ret;
         if (s.equals("bd")) {
             ret = 0;
-            log.info("Lacking data of parking places at MOP nr " + id + ".\n Assuming 0 then.");
+            log.info("Lacking data of parking places at MOP nr " + id + "." + newline + "Assuming 0 then.");
         } else {
             try {
                 ret = Integer.parseInt(s);
             } catch (Exception e) {
                 ret = 0;
-                log.info("Lacking data of parking places at MOP nr " + id + ".\n Assuming 0 then.");
+                log.info("Lacking data of parking places at MOP nr " + id + "." + newline + "Assuming 0 then.");
             }
         }
         return ret;

@@ -133,18 +133,19 @@ public class MOPHandler {
 	}
 	
 	public void addStatsToReport(String reportPath) {
-		FileUtils.appendToFile(reportPath, "################\n");
+		final String newline = System.lineSeparator();
+		FileUtils.appendToFile(reportPath, "################" + newline);
 		FileUtils.appendToFile(reportPath, "Łączna liczba pojazdów przejeżdżających obok MOP-ów: "
 		+ passingVehiclesCounter.getOrDefault("car", 0) + ", " + passingVehiclesCounter.getOrDefault("truck", 0)
-		+ ", " + passingVehiclesCounter.getOrDefault("bus", 0) + "\n");
+		+ ", " + passingVehiclesCounter.getOrDefault("bus", 0) + newline);
 		FileUtils.appendToFile(reportPath, "Łączna liczba pojazdów wjeżdżających na MOP-a: "
 		+ mopEnterCounter.getOrDefault("car", 0) + ", " + mopEnterCounter.getOrDefault("truck", 0)
-		+ ", " + mopEnterCounter.getOrDefault("bus", 0) + "\n");
+		+ ", " + mopEnterCounter.getOrDefault("bus", 0) + newline);
 		int carTime = (int) ( mopEnterCounter.get("car") == null ? 0. : stayLength.get("car") / (60 * mopEnterCounter.get("car")));
 		int truckTime = (int) (mopEnterCounter.get("truck") == null ? 0. : stayLength.get("truck") / (60 * mopEnterCounter.get("truck")));
 		int busTime = (int) (mopEnterCounter.get("bus") == null ? 0. : stayLength.get("bus") / (60 * mopEnterCounter.get("bus")));
 		FileUtils.appendToFile(reportPath, "Średnia długość pobytu na MOP-ie (w min.): "
-		+ carTime + ", " + truckTime + ", " + busTime + "\n");
+		+ carTime + ", " + truckTime + ", " + busTime + newline);
 	}
 	
 	private static Id<Link> tieMOPWithLink(Network network, Coord coord) {

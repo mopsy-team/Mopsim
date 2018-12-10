@@ -11,8 +11,9 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-public class TravelPlanCreator {
 
+public class TravelPlanCreator {
+    private static final String newline = System.lineSeparator();
     private static final int COUNTY_NUMBER = 379;
 
     //Types of vehicles
@@ -20,21 +21,23 @@ public class TravelPlanCreator {
     private static final String TRUCK = "truck";
     private static final String BUS = "bus";
 
-    private static final String HEADER = "<?xml version=\"1.0\"?>\n<!DOCTYPE plans SYSTEM \"http://www.matsim.org/files/dtd/plans_v4.dtd\">\n<plans>\n";
-    private static final String FOOTER = "</plans>\n";
+    private static final String HEADER = "<?xml version=\"1.0\"?>" + newline +
+            "<!DOCTYPE plans SYSTEM \"http://www.matsim.org/files/dtd/plans_v4.dtd\">" + newline +
+            "<plans>" + newline;
+    private static final String FOOTER = "</plans>" + newline;
 
     //Path to file with town coordinates
     private static final String TOWN_COORDINATES_PATH = "src/main/resources/town_coordinates/town_coordinates.csv";
 
     private static Pair<String, String> countyTowns[];
-    
+
     private static final Logger log = Logger.getLogger(TravelPlanCreator.class);
-    
+
     public static void createPlan(final String carMatrixPath,
                                   final String truckMatrixPath,
                                   final String busMatrixPath,
                                   int carNr, int truckNr, int busNr,
-                                  final String outputFilepath, 
+                                  final String outputFilepath,
                                   TimeDistribution timeDistribution) {
         if (carNr < 0 || truckNr < 0 || busNr < 0) {
             log.error("Vehicle number cannot be negative");
@@ -60,9 +63,9 @@ public class TravelPlanCreator {
                                          int carNr, int truckNr, int busNr,
                                          final String outputFilepath, boolean withNumbers,
                                          TimeDistribution timeDistribution) {
-    	log.info("Creating travel plan.");
-    	
-    	setCountyTownsCoordinates();
+        log.info("Creating travel plan.");
+
+        setCountyTownsCoordinates();
 
         PrintWriter writer = null;
         try {
@@ -71,7 +74,7 @@ public class TravelPlanCreator {
             e.printStackTrace();
         }
         writer.printf(HEADER);
-        
+
         log.info("Adding cars.");
         addPlansFromFile(writer, CAR, carMatrixPath, carNr, withNumbers, 0, timeDistribution);
         log.info("Adding trucks.");
@@ -85,7 +88,7 @@ public class TravelPlanCreator {
     }
 
     @SuppressWarnings("unchecked")
-	private static void setCountyTownsCoordinates() {
+    private static void setCountyTownsCoordinates() {
         String line;
         String csvSplitBy = ",";
 
@@ -134,8 +137,8 @@ public class TravelPlanCreator {
     Writes to writer plans for vehicle of given type from csv file with inputFilepath
     If withNumbers is false then take vehicle number from input file.
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-	private static void addPlansFromFile(PrintWriter writer, String vehicleType, String inputFilepath,
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private static void addPlansFromFile(PrintWriter writer, String vehicleType, String inputFilepath,
                                          int vehiclesNumber, boolean withNumbers, int idModifier,
                                          TimeDistribution timeDistribution) {
 
@@ -155,7 +158,7 @@ public class TravelPlanCreator {
                 probability_distribution.add(Pair.create(Pair.create(r, c), travelMatrix[r][c]));
             }
         }
-        
+
         EnumeratedDistribution distribution = new EnumeratedDistribution(probability_distribution);
         Pair<Integer, Integer>[] results = new Pair[vehiclesNumber];
         distribution.sample(vehiclesNumber, results);
@@ -182,7 +185,7 @@ public class TravelPlanCreator {
         String y2 = countyTowns[targetTown].getSecond();
         ret = String.format("<person id=\"%s\"><plan type=\"%s\"><act type=\"h\" x=\"%s\" y=\"%s\" " +
                 "end_time=\"%s:%s:00\"/><leg mode=\"%s\"/><act type=\"w\" x=\"%s\" y=\"%s\" />" +
-                "</plan></person>\n", type + id, CAR, x1, y1, endHour, endMinute, CAR, x2, y2);
+                "</plan></person>" + newline, type + id, CAR, x1, y1, endHour, endMinute, CAR, x2, y2);
         return ret;
     }
 }

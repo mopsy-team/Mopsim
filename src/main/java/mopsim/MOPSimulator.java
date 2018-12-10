@@ -57,7 +57,12 @@ public class MOPSimulator {
 
 		//Loading configuration
 		this.confGroup = confGroup;
-		conf = ConfigUtils.loadConfig(CONFIG_PATH, confGroup);
+		if (!confGroup.isStandalone()) {
+			conf = ConfigUtils.loadConfig(CONFIG_PATH, new MOPSimConfigGroup());
+		}
+		else {
+			conf = ConfigUtils.loadConfig(CONFIG_PATH, confGroup);
+		}
 		simulationId = confGroup.getSimulationId();
 		prepareSimulationDirectories();
 		//Creating travel & facilities plans
@@ -138,21 +143,22 @@ public class MOPSimulator {
 	}
 	
 	private void prepareReportFile(String reportPath) {
-		FileUtils.appendToFile(reportPath, "ID symulacji: " + confGroup.getSimulationId() + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba samochodów w symulacji: " + confGroup.getCarNr() + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba pojazdów ciężarowych w symulacji: " + confGroup.getTruckNr() + "\n");
-		FileUtils.appendToFile(reportPath, "Liczba autobusów w symulacji: " + confGroup.getBusNr() + "\n");
-		FileUtils.appendToFile(reportPath, "Macierz dla samochodów użyta w symulacji: " + confGroup.getCarPath() + "\n");
-		FileUtils.appendToFile(reportPath, "Macierz dla pojazdów ciężarowych użyta w symulacji: " + confGroup.getTruckPath() + "\n");
-		FileUtils.appendToFile(reportPath, "Macierz dla autobusów użyta w symulacji: " + confGroup.getBusPath() + "\n");
-		FileUtils.appendToFile(reportPath, "Plik z danymi o MOPach: " + confGroup.getMopData() + "\n");
-		FileUtils.appendToFile(reportPath, "Rozkład czasów wyjazdów: " + confGroup.getTimeDistribution().getIdentifier() + "\n");
-		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla samochodów: " + confGroup.getCarEnter().getIdentifier() + "\n");
-		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla pojazdów ciężarowych: " + confGroup.getTruckEnter().getIdentifier() + "\n");
-		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla autobusów: " + confGroup.getBusEnter().getIdentifier() + "\n");
-		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla samochodów: " + confGroup.getCarStay().getIdentifier() + "\n");
-		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla pojazdów ciężarowych: " + confGroup.getTruckStay().getIdentifier() + "\n");
-		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla autobusów: " + confGroup.getBusStay().getIdentifier() + "\n");
+		final String newline = System.lineSeparator();
+		FileUtils.appendToFile(reportPath, "ID symulacji: " + confGroup.getSimulationId() + newline);
+		FileUtils.appendToFile(reportPath, "Liczba samochodów w symulacji: " + confGroup.getCarNr() + newline);
+		FileUtils.appendToFile(reportPath, "Liczba pojazdów ciężarowych w symulacji: " + confGroup.getTruckNr() + newline);
+		FileUtils.appendToFile(reportPath, "Liczba autobusów w symulacji: " + confGroup.getBusNr() + newline);
+		FileUtils.appendToFile(reportPath, "Macierz dla samochodów użyta w symulacji: " + confGroup.getCarPath() + newline);
+		FileUtils.appendToFile(reportPath, "Macierz dla pojazdów ciężarowych użyta w symulacji: " + confGroup.getTruckPath() + newline);
+		FileUtils.appendToFile(reportPath, "Macierz dla autobusów użyta w symulacji: " + confGroup.getBusPath() + newline);
+		FileUtils.appendToFile(reportPath, "Plik z danymi o MOPach: " + confGroup.getMopData() + newline);
+		FileUtils.appendToFile(reportPath, "Rozkład czasów wyjazdów: " + confGroup.getTimeDistribution().getIdentifier() + newline);
+		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla samochodów: " + confGroup.getCarEnter().getIdentifier() + newline);
+		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla pojazdów ciężarowych: " + confGroup.getTruckEnter().getIdentifier() + newline);
+		FileUtils.appendToFile(reportPath, "Strategia wjazdu na MOPa dla autobusów: " + confGroup.getBusEnter().getIdentifier() + newline);
+		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla samochodów: " + confGroup.getCarStay().getIdentifier() + newline);
+		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla pojazdów ciężarowych: " + confGroup.getTruckStay().getIdentifier() + newline);
+		FileUtils.appendToFile(reportPath, "Rozkład czasu pobytu na MOPie dla autobusów: " + confGroup.getBusStay().getIdentifier() + newline);
 	}
 	
 	protected MOPSimConfigGroup getMOPSimConfigGroup() {
